@@ -31,6 +31,10 @@ function reverse4(str) {
   }, '');
 }
 
-console.log(reverse4('racecar')); // racecar
-console.log(reverse4('hello')); // olleh
-console.log(reverse4('buybye')); // eybyub
+function reverse5(str) {
+  str.split('').reduce((reverse, char) => char + reverse, '');
+}
+
+console.log(reverse5('racecar')); // racecar
+console.log(reverse5('hello')); // olleh
+console.log(reverse5('buybye')); // eybyub
