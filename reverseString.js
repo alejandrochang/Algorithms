@@ -13,6 +13,7 @@ function reverse2(str) {
   return result;
 }
 
+// solution 2
 function reverse3(str) { // ES6
   let reversed = '';
 
@@ -23,6 +24,13 @@ function reverse3(str) { // ES6
   return reversed;
 }
 
-console.log(reverse3('racecar')); // racecar
-console.log(reverse3('hello')); // olleh
-console.log(reverse3('buybye')); // eybyub
+// advanced solution 
+function reverse4(str) {
+  return str.split('').reduce((reversed, char) => {
+    return char + reversed;
+  }, '');
+}
+
+console.log(reverse4('racecar')); // racecar
+console.log(reverse4('hello')); // olleh
+console.log(reverse4('buybye')); // eybyub
