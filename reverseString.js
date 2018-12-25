@@ -1,4 +1,4 @@
-// solution 1
+// solution 1 - reverse() helper
 function reverse(str) {
   return str.split('').reverse().join('');
 }
@@ -13,6 +13,16 @@ function reverse2(str) {
   return result;
 }
 
-console.log(reverse2('racecar')); // racecar
-console.log(reverse2('hello')); // olleh
-console.log(reverse2('buybye')); // eybyub
+function reverse3(str) { // ES6
+  let reversed = '';
+
+  for (let character of str) {
+    reversed = character + reversed; // adding the char to the end of the reversed string
+  }
+
+  return reversed;
+}
+
+console.log(reverse3('racecar')); // racecar
+console.log(reverse3('hello')); // olleh
+console.log(reverse3('buybye')); // eybyub
