@@ -15,9 +15,23 @@
 //       '#####'
 
 function pyramid(n) { 
+  const mid = Math.floor((2 * n - 1) / 2); // will give us the mid
 
+  for (let row = 0; row < n; row++) {
+    let level = '';
+    for (let col = 0; col < 2 * n - 1; col++) {
+      if (mid - row <= col && mid + row >= col) {
+        level += '#';
+      } else {
+        level += ' ';
+      }
+    }
+
+    console.log(level);
+  }
 }
 
-console.log(pyramid(1));
-console.log(pyramid(2));
-console.log(pyramid(3));
+// console.log(pyramid(1));
+// console.log(pyramid(2));
+// console.log(pyramid(3));
+console.log(pyramid(5));
