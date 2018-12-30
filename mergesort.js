@@ -1,9 +1,11 @@
 // mergesort 
 // splits the arrays into two and then processes them through a helper function
-
+// Time Complexity - O(n * log(n));
 
 function mergeSort(arr) {
-  if (arr.length <= 1) return arr;
+  if (arr.length <= 1) {
+    return arr;
+  }
   const mid = Math.floor(arr.length / 2);
 
   let left = mergeSort(arr.slice(0, mid));
@@ -14,7 +16,7 @@ function mergeSort(arr) {
 
 function merge(left, right) {
   let result = [];
-  while (left.length || right.length) {
+  while (left.length && right.length) {
     if (left[0] < right[0]) {
       result.push(left.shift());
     } else {
