@@ -1,4 +1,5 @@
 // quicksort, gets a pivot and splits in half every time.
+// O(n * log(n));
 
 function quickSort(arr) {
   if (arr.length <= 1) {
