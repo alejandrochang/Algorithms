@@ -21,6 +21,7 @@ class Queue {
   remove() {
     return this.data.shift(); // pop
   }
+
 }
 
 const q = new Queue();
