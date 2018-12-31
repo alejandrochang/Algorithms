@@ -83,6 +83,25 @@ class Tree {
   }
 
   *printValues(){
-    
+    yield this.value;
+    for (let child of this.children) {
+      yield* child.printValues();
+    }
   }
 }
+
+// DFS -> [1, 2, 4, 3]
+const tree = new Tree(1, [
+  new Tree(2, [new Tree(4)]),
+  new Tree(3)
+]); 
+
+const values2 = [];
+for (let val of tree.printValues()) {
+  values2.push(val);
+}
+
+console.log('tree values', values2); // tree values [ 1, 2, 4, 3 ]
+
+
+console.log('tree', tree.printValues().next()); // tree { value: 1, done: false }
