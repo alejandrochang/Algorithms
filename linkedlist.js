@@ -132,6 +132,8 @@ class LinkedList {
     let node = new Node(data, previous.next);
     previous.next = node;
   }
+
+  
 }
 
 const nodeOne = new Node(5);
