@@ -11,6 +11,9 @@
 // class.  Contains should accept a 'data' argument
 // and return the Node in the tree with the same value.
 
+
+// BST -- THINK RECURSIVE!!!
+
 class Node {
   constructor(data) {
     this.data = data;
