@@ -11,22 +11,33 @@ class wordInside {
     this.data.push(str);
   }
 
-  search() {
+  search(str) {
+    let words = this.data;
+    for (let word of words) {
+      if (word[0] !== str[0]) {
+        return false;
+      }
 
+      if (word.indexOf(word) === -1) {
+        return false;
+      }
+    }
+
+    return true;
   }
-
 }
 
 
-const w = wordInside;
+const w = new wordInside;
 w.add('blooper');
 w.add('car');
 w.add('hello');
 
-w.search('bloop') // true
-w.search('bld') // false
-w.search('ooper') // false
-w.search('hel') // true
-w.search('ar') // false
-w.search('car') // true
+console.log(w.search('bloop')); // true
+console.log(w.search('bld')); // false
+
+// w.search('ooper') // false
+// w.search('hel') // true
+// w.search('ar') // false
+// w.search('car') // true
 
