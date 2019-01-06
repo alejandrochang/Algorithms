@@ -2,6 +2,9 @@
 
 1. What are the main differences between API and web service?
 
+Ans: 
+API and Web Services serve as a means of communication. The only difference is that a Web Servie facilitates interaction between two machines over a network. An API acts as an interface between two different applications so that they can communicate with each other. All Web Services are API's, but no all API's are Web Services. Web Services might not perform all the operations that an API would perform. A Web Service only uses three style of use SOAP, REST and XML_RPC, whereas an API can use any style of communication. A Web Service always needs a network for it's operation whereas an API doesn't. 
+
 2. Is there any difference between PUT and POST operations?
 
 3. Coding Question:
