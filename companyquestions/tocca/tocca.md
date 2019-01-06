@@ -16,8 +16,6 @@ PUT /expense-report/45262
 
 POST /expense-report
 
-
-
 Idempotence: Is the property of certain operations whereby they can be applied multiple times without changing the result beyond the initial application. 
 
 
@@ -29,6 +27,7 @@ user_profile structure is the following:
 User_profile: {
 $user_id: { misc. profile information }
 }
+
 The API must be designed in such a way that it returns the profiles in a JSON object that
 contains no more than 50 profiles at one time. Many requests to this API can be
 performed to download all the profiles in the database
