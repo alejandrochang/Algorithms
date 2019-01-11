@@ -20,6 +20,7 @@ function maxChar(str) {
       mostCommonChar = ch;
     }
   }
+  console.log(hashMap)
 
   return mostCommonChar;
 }
