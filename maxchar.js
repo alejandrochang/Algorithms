@@ -6,23 +6,22 @@
 // maxChar("apple 1231111") === "1"
 
 function maxChar(str) {
-  let hashMap = {};
+  let charMap = {};
   let count = 0;
-  let mostCommonChar;
+  let mostCommon = "";
 
-  for (let char of str) {
-    hashMap[char] = hashMap[char] + 1 || 1;
+  for (let ch of str) {
+    charMap[ch] = charMap[ch] + 1 || 1;
   }
 
-  for (let ch in hashMap) {
-    if (hashMap[ch] > count) {
-      count = hashMap[ch];
-      mostCommonChar = ch;
+  for (let ch in charMap) {
+    if (charMap[ch] > count) {
+      count = charMap[ch];
+      mostCommon = ch;
     }
   }
-  console.log(hashMap)
 
-  return mostCommonChar;
+  return mostCommon;
 }
 
 

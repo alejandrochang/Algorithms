@@ -1,30 +1,22 @@
-// let greet = require('./greet');
+// pass by value, does not point to the same place in memory location
 
-// var person = {
-//   firstName: 'Alejandro',
-//   lastName: 'Chang',
-//   greet: function() {
-//     console.log('Hello, ' + this.firstName + ' ' + this.lastName);
-//   }
-// }
-
-// person.greet();
-
-// console.log(person['firstName']) // Alejandro 
-
-function Person(firstName, lastName) {
-  this.firstName = firstName;
-  this.lastName = lastName;
+function change(b) {
+  b = 2;
+  console.log(b); // 2 doesn't change as 1 is a primitive
 }
 
-let Alex = new Person('Alejandro', 'Chang');
+var a = 1;
+change(a);
+console.log(a) // 1
 
-Person.prototype.greet = function() {
-  console.log('Hello ' + this.firstName + ' ' + this.lastName);
+// pass by reference, points to the same place in memory location
+
+function changeObj(d) {
+  d.prop1 = function() {};
+  d.prop2 = {};
 }
 
-Alex.greet();
-
-let Nancy = new Person('Nancy', 'Yang');
-
-Nancy.greet();
+var c = {};
+c.prop1 = {};
+changeObj(c);
+console.log(c); // { prop1: [Function], prop2: {} }
