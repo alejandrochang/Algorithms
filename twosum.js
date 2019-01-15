@@ -6,16 +6,20 @@ function twoSum(arr, sum) {
   let numMap = {};
 
   for (let num of arr) {
+    if (numMap[num]) {
+      return true;
+    }
+    
     let sumMinusEl = sum - num; // 10 - -1
 
     if (numMap[sumMinusEl] === true) {
       return true;
     }
-    console.log(numMap);
-
+  
     numMap[sumMinusEl] = true;
   }
 
+  console.log(numMap);
   return false;
 }
 
