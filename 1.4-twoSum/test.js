@@ -1,6 +1,5 @@
 const twosum = require('./twosum');
 
-
 let arr1 = [1, 2, 3, 9]; // false
 let arr2 = [1, 2, 4, 4]; // true
 let arr3 = [-1, 2, 11, 4]; // true, 11 + -1 = 10

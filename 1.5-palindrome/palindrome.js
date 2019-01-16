@@ -17,9 +17,5 @@ function palindrome2(str) {
 }
 
 
-console.log(palindrome2('racecar')); // true
-console.log(palindrome2('abba')); // true
-console.log(palindrome2('abcdefg')); // false
-console.log(palindrome2('habss')); // false
-console.log(palindrome2('habas')); // false
+module.exports = palindrome;
 
