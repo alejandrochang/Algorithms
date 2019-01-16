@@ -3,6 +3,7 @@ var util = require('util');
 
 
 function Greetr() {
+  EventEmitter.call(this);
   this.greeting = 'Hello';
 }
 
@@ -20,10 +21,6 @@ greeter1.on('greet', (data) => {
 });
 
 greeter1.greet('Alejandro');
-
-
-
-
 
 
 // // Any objects created with greetr should also have access to prototype property of the Event Emitter giving
