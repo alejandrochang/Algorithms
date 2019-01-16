@@ -12,6 +12,10 @@ test('Unique function exist', () => {
   expect(unique).toBeDefined();
 });
 
-test('Unique returns unique arr', () => {
+test('Unique returns unique arr 1', () => {
   expect(unique(getArr())).toEqual(unique(uniqueArr()));
+});
+
+test('Unique returns unique arr 2', () => {
+  expect(unique([5, 5, 5, 5, 5, 5])).toEqual([5]);
 });

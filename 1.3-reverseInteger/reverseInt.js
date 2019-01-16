@@ -9,20 +9,16 @@
 //   reverseInt(-90) === -9
 
 function reverseInt(n) {
-  let number = parseInt(n.toString().split('').reverse().join(''));
-  if (n < 0) {
-    return number * -1;
-  }
-
-  return number;
+  return Math.sign(n) * parseInt(n.toString().split('').reverse().join(''));
 }
 
 
-console.log(reverseInt(15)) // === 51
-console.log(reverseInt(981)) // === 189
-console.log(reverseInt(500)) // === 5
-console.log(reverseInt(-15)) // === -51
-console.log(reverseInt(-90)) // === -9
+// let number = parseInt(n.toString().split('').reverse().join(''));
+// if (n < 0) {
+//   return number * -1;
+// }
+
+// return number;
 
 
 //parseInt(), toString(), Math.sign
@@ -38,3 +34,5 @@ console.log(reverseInt(-90)) // === -9
 //   );
 //   return sign * reverse;
 // }
+
+module.exports = reverseInt;
