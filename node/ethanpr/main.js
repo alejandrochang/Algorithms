@@ -39,9 +39,9 @@ const requestMultiple = async () => { // returns a promise
   console.log(await PromiseRequest(url));
   console.log('middle');
   
-  // const result1 = await PromiseRequest(url1);
-  // const result2 = await PromiseRequest(url2);
-  // console.log('spacechip 1', result1, 'spacehip 2', result2);
+  const result1 = await PromiseRequest(url1);
+  const result2 = await PromiseRequest(url2);
+  console.log('spacechip 1', result1, 'spacehip 2', result2);
   return 'whatever'
 }
 
