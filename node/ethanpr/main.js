@@ -47,6 +47,7 @@ const requestMultiple = async () => { // returns a promise
 
 // requestMultiple().then(finishiedFn => console.log(finishiedFn)); // returns 'whatever'
 // we can use a .then() because every async function will return a promise 
+// its synchronous until you hit await 
 
 console.log(requestMultiple()); // returns a promise
 

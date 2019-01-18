@@ -13,3 +13,8 @@ person.greet.apply({ name: 'Alejandro Chang'}); // Hello Alejandro Chang
 // comma separated list of an array of arguments
 // this object -> will become the 'this' keyword
 
+var person2 = {
+  name: 'Alejandro Chang 3'
+}
+
+person.greet.bind(person2)(); // Hello Alejandro Chang 3

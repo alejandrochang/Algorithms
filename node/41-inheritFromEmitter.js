@@ -1,28 +1,32 @@
-'use strict';
 
-var EventEmitter = require('events');
-// var util = require('util');
+const Greetr = require("./41-greeder");
+var greeter1 = new Greetr();
 
-class Greetr extends EventEmitter {
-  constructor() {
-    super(); // calling parent of the constructor, inherits
-    this.greeting = 'Hello World';
-  }
+greeter1.on("greet", () => {
+  console.log("Inside the event helper");
+});
 
-  greet(data) {
-    console.log(`${this.greeting}: ${data}`);
-    this.emit('greet', data);
-  }
-}
+greeter1.greet("Tony");
 
-var greeter1 = new Greetr;
 
-greeter1.on('greet', () => {
-  console.log('Inside the event helper');
-})
+// var EventEmitter = require("events");
 
-greeter1.greet('Tony');
-// function Greetr() {
-//   EventEmitter.apply(this); // by using super() we call on the parents constructor
-//   this.greeting = 'Hello World';
+// class Greetr extends EventEmitter {
+//   constructor() {
+//     super(); // calling parent of the constructor, inherits
+//     this.greeting = "Hello World";
+//   }
+
+//   greet(data) {
+//     console.log(`${this.greeting}: ${data}`);
+//     this.emit("greet", data);
+//   }
 // }
+
+// var greeter1 = new Greetr();
+
+// greeter1.on("greet", () => {
+//   console.log("Inside the event helper");
+// });
+
+// greeter1.greet("Tony");
