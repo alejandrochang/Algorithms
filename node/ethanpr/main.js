@@ -23,7 +23,7 @@ const PromiseRequest = (url) => {
       });
     }
   )
-};
+}
 
 // PromiseRequest(url).then((response) => console.log(response)).catch((err) => console.log(err));
 
