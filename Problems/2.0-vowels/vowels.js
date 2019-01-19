@@ -8,21 +8,8 @@
 //   vowels('Why?') --> 0
 
 function vowels(str) {
-  const matches = str.match(/[aeiou]/gi);
-  return matches ? matches.length : 0;
+  const matches = str.match(/[aeuiou]/gi);
+  return matches === null ? 0 : matches.length;
 }
 
-console.log(vowels('Hi There!')); // --> 3
-console.log(vowels('Why do you ask?')); // --> 4
-console.log(vowels('Why?')); // --> 0
-
-
-// function vowels(str) {
-//   let vowels = ["a", "e", "i", "o", "u"];
-//   let count = 0;
-//   for (let char of str.toLowerCase()) {
-//     if (vowels.includes(char)) count += 1;
-//   }
-
-//   return count;
-// }
+module.exports  = vowels;
