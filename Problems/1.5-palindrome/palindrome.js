@@ -12,9 +12,9 @@ function palindrome(str) {
   return str === str.split('').reverse().join('');
 }
 
-function palindrome2(str) {
-  return str.split('').every((char, i) =>  char === str[str.length - i - 1]);
-}
+// function palindrome2(str) {
+//   return str.split('').every((char, i) =>  char === str[str.length - i - 1]);
+// }
 
 
 module.exports = palindrome;

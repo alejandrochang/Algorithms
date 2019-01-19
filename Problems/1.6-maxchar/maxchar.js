@@ -25,10 +25,7 @@ function maxChar(str) {
 }
 
 
-console.log(maxChar("abcccccccd")); // === "c"
-console.log(maxChar("apple 1231111")); // === "1"
-
-
+module.exports = maxChar;
 
 
 /*

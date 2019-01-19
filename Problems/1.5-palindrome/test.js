@@ -4,12 +4,23 @@ test('Require palindrome function to exists', () => {
   expect(palindrome).toBeDefined();
 });
 
-test('Palindrome', () => {
-  expect().
+test('Checking palindrom of racecar ===  true', () => {
+  expect(palindrome('racecar')).toEqual(true);
 });
 
-// console.log(palindrome2('racecar')); // true
-// console.log(palindrome2('abba')); // true
-// console.log(palindrome2('abcdefg')); // false
-// console.log(palindrome2('habss')); // false
-// console.log(palindrome2('habas')); // false
+test("Checking palindrom of abba ===  true", () => {
+  expect(palindrome("abcdefg")).toEqual(false);
+});
+
+test("Checking palindrom of racecar ===  racecar", () => {
+  expect(palindrome("abba")).toEqual(true);
+});
+
+test("Checking palindrom of racecar ===  racecar", () => {
+  expect(palindrome("habss")).toEqual(false);
+});
+
+test("Checking palindrom of racecar ===  racecar", () => {
+  expect(palindrome("habas")).toEqual(false);
+});
+
