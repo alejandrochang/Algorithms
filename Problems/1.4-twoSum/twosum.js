@@ -9,7 +9,9 @@ function twoSum(arr, sum) {
       return true;
     }
   
-    numMap[sumMinusEl] = true;
+    if (!numMap[num]) {
+      numMap[num] = true;
+    }
   }
 
   return false;
