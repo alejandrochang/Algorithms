@@ -26,36 +26,9 @@ function fib(n) {  // exponential time solution
     return n;
   }
 
-  return fib(n - 1) + fib(n - 2);
+  return fib(n-2) + fib(n-1);
 }
 
 fib = memoize(fib);
 
-console.log(fib(4))  // === 3
-console.log(fib(5))  // === 5
-console.log(fib(6))  // === 8
-console.log(fib(7))  // === 13
-console.log(fib(20))  // === 6765
-
-
-// function fib(n) {
-//   let result = [0, 1];
-
-//   for (let i = 2; i <= n; i++) {
-//     let a = result[i - 1];
-//     let b = result[i - 2];
-
-//     result.push(a + b);
-//   }
-
-//   return result[n];
-// }
-
-// function fib(n) {
-//   // exponential time solution
-//   if (n < 2) {
-//     return n;
-//   }
-
-//   return fib(n - 1) + fib(n - 2);
-// }
+module.exports = fib;
