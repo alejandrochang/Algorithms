@@ -17,4 +17,4 @@ function capitalize(str) {
   return result;
 }
 
-module.exports = capitalize;
+module.exports = capitalize;c
