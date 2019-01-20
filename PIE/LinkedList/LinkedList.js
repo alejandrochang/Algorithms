@@ -14,6 +14,7 @@ class LinkedList {
     this.head = null;
   }
 
+  // head 
   insertFirst(data) {
     this.head = new Node(data, this.head);
   }
@@ -53,6 +54,7 @@ class LinkedList {
     return null;
   }
 
+  //deleting
   removeAt(idx){
     if (!this.head) {
       return null;
@@ -69,6 +71,7 @@ class LinkedList {
     previous.next = previous.next.next;
   }
 
+  // inserting
   insertAt(data, idx) {
     if (!this.head) {
       this.head = new Node(data);
