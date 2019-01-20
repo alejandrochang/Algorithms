@@ -26,7 +26,16 @@ class LinkedList {
   }
 
   getLast() {
+    if (!this.head) {
+      return null;
+    }
 
+    let node = this.head;
+    while (node.next) {
+      node = node.next;
+    }
+
+    return node;
   }
 
   getAt(idx) {
@@ -69,7 +78,8 @@ class LinkedList {
       this.head = new Node(data, this.head);
     }
 
-    // if ()
-
+    let previous = this.getAt(idx-1) || this.getLast();
+    let node = new Node(data, previous.next);
+    previous.next = node;
   }
 }
