@@ -33,12 +33,16 @@ class Node {
 ```
 
 ### Binary Trees/ Binary Search Trees
-A Binary tree is a tree in which each node has no more than two children, referred to as left and right. If there is a question about a tree it is good to destinguish between a tree, BST and overall binary tree.
+A Binary tree is a tree in which each node has no more than two children, referred to as left and right. If there is a question about a tree it is good to destinguish between a tree, binary tree anf BST.
 
 BST:
 A binary search tree is a special kind of tree. The value held by a node's left child is less than or equal to its own value <=, and the value on the right side of the tree is greater than or equal to the node's value >=. All descendants to the left are less than the root node and descendants to the right are greater than the root node. 
 
-O(log(n)) lookup to traverse the tree - similar to Bsearch
+Access - Search - Insertion - Deletion
+Average - O(log(n)) - Worst Case - O(n);
+O(log(n)) lookup to traverse the tree - similar to Bsearch, 
+
+2^x = n -> log2^n = x -> log(n)
 
 ```js
 class Node {
@@ -75,3 +79,4 @@ class Node {
   }
 }
 ```
+
