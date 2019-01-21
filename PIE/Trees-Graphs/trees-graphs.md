@@ -12,6 +12,8 @@ children that is an array with all of that nodes children and so forth.
 
 Traversing a regular tree is O(n) as you have to go through every possibility. 
 
+Methods: constructor, add, remove
+
 ```js
 class Node {
   constructor(data) {
