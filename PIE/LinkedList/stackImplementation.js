@@ -8,12 +8,6 @@ const L = require('./LinkedList');
 let List = L.LinkedList;
 let Node = L.Node;
 
-// l = new List;
-// l.insertLast('a')
-// l.insertLast('b')
-// l.insertLast('c')
-// l.insertLast('d')
-// console.log(l.getLast());
 
 class Stack {
   constructor() {
@@ -95,3 +89,11 @@ Insertion/Deletion
 4) Elements can be inserted and deleted in linked lists indefinitely.
 Insertion/Deletion of values in arrays are very expensive. It requires memory reallocation.
 */
+
+
+// l = new List;
+// l.insertLast('a')
+// l.insertLast('b')
+// l.insertLast('c')
+// l.insertLast('d')
+// console.log(l.getLast());

@@ -16,3 +16,9 @@ The primary traversal problem with these kinds of list is to avoid the cycle avo
 
 ### Common LL operations
 Tracking the head, traversing the list, inserting and deleting elements.
+
+### Implement a Stack using LinkedList vs. Dynamic Array
+Prefer a LinkedList. Access is the only benefit of dynamic arrays which is O(1). LinkedList has the benefit of 
+O(1) - insertion and deletion. This is specially important if we want to replicate a Stack as closely as possible
+as it also has constant push() and pop() methods. 
+
