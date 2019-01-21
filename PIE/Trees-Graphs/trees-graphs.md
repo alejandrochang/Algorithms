@@ -80,3 +80,4 @@ class Node {
 }
 ```
 
+Many tree oepratinos can be implement recursively. The recursive implementation may not be the most efficient, but its a good place to start. 
