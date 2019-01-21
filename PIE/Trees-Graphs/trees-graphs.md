@@ -87,3 +87,12 @@ Many tree oepratinos can be implement recursively. The recursive implementation 
 Common Searches:
 It's convenient when you have a tree such as ordering properties in a Heap or BST. Most of the time you're given a tree that isn't a BST or heap. Examples: Military rankings, family tree, organization chart. One common ask is when searching for a specific node, when you search a tree without ordering the worst case will always be O(n). To common algorithms to aid in this task: BFS(Breadth First Search) and DFS(Depth First Search).
 
+* Traversals 
+Another common tree problem is a traversal. A traversal is just like a search, except that instead of stopping when you find a particular target node, you visit every node in the tree. Often used to perform some operation on each node in the tree. 
+
+Depth-First-Traversals (Common):
+1. Preorder - Performs the operations first on the node itself, then on its left descendants, and finally on its right descendants. A node is always visited before any of its children. root + left subtree + right subtree
+
+2. Inorder - Performs the operations first on the node's left descendants, then on the node itself and finally on its right descendants. Left subtree + root + right subtree.
+
+3. Postorder - Performs the opreations first on the node's left descendants, the on the nodes right descendants and finally on the node itself.  Left subtree + right subtree + root
