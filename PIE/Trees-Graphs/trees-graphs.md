@@ -81,3 +81,7 @@ class Node {
 ```
 
 Many tree oepratinos can be implement recursively. The recursive implementation may not be the most efficient, but its a good place to start. 
+
+Common Searches:
+It's convenient when you have a tree such as ordering properties in a Heap or BST. Most of the time you're given a tree that isn't a BST or heap. Examples: Military rankings, family tree, organization chart. One common ask is when searching for a specific node, when you search a tree without ordering the worst case will always be O(n). To common algorithms to aid in this task: BFS(Breadth First Search) and DFS(Depth First Search).
+
