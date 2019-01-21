@@ -10,6 +10,8 @@ children that is an array with all of that nodes children and so forth.
 4. Ancestor - An ancestor of a node is any other node for which the node is a descendant. 
 5. Leaves - The leaves are nodes that do not have any children.
 
+Traversing a regular tree is O(n) as you have to go through every possibility. 
+
 ```js
 class Node {
   constructor(data) {
@@ -36,7 +38,7 @@ A Binary tree is a tree in which each node has no more than two children, referr
 BST:
 A binary search tree is a special kind of tree. The value held by a node's left child is less than or equal to its own value <=, and the value on the right side of the tree is greater than or equal to the node's value >=. All descendants to the left are less than the root node and descendants to the right are greater than the root node. 
 
-
+O(log(n)) lookup to traverse the tree - similar to Bsearch
 
 ```js
 class Node {
