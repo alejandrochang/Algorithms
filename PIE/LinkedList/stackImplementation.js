@@ -4,15 +4,65 @@ a dynamic array and justify your decision. Design the interface to your stack to
 consistent and easy to use.
 */
 
+const L = require('./LinkedList');
+let List = L.LinkedList;
+let Node = L.Node;
 
+// l = new List;
+// l.insertLast('a')
+// l.insertLast('b')
+// l.insertLast('c')
+// l.insertLast('d')
+// console.log(l.getLast());
 
 class Stack {
   constructor() {
-    this.data = new LinkedList;
-    console.log(this.data);
+    this.data = new List;
+  }
+
+  push(data) {
+    this.data.insertLast(data);
+  }
+
+  pop() {
+    let previous = this.data.head;
+    let node = this.data.head.next;
+    if (!this.data.head.next) {
+      this.data.head = null;
+      return;
+    }
+
+    while (node.next) {
+      previous = previous.next;
+      node = node.next;
+    }
+
+    let last = previous.next;
+    previous.next = null;
+    return last;
+    // take last element from the list
+  }
+
+  peek() {
+    let last = this.data.getLast();
+    return last;
+    // show last element from list
   }
 }
 
+let stack = new Stack;
+stack.push('a');
+stack.push('b');
+stack.push('c');
+console.log(stack.pop()); // c, removes c 
+console.log(stack.peek()); // b
+console.log(stack.peek()); // b
+console.log(stack); // a
+
+// Node { data: 'c', next: null }
+// Node { data: 'b', next: null }
+// Node { data: 'b', next: null }
+// Stack { data: LinkedList { head: Node { data: 'a', next: [Node] } } }
 
 /* Pros and Cons of Dynamic Array vs. LinkedList (to hold data)
 Stack:

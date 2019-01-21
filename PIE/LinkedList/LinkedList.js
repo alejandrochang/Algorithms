@@ -39,6 +39,15 @@ class LinkedList {
     return node;
   }
 
+  insertLast(data) {
+    const last = this.getLast();
+    if (last) {
+      last.next = new Node(data);
+    } else {
+      this.head = new Node(data);
+    }
+  }
+  
   getAt(idx) {
     let node = this.head;
     let count = 0;
@@ -86,3 +95,5 @@ class LinkedList {
     previous.next = node;
   }
 }
+
+module.exports = { Node, LinkedList };
