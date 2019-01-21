@@ -87,7 +87,7 @@ Many tree oepratinos can be implement recursively. The recursive implementation 
 Common Searches:
 It's convenient when you have a tree such as ordering properties in a Heap or BST. Most of the time you're given a tree that isn't a BST or heap. Examples: Military rankings, family tree, organization chart. One common ask is when searching for a specific node, when you search a tree without ordering the worst case will always be O(n). To common algorithms to aid in this task: BFS(Breadth First Search) and DFS(Depth First Search).
 
-* Traversals 
+### Traversals 
 Another common tree problem is a traversal. A traversal is just like a search, except that instead of stopping when you find a particular target node, you visit every node in the tree. Often used to perform some operation on each node in the tree. 
 
 Depth-First-Traversals (Common):
@@ -96,3 +96,10 @@ Depth-First-Traversals (Common):
 2. Inorder - Performs the operations first on the node's left descendants, then on the node itself and finally on its right descendants. Left subtree + root + right subtree.
 
 3. Postorder - Performs the opreations first on the node's left descendants, the on the nodes right descendants and finally on the node itself.  Left subtree + right subtree + root
+
+Traversal: Recursion is a good way to start thinking about the problem. 
+
+### Graphs
+A tree is a actually a special case of a prah. Unlike tree nodes, graph nodes (vertices) can have multiple 'parents', possinly creating a loop or a cycle. The links between nodes as well as the nodes themselves may have values or weights. These links are called edges and may containe more information than just the pointer. A graph with one way edges is called a directed graph. A graph with two-way pointers is called an undirected graph. 
+
+Common representation of is to use an adjacency list: a list of references to other nodes with which the node shares edges. This list is analogous to the child references of the tree node data structure. 

@@ -1,3 +1,5 @@
+// methods include add remove for Node class
+// traversebst and traversedfs(fn) for tree class
 
 class Node {
   constructor(data) {
