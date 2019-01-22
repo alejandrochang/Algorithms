@@ -10,16 +10,23 @@ function heightOfTree(root) {
     return 0; // -1 if root doesn't count
   }
 
-  let left = heightOfTree(root.left);
-  let right = heightOfTree(root.right);
-
-  if (left > right) {
-    return left + 1;
-  } else {
-    return right + 1;
-  }
+  return 1 + Math.max(heightOfTree(root.left), heightOfTree(root.right));
 }
 
 console.log(heightOfTree(root)); // 4
 
 // ask does the root count as 1 or is it 0
+
+
+// if (root === null) {
+//   return 0; // -1 if root doesn't count
+// }
+
+// let left = heightOfTree(root.left);
+// let right = heightOfTree(root.right);
+
+// if (left > right) {
+//   return left + 1;
+// } else {
+//   return right + 1;
+// }
