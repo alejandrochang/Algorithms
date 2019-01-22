@@ -44,9 +44,11 @@ bst.insert(12);
 bst.insert(17);
 bst.insert(9);
 
-console.log(bst.right.left.data); // 27
-console.log(bst.right.right.data); // 100
-console.log(bst.left.right.data); // 17
+module.exports = bst;
+
+// console.log(bst.right.left.data); // 27
+// console.log(bst.right.right.data); // 100
+// console.log(bst.left.right.data); // 17
 
 //          23
 //        15     33
