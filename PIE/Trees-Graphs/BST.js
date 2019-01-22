@@ -33,6 +33,10 @@ class Node {
 
     return null;
   }
+
+  printValue() {
+    console.log(this.data);
+  }
 }
 
 let bst = new Node(23);

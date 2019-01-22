@@ -2,6 +2,7 @@
 // maximum distance from the root node to any lead node. 
 
 // Write a function to calculate the height of an arbitrary binary tree
+// O(n) as we have to go through each possibility to check the length of each sub-tree
 
 const root = require('./BST');
 
