@@ -10,7 +10,7 @@ function firstNonRepChar(str) {
     charMap[char] = charMap[char] + 1 || 1;
   }
 
-  for (let ch in charMap) {
+  for (let ch of str) {
     if (charMap[ch] === 1) {
       return ch;
     }
@@ -21,3 +21,6 @@ function firstNonRepChar(str) {
 
 console.log(firstNonRepChar('total')); // o
 console.log(firstNonRepChar('teeter')); // r
+
+
+// trick to keep track, iterate throuugh the str and use the hasMap to check the values in order
