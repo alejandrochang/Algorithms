@@ -2,13 +2,13 @@ const bst = require('./BST');
 
 // O(n) - linear time
 function postOrder(root) {
-  if (root === null) {
-    return;
+  if (!root) {
+    return null;
   }
 
   postOrder(root.left);
   postOrder(root.right);
-  root.printValue(root.data);
+  root.printValue();
 }
 
 console.log(postOrder(bst));

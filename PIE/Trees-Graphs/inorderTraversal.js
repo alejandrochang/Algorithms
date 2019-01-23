@@ -7,7 +7,7 @@ function inOrderTraversal(root) {
   }
 
   inOrderTraversal(root.left);
-  root.printValue(root.data);
+  root.printValue();
   inOrderTraversal(root.right);
 }
 

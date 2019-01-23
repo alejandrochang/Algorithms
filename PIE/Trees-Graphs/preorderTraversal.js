@@ -8,7 +8,7 @@ function preorderTraversal(root) {
     return;
   }
 
-  root.printValue(root.data);
+  root.printValue();
   preorderTraversal(root.left);
   preorderTraversal(root.right);
 }
