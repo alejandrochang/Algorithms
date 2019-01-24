@@ -19,3 +19,23 @@ A heap is a tree-like datastructure where each node must be ordered in respect t
 
 <!-- Binary Heap -->
 A binary heap are a specific implementation of a heap where each parent can't have more than two children. A complete binary heap has every level filled, except for the bottom level. This level gets populated left to right.
+
+A binary heap keeps the order(priority) of its data. If they're on the same level the order doesn't matter, the order is more characterized by the floor level. They're filled from left to right, until no more elements can be added. Heap starts idx = 1;
+
+Min Heap:
+<!-- 
+                      1
+                  5      9
+                10  6   12
+ -->
+
+Max Heap:
+<!-- 
+                    12
+                10      9
+              5  6    1
+ -->
+
+ left child: i * 2
+ right child: i * 2 + 1
+ left child: i / 2
