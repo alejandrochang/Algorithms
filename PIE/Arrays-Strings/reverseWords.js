@@ -12,7 +12,6 @@ function reverseWords(str) {
 }
 
 console.log(reverseWords("Do or do not, there is no try.")); // try. no is there not, do or Do
-
 console.log(reverseWords("A racecar is fast.")); // fast. is racecar A
 
 
