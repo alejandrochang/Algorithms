@@ -1,6 +1,9 @@
 
 // Implement binary search recursively
 
+// bsearch is log(n) because half of the search space is elminitaed through each iteration.
+// This is more efficient that a single search through all the elements 
+
 function bsearch(arr, target) {
   if (arr.length === 0) {
     return null;
