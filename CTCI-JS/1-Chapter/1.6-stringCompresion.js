@@ -21,8 +21,6 @@ function stringCompression(str) {
   return compressedStr;
 }
 
-
-
 console.log(stringCompression("aaaaaa")) //  "a6"
 console.log(stringCompression("aabcccccaaa")) ; // "a2b1c5a3"
 
@@ -43,4 +41,23 @@ console.log(stringCompression("aabcccccaaa")) ; // "a2b1c5a3"
 //   }
 
 //   return result;
+// }
+
+// function stringCompression(str) {
+//   if (str.length === 0) {
+//     return null;
+//   }
+
+//   let compressedStr = "";
+//   let count = 0;
+
+//   for (let i = 0; i < str.length; i++) {
+//     count++;
+//     if (str[i] !== str[i + 1]) {
+//       compressedStr += str[i] + count;
+//       count = 0;
+//     }
+//   }
+
+//   return compressedStr;
 // }
