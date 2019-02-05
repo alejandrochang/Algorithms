@@ -37,9 +37,20 @@ List2.insertFirst(1);
 List2.insertFirst(99);
 
 let l1 = List1.head;
-let l2 = List1.head;
+let l2 = List2.head;
+
+// console.log('l1', l1, 'l2', l2);
 
 function intersect(l1, l2) {
-  
+  let first = l1;
+  let second = l2;
+
+  while (first.data !== second.data) {
+    first = first.next;
+    second = second.next;
+  }
+
+  return first.data || second.data;
 }
 
+console.log(intersect(l1, l2));
