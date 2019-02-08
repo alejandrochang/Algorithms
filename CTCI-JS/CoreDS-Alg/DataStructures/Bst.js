@@ -47,15 +47,18 @@ class Node {
 }
 
 class Tree {
-  constructor(data) {
+  constructor() {
     this.root = null;
   }
 
   dfs(cb) {
-
+    let node = this.root;
+    cb(node)
+    node.left.dfs(cb);
+    node.right.dfs(cb);
   }
 
-  bfs(cb) {
+  bfs() {
 
   }
 }
@@ -68,10 +71,13 @@ node.insert(7);
 node.insert(2);
 node.insert(35);
 
-console.log(node.contains(35));  // Node { data: 35, left: null, right: null }
-console.log(node.left.left.data); // 2
-console.log(node.left.right.left.data); // 7
+// console.log(node.contains(35));  // Node { data: 35, left: null, right: null }
+// console.log(node.left.left.data); // 2
+// console.log(node.left.right.left.data); // 7
 
+let tree = new Tree();
+tree.root = node;
+; // 25, 5, 2,15, 7, 425, 35
 
 //           25
 //      5         425
