@@ -18,3 +18,23 @@
 // and start = (3, 0)(bottom left) and end = (0, 0)(top left), 
 // the minimum number of steps required to reach the end is 7, 
 // since we would need to go through(1, 2) because there is a wall everywhere else on the second row.
+
+let matrix = [[f, f, f, f],
+              [t, t, f, t],
+              [f, f, f, f],
+              [f, f, f, f]
+            ]
+
+let start = (3, 0);
+let end = (0, 0)
+
+function matrixBool(matrix, start, end) {
+  let counter = 0;
+  let steps = [[1, 0], [0, 1], [-1, 0], [0, -1]];
+  while (start !== end) {
+    
+    matrixBool(matrix, start, end);
+  }
+}
+
+console.log(matrixBool(matrix, start, end)); // 7
