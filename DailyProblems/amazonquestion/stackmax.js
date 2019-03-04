@@ -55,5 +55,5 @@ s.pop();
 s.pop();
 s.pop();
 
-console.log('max', s.greatest());
+console.log('max', s.greatest()); // 25, after popping gretest
 console.log(s);
