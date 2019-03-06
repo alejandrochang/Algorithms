@@ -10,20 +10,24 @@
 // Do this in O(N) time and O(1) space.
 
 function repeatedOnlyOnce(array) {
-  let charMap = {};
-
-  for (let num of array) {
-    charMap[num] = charMap[num] + 1 | 1;
-  }
-
-  for (let num in charMap) {
-    if (charMap[num] === 1) {
-      return num;
-    }
-  }
-
-  return null;
+  
 }
+
+// function repeatedOnlyOnce(array) {
+//   let charMap = {};
+
+//   for (let num of array) {
+//     charMap[num] = charMap[num] + 1 | 1;
+//   }
+
+//   for (let num in charMap) {
+//     if (charMap[num] === 1) {
+//       return num;
+//     }
+//   }
+
+//   return null;
+// }
 
 console.log(repeatedOnlyOnce([6, 1, 3, 3, 3, 6, 6])); // 1
 console.log(repeatedOnlyOnce([13, 19, 13, 13])); // 19
