@@ -29,19 +29,20 @@ function encoding(str) {
 // console.log(encoding("AAAABBBCCDAA")); // "4A3B2C1D2A" | 4A3B2C1D2A
 
 
+// num is a constant between 0 - 9;
 
 function decoding(str) {
-  let charCount = [];
-  let chars = [];
   let result = "";
 
   for (let i = 0; i < str.length; i++) {
-    if (i % 2 === 0) {
-      result += str[i + 1].repeat(Number(str[i]));
-      // result += Array(Number(str[i]) + 1).join(str[i + 1]);
+    let nums = str[i];
+    let char = str[i + 1];
+    if (i % 2 === 0) { // also => (typeof Number(nums) === 'number')
+      for (let j = 0; j < nums; j++) {
+        result += char;
+      }
     }
   }
-
   return result;
 }
 
@@ -49,3 +50,8 @@ console.log(decoding("4A3B2C1D2A")); // "AAAABBBCCDAA"
 
 // > Array(5).join("a") => "aaaa"
 // AAAABBBCCDAA
+
+// if (i % 2 === 0) {
+//   result += str[i + 1].repeat(Number(str[i]));
+//   result += Array(Number(str[i]) + 1).join(str[i + 1]);
+// }
