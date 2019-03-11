@@ -26,28 +26,25 @@ function encoding(str) {
   return result;
 }
 
-console.log(encoding("AAAABBBCCDAA")); // "4A3B2C1D2A" | 4A3B2C1D2A
+// console.log(encoding("AAAABBBCCDAA")); // "4A3B2C1D2A" | 4A3B2C1D2A
 
 
 
-// function decoding(str) {
-//   let countArr = [];
-//   let chArr = [];
-//   let result = "";
-//   for (let i = 0; i < str.length; i++) {
-//     if (i % 2 === 0) { // even
-//       chArr.push(str[i]);
-//     } else {
-//       countArr.push(str[i]);
-//     }
-//   }
+function decoding(str) {
+  let charCount = [];
+  let chars = [];
+  let result = "";
 
-//   let j = 0;
-//   for (let z = 0; z < countArr[j].length; z++) {
-//     result += 
-//   }
+  for (let i = 0; i < str.length; i++) {
+    if (i % 2 === 0) {
+      result += Array(Number(str[i]) + 1).join(str[i + 1]);
+    }
+  }
 
-//   return result;
-// }
+  return result;
+}
 
 console.log(decoding("4A3B2C1D2A")); // "AAAABBBCCDAA"
+
+// > Array(5).join("a") => "aaaa"
+// AAAABBBCCDAA
