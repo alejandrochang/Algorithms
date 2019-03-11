@@ -37,7 +37,8 @@ function decoding(str) {
 
   for (let i = 0; i < str.length; i++) {
     if (i % 2 === 0) {
-      result += Array(Number(str[i]) + 1).join(str[i + 1]);
+      result += str[i + 1].repeat(Number(str[i]));
+      // result += Array(Number(str[i]) + 1).join(str[i + 1]);
     }
   }
 
