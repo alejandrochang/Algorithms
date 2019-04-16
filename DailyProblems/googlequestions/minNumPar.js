@@ -3,3 +3,21 @@
 
 // For example, given the string "()())()", you should return 1. Given the string ")
 // (", you should return 2, since we must remove all of them.
+
+function minNumPar(str) {
+  let parMap = {};
+  for (let ch of str) {
+    parMap[ch] = parMap[ch] + 1 || 1;
+  }
+
+  
+}
+
+console.log("()())()"); // 1
+console.log(")("); // 2
+
+
+
+// each parenthesis is closed;
+// open + 1
+// close - 1
