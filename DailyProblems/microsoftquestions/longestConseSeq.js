@@ -9,10 +9,14 @@ function longestConsecutiveSequence(arr) {
   let hashMap = {};
 
   for (let num of arr) {
-    hashMap[num] = [num];
+    hashMap[num] = [num]; // '100': [100]
   }
 
-  console.log(hashMap);
+  for (let num in hashMap) {
+    if (key[-1] - 1 === parseInt(num)) {
+      hashMap[key].unshit(num);
+    }
+  }
 }
 
 
