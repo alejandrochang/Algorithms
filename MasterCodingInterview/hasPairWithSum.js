@@ -20,4 +20,4 @@ console.log(hasPairWithSum(arr, 26)); // true
 // i: arr, integer (two factors)
 // o: boolean
 // no restrictions
-// Time: Space:
+// Time: O(a)  Space: O(n) - dependent on array length
