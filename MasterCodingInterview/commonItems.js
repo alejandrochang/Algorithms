@@ -15,6 +15,9 @@ function commonItems(arr1, arr2) {
 
   return false;
 }
+
+// O(a) space complexity
+
 // const commonItems = (arr, arr2) => {
 //   let countMap = {};
 //   for (let ch of arr) {
@@ -47,3 +50,5 @@ console.log(commonItems(a, c)); // true
 
 // 1) brute force/naive approach, whys is it inefficient? - O(n^2)
 // 2) Theres 2 different arrays meaning that it is a*b or a + b
+// 3) Remember space complexity
+// 4) Remember to write modulerize code, explain in english, especially if its happening constantly 
