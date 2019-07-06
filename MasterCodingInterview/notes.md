@@ -31,3 +31,18 @@ CPU CACHE: CPU has a tiny memory which stores data of recently accessed memory
 4 rows = 32 bits of information -> 2,147,483,647 bits of info
 8 rows = 64 bits of information -> 9,223,372,036,854,775,807 bits of information
 
+Each Item(Object) takes 4 shelves in our memory
+```js
+const strings = ['a', 'b', 'c', 'd', 'e'];
+//(for 32-bit system) -> 4 items * 4 shelves = 16 bytes of storage - 4 for each object
+
+strings[2] // indexing -> stored in RAM where it remembers where to find it at
+```
+
+##Operations on Data Structures
+* Insertion
+* Deletion
+* Traversal
+* Searching
+* Sorting
+* Access
