@@ -37,7 +37,36 @@ const strings = ['a', 'b', 'c', 'd', 'e'];
 //(for 32-bit system) -> 4 items * 4 shelves = 16 bytes of storage - 4 for each object
 
 strings[2] // indexing -> stored in RAM where it remembers where to find it at
+
+// reference type
+const object1 = { value: 10 };
+const object2 = object1;
+const object3 = { value: 10 };
+
+// context vs. scope
+const object4 = {
+  function a(){
+    console.log(this); // this is function a
+  }
+}
+
+class Player {
+  constructor(name, type) {
+    this.name = name;
+    this.type = type;
+  }
+
+  introduce() {
+    console.log(`Hi my name is ${this.name} and Im a ${this.type} player`);
+  }
+}
+
+const player1 = new Player('Alejandro', 'street fighter');
+// instantiation
 ```
+
+Reference Type:
+Objects inherently have a reference type that points to their respective prototypes.
 
 ##Operations on Data Structures
 * Insertion
