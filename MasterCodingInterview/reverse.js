@@ -13,8 +13,13 @@ function reverse2(str){
   return result;
 }
 
+function reverse3(str) {
+  return [...str].reverse().join('');
+}
+
 console.log(reverse('racecar'));
 console.log(reverse('hello world'));
 console.log(reverse('now! hey'));
-console.log(reverse('Hi My name is Andrei.'));
-console.log(reverse2('Hi My name is Andrei.'));
+console.log(reverse('Hi My name is Andrei.')); // .ierdnA si eman yM iH
+console.log(reverse2('Hi My name is Andrei.')); // .ierdnA si eman yM iH
+console.log(reverse3('Hi My name is Andrei.')); // .ierdnA si eman yM iH
