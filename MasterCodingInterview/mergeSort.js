@@ -1,7 +1,40 @@
+// function mergeSort(arr) {
+//   if (arr.length <= 1) {
+//     return arr;
+//   }
+//   const mid = Math.floor(arr.length / 2);
+//   const left = mergeSort(arr.slice(0, mid));
+//   const right = mergeSort(arr.slice(mid));
+//   return merge(left, right);
+// }
 
-function mergeSortArrays(left, right) {
+// function merge(left, right) {
+//   let result = [];
+//   while (left.length && right.length) {
+//     if (left[0] < right[0]) {
+//       result.push(left.shift())
+//     } else {
+//       result.push(right.shift());
+//     }
+//   }
+
+//   return [...result, ...left, ...right];
+// }
+
+
+
+
+const mergeSort = (arr) => {
+  if (arr.length <= 1) return arr;
+  const middle = Math.floor(arr.length / 2);
+  const left = mergeSort(arr.slice(0, middle));
+  const right = mergeSort(arr.slice(middle));
+
+  return merge(left, right);
+}
+
+const merge = (left, right) => {
   let result = [];
-
   while (left.length && right.length) {
     if (left[0] < right[0]) {
       result.push(left.shift());
@@ -10,23 +43,8 @@ function mergeSortArrays(left, right) {
     }
   }
 
-  return [...left, ...result, ...right];
+  return [...result, ...left, ...right];
 }
 
-const array = [0, 3, 4, 31, 51];
-const array2 = [-5, 4, 14, 121, 709];
-
-console.log(mergeSortArrays(array, array2)); // [-5, 0, 3, 4, 4, 14, 31, 51, 121, 709];
-
-
-function mergeSort(arr) {
-  if (arr.length === 1) return arr;
-  const middle = Math.floor(arr.length / 2);
-  const left = mergeSort(arr.slice(0, middle));
-  const right = mergeSort(arr.slice(middle));
-
-  return mergeSortArrays(left, right);
-}
-
-const unorderedArr = [2, 5, 122, 11, -54, 28, 8383, 1];
-console.log(mergeSort(unorderedArr)); // [sorted]
+const arr = [1, 53, -2, -42, 5, 77, 2323, 31, 1];
+console.log(mergeSort(arr)); // [ -42, -2, 1, 1, 5, 31, 53, 77, 2323 ]
