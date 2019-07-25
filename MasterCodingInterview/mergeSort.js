@@ -23,27 +23,26 @@
 
 
 
-
-const mergeSort = (arr) => {
+function mergeSort(arr) {
   if (arr.length <= 1) return arr;
-  const middle = Math.floor(arr.length / 2);
-  const left = mergeSort(arr.slice(0, middle));
-  const right = mergeSort(arr.slice(middle));
+  const mid = Math.floor(arr.length / 2);
+  let left = mergeSort(arr.slice(0, mid));
+  let right = mergeSort(arr.slice(mid));
 
   return merge(left, right);
 }
 
-const merge = (left, right) => {
-  let result = [];
+function merge(left, right) {
+  let sorted = [];
   while (left.length && right.length) {
     if (left[0] < right[0]) {
-      result.push(left.shift());
+      sorted.push(left.shift());
     } else {
-      result.push(right.shift());
+      sorted.push(right.shift());
     }
   }
 
-  return [...result, ...left, ...right];
+  return [...sorted, ...left, ...right];
 }
 
 const arr = [1, 53, -2, -42, 5, 77, 2323, 31, 1];
