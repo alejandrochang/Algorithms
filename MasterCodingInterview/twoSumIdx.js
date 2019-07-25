@@ -8,25 +8,21 @@
 
 
 function twoSum(nums, target) {
-    let indexMap = {}
-    let storedIndex = 0;
-    for (let i = 0; i < nums.length; i++) {
-      let diff = target - nums[i];
-      if (indexMap[nums[i]]) { // the current number being iterated
-        return [storedIndex, i];
-      }
-
-      indexMap[diff] = true;
-      storedIndex = i;
-    }
-
-  return false;
+  let hashMap = {};
+  for (let i = 0; i < nums.length; i++) {
+    let diff = target - nums[i];
+    
+  }
 };
 
-console.log(twoSum([2, 7, 11, 15], 9));
+console.log(twoSum([2, 7, 11, 15], 9)); // [0, 1]
+console.log(twoSum([3, 2, 3], 6)); // [0, 2]
 
 
 //Given nums = [2, 7, 11, 15], target = 9,
 
 // Because nums[0] + nums[1] = 2 + 7 = 9,
 // return [0, 1].
+
+// 0: { index: 0, difference: 3};
+// for (let num in hashMap) { if (hashMap[num] === )}
