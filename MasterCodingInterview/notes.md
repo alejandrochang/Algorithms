@@ -1,4 +1,4 @@
-#Data Structures:
+# Data Structures:
 * Arrays
 * Stacks
 * Queues
@@ -8,13 +8,13 @@
 * Graphs
 * Hash Tables
 
-#Algorithms
+# Algorithms
 * Sorting
 * Dynamic Programming
 * BFS + DFS (Searching)
 * Recursion
 
-#Overral Foundation
+# Overral Foundation
 * Readability of Code
 * Space Complexity & Time Complexity
 
@@ -68,10 +68,31 @@ const player1 = new Player('Alejandro', 'street fighter');
 Reference Type:
 Objects inherently have a reference type that points to their respective prototypes.
 
-##Operations on Data Structures
+## Operations on Data Structures
 * Insertion
 * Deletion
 * Traversal
 * Searching
 * Sorting
 * Access
+
+
+Static Vs Dynamic Variables
+Static variables (should) remain the same e.g. temperature of a water bath, k constant of a particular spring. Dynamic variables change as the experiment progresses e.g. air temperature and pressure, amount of natural light.
+
+# Arrays - When should you use it?
+Pros:
+- Arrays have fast lookups O(1)
+- Fast push() and pop() methods
+- Good for sorting, as arrays are ordered by index
+
+Cons:
+- Slow inserts
+- Slow deletes
+- Fied Size * (if static arrays)
+
+
+Hash Function: A hash takes an input and generates some random pattern. Hashes are one way. Its practically impossible to know what the input is unless you created it.
+Idempotent: The ability to not 
+# Hash Tables - WWhen should you use it?
+-
