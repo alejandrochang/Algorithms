@@ -95,4 +95,6 @@ Cons:
 Hash Function: A hash takes an input and generates some random pattern. Hashes are one way. Its practically impossible to know what the input is unless you created it.
 Idempotent: The ability to not 
 # Hash Tables - WWhen should you use it?
--
+- Insert, Deletion, Search, Removal - O(1)
+- Collisions can bring hashes to O(n) - depending on the hash function it might take O(n)
+- 
