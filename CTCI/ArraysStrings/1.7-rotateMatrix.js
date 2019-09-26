@@ -4,12 +4,20 @@
 // Can you do this in place?
 
 const rotateMatrix = (arr) => {
+  let result = ;
+  for (let i = 0; i < arr.length; i++) {
+    result[i + 2] = arr[i];
+  }
 
+  return result;
 }
 
 
-console.log(rotateMatrix(arr));
+// 1 2 3       7 4 1      0 1 2
+// 4 5 6   ->  8 5 2 -->  3 4 5 
+// 7 8 9       9 6 3      6  7 8 
 
-// 1 2 3       7 4 1
-// 4 5 6   ->  8 5 2
-// 7 8 9       9 6 3
+
+const arr = [1, 2, 3, 4, 5, 6, 7, 8, 9 ];
+
+console.log(rotateMatrix(arr));
