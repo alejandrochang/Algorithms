@@ -1,6 +1,6 @@
 # Linked List
 
-Adding and Deleting a Node from a Singly Linked List
+Adding and Deleting a Node from a Singly Linked List.
 
 ```js
 
@@ -16,6 +16,10 @@ Adding and Deleting a Node from a Singly Linked List
     constructor() {
       this.head = null;
       this.size = 0;
+    }
+
+    add(data) {
+      const node = new Node(data);
     }
   }
 ```
