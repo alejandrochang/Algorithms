@@ -11,9 +11,26 @@
 // 8532 - 2358 = 6174
 // Write a function that returns how many steps this will take for a given input N.
 
+const getAscending = (num) => {
+  return num.split('').sort(function(a, b) { return a - b }).join('');
+}
+
+const getDescending = (num) => {
+  return num.split('').sort(function(a, b) { return b - a }).join('');
+}
 
 const kaprekarsConstant = (num) => {
+  let steps = 0;
+  const ascending = getAscending(num);
+  const descending = getDescending(num);
 
+  const result = ascending - descending;
+  if (result === 6174) {
+    return steps;
+  } else {
+    steps += 1;
+    kaprekarsConstant(result);
+  }
 }
 
 
