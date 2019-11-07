@@ -31,8 +31,8 @@ console.log(maxChar("apple 1231111")); // === "1"
 
 // I: string
 // O: string
-// Time: 
-// Space:
+// Time: O(n)
+// Space: O(n)
 
 // [pseudo]
 // put chars in count hash
