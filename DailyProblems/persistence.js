@@ -28,8 +28,8 @@ console.log(persistence(999)); // === 4
 
 // I: int
 // O: int (# of times to get to single digit)
-// T: 
-// S: 
+// T: O(n ^ 2)
+// S: O(n)
 
 // [pseudo]
 // turn numbers to string, split into array
