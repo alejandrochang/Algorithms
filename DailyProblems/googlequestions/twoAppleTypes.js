@@ -7,12 +7,11 @@
 // For example, given the input [2, 1, 2, 3, 3, 1, 3, 5], the longest portion will involve types 1 and 3, with a length of four.
 
 const longestPortion = (array) => {
-  let numMap = {};
+  let options = {};
+  let currentCount = 0;
   let longestPath = 0;
 
-  for (let i = 0; i < array.length; i++) {
-
-  }
+  
 }
 
 console.log(longestPortion([2, 1, 2, 3, 3, 1, 3, 5])); // length of 4
@@ -23,4 +22,6 @@ console.log(longestPortion([2, 1, 2, 3, 3, 1, 3, 5])); // length of 4
 // S: O(n)
 
 // [pesudo]
-// add number 
+// add options to map
+// if (length of map is < 3) continue adding
+// if length of map is > 3 reset currentCount and assign longestPath if possible
