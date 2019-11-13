@@ -9,12 +9,34 @@
 //   anagrams('Hi there', 'Bye there') --> False
 
 const anagrams = (str1, str2) => {
-  return filteredString(str1) === filteredString(str2);
+  const countMap = buildMap(str1);
+  const countMap2 = buildMap(str2);
+
+  for (let key in countMap) {
+    if (countMap2[key] !== countMap[key]) {
+      return false;
+    }
+  }
+  
+  return Object.keys(countMap).length === Object.keys(countMap2).length;
 }
 
-const filteredString = (string) => {
-  return string.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
+const buildMap = (str) => {
+  const map = {};
+  for (let ch of str.replace(/[^\w]/g, '').toLowerCase()) {
+    map[ch] = map[ch] + 1 || 1;
+  }
+
+  return map;
 }
+
+// const anagrams = (str1, str2) => {
+//   return filteredString(str1) === filteredString(str2);
+// }
+
+// const filteredString = (string) => {
+//   return string.replace(/[^\w]/g, '').toLowerCase().split('').sort().join('');
+// }
 
 console.log(anagrams('rail safety', 'fairy tales')); //  --> True
 console.log(anagrams('RAIL! SAFETY!', 'fairy tales')); //  --> True
@@ -28,8 +50,7 @@ console.log(anagrams('Hi there', 'Bye there')); // --> False
 
 // [pseudo]
 
-// easy solution: take all characters, filter all characters that are  not letters, sort them see if they qual eachother. 
+// easy solution: take all characters, filter all characters that are  not letters, sort them see if they qual eachother. Time Complexity: O(log(n))
 // countMap,keep count of a count of the characters used, 
-
 
 // replace(/[^\w]/g, "")
