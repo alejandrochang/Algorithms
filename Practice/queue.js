@@ -8,17 +8,22 @@
 //     q.add(1);
 //     q.remove(); // returns 1;
 
+// A queue pushes to the end, and removes from the font
+// or removes from the front and pushes on the end
+
 class Queue {
   constructor() {
     this.data = [];
   }
 
   add(el) {
+    // this.data.unshift(el)
     this.data.push(el);
   }
 
   remove(){
-    const removedElement = this.data.pop();
+    // const removedElement = this.data.unshift();
+    const removedElement = this.data.shift();
     return removedElement;
   }
 }
@@ -42,4 +47,4 @@ queue.remove();
 queue.remove();
 
 console.log({ queue });
-// Expected: [ 2, 5, 222 ]
+// Expected: [ 222, 67, 9 ]
