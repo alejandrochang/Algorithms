@@ -17,10 +17,13 @@ console.log(palindrome("abba")); //  === true
 console.log(palindrome("abcdefg")); // === false
 
 
-// I: 
-// O: 
-// Time: 
-// Space: 
+// I: string
+// O: bool
+// Time: O(n)
+// Space: O(1)
 
 // [pseudo]
 // split string, reverser, join equal it to original string, see if its equal
+
+// [pseudo 2]
+//  iterate through string, see if first and last character are the same, if they're not return false, else return true;
