@@ -7,3 +7,20 @@
 //   palindrome("abba") === true
 //   palindrome("abcdefg") === false
 
+
+
+const palindrome = (string) => {
+  return string === string.split('').reverse().join('');
+}
+
+console.log(palindrome("abba")); //  === true
+console.log(palindrome("abcdefg")); // === false
+
+
+// I: 
+// O: 
+// Time: 
+// Space: 
+
+// [pseudo]
+// split string, reverser, join equal it to original string, see if its equal
