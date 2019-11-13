@@ -5,7 +5,7 @@
 // or punctuation. Consider capital letters to be the same as lower case
 // --- Examples
 //   anagrams('rail safety', 'fairy tales') --> True
-//   anagrams('RAIL! SAFETY!', 'fairy tales') --> True
+//   anagrams('RAIL! SAFETY!', 'fairy taales') --> True
 //   anagrams('Hi there', 'Bye there') --> False
 
 const anagrams = (str1, str2) => {
@@ -14,10 +14,12 @@ const anagrams = (str1, str2) => {
 
   for (let key in countMap) {
     if (countMap2[key] !== countMap[key]) {
+      // if count on maps is different it will return false
       return false;
     }
   }
   
+  // cant compare hashMaps, but can compare there lengths, there contents are correct at this point
   return Object.keys(countMap).length === Object.keys(countMap2).length;
 }
 
@@ -29,6 +31,12 @@ const buildMap = (str) => {
 
   return map;
 }
+
+// I: str1, str2
+// O: Bool
+// Time: O(n)
+// Space: O(n)
+
 
 // const anagrams = (str1, str2) => {
 //   return filteredString(str1) === filteredString(str2);
@@ -51,6 +59,6 @@ console.log(anagrams('Hi there', 'Bye there')); // --> False
 // [pseudo]
 
 // easy solution: take all characters, filter all characters that are  not letters, sort them see if they qual eachother. Time Complexity: O(log(n))
-// countMap,keep count of a count of the characters used, 
+// Hard solutionm: countMap, make sure every ch in map1 === ch of map2, check length
 
 // replace(/[^\w]/g, "")
