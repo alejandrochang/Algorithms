@@ -10,15 +10,36 @@
 
 class Queue {
   constructor() {
-
+    this.data = [];
   }
 
-  add() {
-
+  add(el) {
+    this.data.push(el);
   }
 
   remove(){
-
+    const removedElement = this.data.pop();
+    return removedElement;
   }
 }
 
+// [pseudo]
+// add - O(1) - constant pushing into array
+// removeing - O(1) - popping from array
+
+
+const queue = new Queue;
+
+// adding to queue
+queue.add(2);
+queue.add(5);
+queue.add(222);
+queue.add(67);
+queue.add(9);
+
+// removing from queue
+queue.remove();
+queue.remove();
+
+console.log({ queue });
+// Expected: [ 2, 5, 222 ]
