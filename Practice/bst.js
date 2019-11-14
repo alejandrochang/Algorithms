@@ -19,6 +19,7 @@ class Node {
   }
 
   insert(data) {
+    // recursively go down tree left or right side, until empty spot
     if (this.left && data < this.left) {
       this.left.insert(data);
     } else if (data < this.left) {
@@ -31,7 +32,15 @@ class Node {
   }
 
   contains(data) {
+    if (data === this.data) {
+      return this.data;
+    }
 
+    if (this.left && data < this.data) {
+      return this.left.contains(data);
+    } else if (this.right && data > this.data) {
+      return this.right.contains(data);
+    }
   }
 }
 
