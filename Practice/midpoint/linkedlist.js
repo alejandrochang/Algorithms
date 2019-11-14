@@ -1,12 +1,3 @@
-// Implement a LinkedList, Node and Class
-// Use methods: clear, size, getAt(idx),
-// insertAt(data, idx),removeFirst(), removeAt(idx), 
-// insertFirst(data), getLast(), insertLast(data), forEach(fn)
-
-// LinkedList keep track of its current node and its next node
-// next is initialized to null, as we don't know the next number
-// 1 -> 2 -> 3 -> 4 -> 5
-
 class Node {
   constructor(data, next = null) {
     this.data = data;
@@ -15,8 +6,12 @@ class Node {
 }
 
 class LinkedList {
-  constructor() {
+  constructor(values = []) {
     this.head = null;
+
+    for (let value of values) {
+      this.insertLast(value);
+    }
   }
 
   clear() {
@@ -28,65 +23,66 @@ class LinkedList {
     let node = this.head;
 
     while (node) {
-      counter += 1;
+      counter++;
       node = node.next;
     }
 
     return counter;
   }
 
-  getAt(idx) {
-    // check to see where linked list starts
-    if (!this.head) return null;
-    let counter = 0;
-    let node = this.head;
-
-    while (node) {
-      if (idx === counter) {
-        return node;
-      }
-
-      node = node.next;
-      counter += 1;
+  getAt(index) {
+    if (!this.head) {
+      return null;
     }
 
+    let counter = 0;
+    let node = this.head;
+    while (node) {
+      if (counter === index) {
+        return node;
+      }
+      node = node.next;
+      counter++;
+    }
     return null;
   }
 
-  insertAt(data, idx) {
+  insertAt(data, index) {
     if (!this.head) {
-      // insert at first slot if no linkedList present
       this.head = new Node(data);
+      return;
     }
 
-    let counter = 0;
+    if (index === 0) {
+      this.head = new Node(data, this.head);
+      return;
+    }
+
+    let counter = 1;
     let previous = this.head;
     let node = this.head.next;
-
     while (node) {
-      if (counter === idx) {
-        // set the head to current data, set current node to next
+      if (counter === index) {
         previous.next = new Node(data, node);
         return;
       }
-
       previous = node;
       node = node.next;
-      counter += 1
+      counter++;
     }
 
-    // if idx not found, insert at the end of LinkedList
     previous.next = new Node(data, node);
   }
 
   removeFirst() {
-    if (!this.head) return;
+    if (!this.head) {
+      return;
+    }
 
-    // cut off the inital part of LinkedList
     this.head = this.head.next;
   }
 
-    removeLast() {
+  removeLast() {
     if (!this.head) {
       return;
     }
@@ -157,10 +153,26 @@ class LinkedList {
       return this.head;
     }
   }
-}
 
-// inserting at idx, iterate through counter see where to insert index,
-// if idx = 0, push head to next
-// keep track of previous, and current node (this.head.next)
+  forEach(fn) {
+    if (!this.head) {
+      return null;
+    }
+
+    let node = this.head;
+    while (node) {
+      fn(node);
+      node = node.next;
+    }
+  }
+
+  *[Symbol.iterator]() {
+    let node = this.head;
+    while (node) {
+      yield node;
+      node = node.next;
+    }
+  }
+}
 
 module.exports = { Node, LinkedList };
