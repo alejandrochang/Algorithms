@@ -7,8 +7,8 @@
 const allScores = (a, b) => {
   let result = [];
   let counter = 0;
-  let i = 0;
-  let j = 0;
+  let i = 0; // 0
+  let j = 0; // 1
 
   while (i < a.length && j !== b.length) {
     const aScore = a[i]; // 1
@@ -21,9 +21,9 @@ const allScores = (a, b) => {
 
     if (aScore === a[a.length - 1]) {
       result.push(counter);
-      j++;
       counter = 0;
       i = 0;
+      j++;
     }
   }
 
