@@ -68,3 +68,24 @@ This is what it ends up loking likle:
   }
 
 ```
+
+5) `querySelector` and `querySelectorAll`
+
+querySelector and querySelector all allows you to get any class,
+id, tag, anything to be able to use that html doc
+
+```js
+// gettting a button
+var submit = document.querySelector('input[type="submit');
+submit.value = "SEND"
+
+var item = document.querySelector('.list-group-item');
+item.style.color = 'red';
+
+// last element
+let lastItem = document.querySelector('.list-group-item:last-child');
+lastItem.style.color = 'blue';
+
+let secondItem = document.querySelector('.list-group-item:nth-child(2)')
+secondItem.style.color = 'coral';
+```

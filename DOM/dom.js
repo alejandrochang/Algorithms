@@ -48,15 +48,47 @@
 // items[1].style.backgroundColor = 'blue'
 
 // Get Elements by Tag Name
-var li = document.getElementsByTagName('li');
-console.log({ li });
-console.log(li[1]);
+// var li = document.getElementsByTagName('li');
+// console.log({ li });
+// console.log(li[1]);
 
-li[1].textContent = 'Nahh there'
-li[1].style.fontWeight = 'bold'
+// li[1].textContent = 'Nahh there'
+// li[1].style.fontWeight = 'bold'
 
-for (let i = 0; i < li.length; i++) {
-  li[i].style.backgroundColor = 'gray'
-}
+// for (let i = 0; i < li.length; i++) {
+//   li[i].style.backgroundColor = 'gray'
+// }
 
-li[1].style.backgroundColor = 'blue'
+// li[1].style.backgroundColor = 'blue'
+
+// QUERYSELECTOR
+
+// grab any css selector
+// let header = document.querySelector('#main-header');
+// header.style.borderBottom = 'solid 4px red'
+
+// var input = document.querySelector('input');
+// input.value = 'hello world';
+
+// var submit = document.querySelector('input[type="submit');
+// // console.log({ submit })
+// submit.value = "SEND"
+
+// var item = document.querySelector('.list-group-item');
+// item.style.color = 'red';
+
+// let lastItem = document.querySelector('.list-group-item:last-child');
+// lastItem.style.color = 'blue';
+
+// let secondItem = document.querySelector('.list-group-item:nth-child(2)')
+// secondItem.style.color = 'coral';
+
+let li = document.querySelector('li');
+li.style.color = 'red';
+
+let li2 = document.querySelector('li:nth-child(2)'); // second
+li2.style.backgroundColor = 'grey';
+
+// // QUERYSELECTORALL
+
+// let titles = document.querySelectoAll('')
