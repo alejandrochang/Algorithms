@@ -91,16 +91,16 @@
 
 // // QUERYSELECTORALL
 
-let titles = document.querySelectorAll('.title');
-console.log({ titles });
+// let titles = document.querySelectorAll('.title');
+// console.log({ titles });
 
-titles.forEach((title) => {
-  title.innerText = 'What is it';
-  title.style.color = 'BLUE';
-})
+// titles.forEach((title) => {
+//   title.innerText = 'What is it';
+//   title.style.color = 'BLUE';
+// })
 
-let odd = document.querySelectorAll('li:nth-child(odd)');
-let even = document.querySelectorAll('li:nth-child(even)');
+// let odd = document.querySelectorAll('li:nth-child(odd)');
+// let even = document.querySelectorAll('li:nth-child(even)');
 
 // odd.forEach((title) => {
 //   title.style.backgroundColor = 'grey';
@@ -112,10 +112,13 @@ let even = document.querySelectorAll('li:nth-child(even)');
 //   title.style.fontWeight = 100
 // });
 
-for (let i = 0; i < odd.length; i++) {
-  odd[i].style.backgroundColor = 'black';
-  even[i].style.backgroundColor = 'yellow';
-  odd[i].style.color = 'yellow'
-  odd[i].innerText = 'Yellow';
-  even[i].innerText = 'Black';
-}
+// for (let i = 0; i < odd.length; i++) {
+//   odd[i].style.backgroundColor = 'black';
+//   even[i].style.backgroundColor = 'yellow';
+//   odd[i].style.color = 'yellow'
+//   odd[i].innerText = 'Yellow';
+//   even[i].innerText = 'Black';
+// }
+
+
+// PART 2

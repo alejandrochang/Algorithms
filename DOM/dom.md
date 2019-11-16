@@ -72,9 +72,36 @@ This is what it ends up loking likle:
 5) `querySelector` and `querySelectorAll`
 
 querySelector and querySelector all allows you to get any class,
-id, tag, anything to be able to use that html doc
+id, tag, anything to be able to use in that html doc. querySelector gets the first item, querySelectorAll returns an array of all the items that match the criteria. You can iterate over etc.
+
+```html
+<body>
+  <div class="container">
+    <div id="main" class="card card-body">
+      <h2 class="title">Add Items</h2>
+      <form class="form-inline mb-3">
+        <input type="text" class="form-control mr-2">
+        <input type="submit" class="btn btn-dark" value="Submit">
+        <input type="submit" class="btn btn-dark" value="Not Submit">
+      </form>
+      <h2 class="title">Items</h2>
+      <ul id="items" class="list-group">
+        <li class="list-group-item">Item 1</li>
+        <li class="list-group-item">Item 2</li>
+        <li class="list-group-item">Item 3</li>
+        <li class="list-group-item">Item 4</li>
+      </ul>
+    </div>
+  </div>
+
+  <script src="dom.js"></script>
+</body>
+```
+
+
 
 ```js
+// dom.js file
 // gettting a button
 var submit = document.querySelector('input[type="submit');
 submit.value = "SEND"
@@ -88,4 +115,11 @@ lastItem.style.color = 'blue';
 
 let secondItem = document.querySelector('.list-group-item:nth-child(2)')
 secondItem.style.color = 'coral';
+
+// items through a css pseudo selector
+let items = document.querySelectorAll('li:nth-child(odd)')
+items.forEach((item) => {
+  item.style.backgroundColor = 'gold';
+})
+
 ```
