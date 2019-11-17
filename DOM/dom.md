@@ -139,3 +139,10 @@ firstElementChild returns the first HTML element
 ### lastChild and lastElementChild
 lastChild returns whitespace
 lastElementChild return the last HTML element
+
+### nextSibling, nextElementSibling and previousSibling and previousElementSibling
+
+nextSibling and previousSibling return the node
+nextElemementSibling and previousElementSibling return the html tag
+
+if there is not nextElementSibling or previousElementSibling it will return null
