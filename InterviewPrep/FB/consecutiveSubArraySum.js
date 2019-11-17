@@ -2,8 +2,15 @@
 // contiguous subarray of given length k that has the maximum average value.
 // Consercutive subarraySum
 
+const allNegatives = (arr) => arr.every((n) => n < 0);
+const allPositives = (arr) => arr.every((n) => n > 0);
+
 // Kadane's approach Algorithmn
 const maxSequence = (arr) => {
+  // edge cases
+  if (arr.length === 0 || allNegatives(arr)) return 0;
+  if (allPositives(arr)) return arr.reduce((sum, curr) => sum += curr );
+  
   let currentMax = 0; // 5
   let max = 0; // 5
 
@@ -20,11 +27,28 @@ const maxSequence = (arr) => {
 // Time: O(n)
 // Space: O(n)
 
-// const arr =[-2, 1, -3, 4, -1, 2, 1, -5, 4];
+const posArr = [2, 5, 6, 10, 4];
+const negArr = [-2, -5, -6, -10, -4];
+const arr =[-2, 1, -3, 4, -1, 2, 1, -5, 4];
+
+console.log(maxSequence(posArr)); // 27
+console.log(maxSequence(negArr)); // 0
 console.log(maxSequence(arr)); // 6
+
+
 // Loop through array
 // Compare sequence with 0, see which ones bigger, if > 0, continue adding
 // if < 0, reset to 0 for next subSequence
+
+
+
+
+
+
+
+
+
+
 
 
 // 2) Brute Force O(n^2)
@@ -59,5 +83,5 @@ const consecutiveSubArraySum = (arr) => {
 // j: 2 arr[j] = 1
 // maxSum = -2
 
-const arr =[-2, 1, -3, 4, -1, 2, 1, -5, 4];
+// const arr =[-2, 1, -3, 4, -1, 2, 1, -5, 4];
 // 4, -1, 2, 1 === 6
