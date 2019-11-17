@@ -168,4 +168,23 @@ const items = document.querySelector('#items'); // # for ids
 
 let newDiv = document.createElement('div');
 
-console.log(newDiv);
+// add a class, id or attribute
+newDiv.className = 'hello';
+newDiv.id = 'hello1';
+newDiv.setAttribute('title', 'Hello Div');
+
+
+// create a text node
+const newDivText = document.createTextNode('Alejandros List');
+
+// add text to div
+newDiv.appendChild(newDivText);
+newDiv.style.color = 'gold';
+
+// const container = document.querySelector('#items');
+// container.appendChild(newDiv);
+// console.log(newDiv);
+
+const title = document.querySelector('header .container');
+const h1 = document.querySelector('header h1');
+title.insertBefore(newDiv, h1);

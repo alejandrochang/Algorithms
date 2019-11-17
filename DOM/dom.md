@@ -20,7 +20,11 @@ Important methods:
   - firstChild and firstElementChild
   - lastChild and lastElementChild
   - nextSibling and nextElementSibling
-  - previousSibilingand previousElementSibling
+  - previousSibiling and previousElementSibling
+  - createElement
+  - createTextNode
+  - appendChild
+  - insertBefore(newElement, beforElement)
 
 1) getElementById -> gets element by id on tag
 
