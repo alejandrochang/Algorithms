@@ -129,12 +129,35 @@ const items = document.querySelector('#items'); // # for ids
 // items.parentNode.style.backgroundColor = '#f4f4f4';
 // items.parentNode.parentNode.parentNode.style.backgroundColor = 'black';
 
+// console.log(items.parentNode.parentNode)
+// console.log(items.parentElement.parentElement)
 // the parentNode grabs the parent of the items, which in this case
 // is the <div> encapsulating all items
 
 // childNodes and children
 // childNodes grabs everything including whitespace (breaks)
-console.log(items.childNodes);
+// console.log(items.childNodes); // node list
 
 // just the list item
-console.log(items.children);
+// console.log(items.children); // html collection
+// items.children[1].style.backgroundColor = 'yellow';
+
+// firstChild and firstElementChild
+// console.log(items.firstChild); // first Node (which in this case is text);
+// console.log(items.firstElementChild);
+
+// items.firstElementChild.textContent = 'Alejandro';
+
+// lastChild and lastElementChild
+// items.lastElementChild.textContent = 'Not Alejandro';
+
+// nextSibling and nextElementSibling
+// console.log(items.nextSibling); // gives us the text node
+// console.log(items.nextElementSibling); // if none it will return null
+
+// previousSibling and previousElementSibling
+// console.log(items.previousSibling); // text node
+// console.log(items.previousElementSibling); // html element
+
+// items.previousElementSibling.innerText = 'All of the Items'
+

@@ -10,10 +10,12 @@ Nodes
 
 Important methods:
   - getElementById 
-  - textContent
-  - innerText
+  - textContent and innerText
   - innerHTML
   - getElementsByClassName
+  - getElementsByTagName
+  - querySelector and querySelectorAll
+  - parentNode && parentElement
 
 1) getElementById -> gets element by id on tag
 
@@ -123,3 +125,13 @@ items.forEach((item) => {
 })
 
 ```
+
+### parentNode and  parentElement
+
+parentNode and parentElement both grab the parents HTML element and returns it for manipulation
+
+
+### childNode and childElement
+childNode returns a node list including breaks and whitespace. While childElement returns the actual HTML element for manipulation. Use childElement when looking for child
+
+### 
