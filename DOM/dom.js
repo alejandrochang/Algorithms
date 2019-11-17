@@ -166,25 +166,52 @@ const items = document.querySelector('#items'); // # for ids
 // console.log(items.nextSibling); //text
 // console.log(items.nextElementSibling); //tag
 
-let newDiv = document.createElement('div');
+// let newDiv = document.createElement('div');
 
-// add a class, id or attribute
-newDiv.className = 'hello';
-newDiv.id = 'hello1';
-newDiv.setAttribute('title', 'Hello Div');
+// // add a class, id or attribute
+// newDiv.className = 'hello';
+// newDiv.id = 'hello1';
+// newDiv.setAttribute('title', 'Hello Div');
 
 
-// create a text node
-const newDivText = document.createTextNode('Alejandros List');
+// // create a text node
+// const newDivText = document.createTextNode('Alejandros List');
 
-// add text to div
-newDiv.appendChild(newDivText);
-newDiv.style.color = 'gold';
+// // add text to div
+// newDiv.appendChild(newDivText);
+// newDiv.style.color = 'gold';
 
-// const container = document.querySelector('#items');
-// container.appendChild(newDiv);
-// console.log(newDiv);
+// // const container = document.querySelector('#items');
+// // container.appendChild(newDiv);
+// // console.log(newDiv);
 
-const title = document.querySelector('header .container');
-const h1 = document.querySelector('header h1');
-title.insertBefore(newDiv, h1);
+// const title = document.querySelector('header .container');
+// const h1 = document.querySelector('header h1');
+// title.insertBefore(newDiv, h1);
+
+// const lastListItem = items.lastElementChild;
+
+// const li = document.createElement('li');
+// li.className = 'list-group-item';
+// li.style.color = 'gold';
+
+// const liText = document.createTextNode('Item 5');
+// li.appendChild(liText);
+
+// lastListItem.after(li);
+// lastListItem.appendChild(li);
+
+const button = document.getElementById('button').addEventListener('click', buttonClick);
+
+function buttonClick() {
+  console.log('button was clicked');
+  document.getElementById('header-title').textContent ='Text has changed and colors has too';
+  const items = document.querySelectorAll('.list-group-item');
+  for (let i = 0; i < items.length; i++) {
+    if (i % 2 === 0) {
+      items[i].style.backgroundColor = 'black';
+    } else {
+      items[i].style.backgroundColor = 'yellow';
+    }
+  }
+}
