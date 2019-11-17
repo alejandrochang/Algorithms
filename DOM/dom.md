@@ -127,11 +127,15 @@ items.forEach((item) => {
 ```
 
 ### parentNode and  parentElement
-
 parentNode and parentElement both grab the parents HTML element and returns it for manipulation
 
+### childNode and children
+childNode returns a node list including breaks and whitespace. While children returns the actual HTML element for manipulation. Use children when looking for child.
 
-### childNode and childElement
-childNode returns a node list including breaks and whitespace. While childElement returns the actual HTML element for manipulation. Use childElement when looking for child
+### firstChild and firstElementChild
+firstChild returns whitespace
+firstElementChild returns the first HTML element
 
-### 
+### lastChild and lastElementChild
+lastChild returns whitespace
+lastElementChild return the last HTML element

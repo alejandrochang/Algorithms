@@ -160,4 +160,3 @@ const items = document.querySelector('#items'); // # for ids
 // console.log(items.previousElementSibling); // html element
 
 // items.previousElementSibling.innerText = 'All of the Items'
-
