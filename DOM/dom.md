@@ -16,6 +16,11 @@ Important methods:
   - getElementsByTagName
   - querySelector and querySelectorAll
   - parentNode && parentElement
+  - childNode && children
+  - firstChild and firstElementChild
+  - lastChild and lastElementChild
+  - nextSibling and nextElementSibling
+  - previousSibilingand previousElementSibling
 
 1) getElementById -> gets element by id on tag
 
