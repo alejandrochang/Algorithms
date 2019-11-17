@@ -203,15 +203,22 @@ const items = document.querySelector('#items'); // # for ids
 
 const button = document.getElementById('button').addEventListener('click', buttonClick);
 
-function buttonClick() {
-  console.log('button was clicked');
-  document.getElementById('header-title').textContent ='Text has changed and colors has too';
-  const items = document.querySelectorAll('.list-group-item');
-  for (let i = 0; i < items.length; i++) {
-    if (i % 2 === 0) {
-      items[i].style.backgroundColor = 'black';
-    } else {
-      items[i].style.backgroundColor = 'yellow';
-    }
-  }
+function buttonClick(e) {
+  console.log(e.target.id);
+  console.log(e.target.className);
+  console.log(e.target.classList); // arr of the classList on element
 }
+
+// function buttonClick(e) {
+//   console.log({ e });
+  // console.log('button was clicked');
+  // document.getElementById('header-title').textContent ='Text has changed and colors has too';
+  // const items = document.querySelectorAll('.list-group-item');
+  // for (let i = 0; i < items.length; i++) {
+  //   if (i % 2 === 0) {
+  //     items[i].style.backgroundColor = 'black';
+  //   } else {
+  //     items[i].style.backgroundColor = 'yellow';
+  //   }
+  // }
+// }
