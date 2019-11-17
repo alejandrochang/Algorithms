@@ -122,3 +122,12 @@
 
 
 // PART 2
+// TRAVERSING THE DOM
+
+const items = document.querySelector('#items'); // # for ids
+
+// parentNode
+items.parentNode.style.backgroundColor = '#f4f4f4';
+
+// the parentNode grabs the parent of the items, which in this case
+// is the <div> encapsulating all items
