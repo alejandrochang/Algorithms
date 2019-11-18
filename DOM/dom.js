@@ -213,6 +213,11 @@ function buttonClick(e) {
   // console.log(e.clientY); // y-axis from browser/window
   // console.log(e.offsetX); // offset is frome el itself
   // console.log(e.offsetY); // offset is from el itself
+
+  // customized event clicks:
+  // console.log(e.altKey); // option and click for mac
+  // console.log(e.ctrlKey);
+  // console.log(e.shiftKey); // shift and click
 }
 
 // function buttonClick(e) {
@@ -228,3 +233,12 @@ function buttonClick(e) {
   //   }
   // }
 // }
+
+// single click and double click
+// const button2 = document.getElementById('button').addEventListener('click', runEvent);
+// const button2 = document.getElementById('button').addEventListener('dblclick', runEvent);
+const button2 = document.getElementById('button').addEventListener('mousedown', runEvent);
+
+function runEvent(e){
+  console.log('EVENT TYPE: '+e.type);
+}
