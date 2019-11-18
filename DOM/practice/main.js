@@ -9,6 +9,9 @@ form.addEventListener('submit', addItem);
 // Delete event for items
 itemList.addEventListener('click', deleteItem);
 
+// filter event
+searchInput.addEventListener('keyup', filterItems);
+
 function addItem(e){
   e.preventDefault(); // prevent browser default on submit
 
@@ -39,4 +42,22 @@ function deleteItem(e) {
       itemList.removeChild(li);
     }
   }
+}
+
+// filter Items
+function filterItems(e) {
+  // convert text to lower case
+  var text = e.target.value.toLowerCase();
+  // get list, return html document
+  let items = itemList.getElementsByTagName('li');
+  // convert to array
+  Array.from(items).forEach((item) => {
+    let itemName = item.firstChild.textContent;
+
+    if (itemName.toLowerCase().indexOf(text) !== -1) {
+      item.style.display = 'block';
+    } else {
+      item.style.display = 'none'
+    }
+  });
 }
