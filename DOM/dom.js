@@ -264,7 +264,7 @@ box.addEventListener('mousemove', runEvent);
 
 let itemInput = document.querySelector('input[type="text"]');
 let form = document.querySelector('form');
-
+let select = document.querySelector('select');
 // keydown, while typing
 // itemInput.addEventListener('keydown', runEvent);
 
@@ -284,14 +284,21 @@ let form = document.querySelector('form');
 
 // itemInput.addEventListener('input', runEvent);
 
+// event type is change
+// select.addEventListener('change', runEvent);
+// select.addEventListener('input', runEvent);
+
+form.addEventListener('submit', runEvent);
+
 function runEvent(e){
+  e.preventDefault();
   console.log('EVENT TYPE: '+e.type);
   console.log('value', e.target.value);
 
   // remove everything from page
   // document.body.style.display = 'none';
 
-  document.getElementById('output').innerHTML = '<h3>'+e.target.value+'</h3>';
+  // document.getElementById('output').innerHTML = '<h3>'+e.target.value+'</h3>';
 
   // output.innerHTML = '<h3>MouseX '+e.offsetX+'</h3><h3>Mouse Y:'+e.offsetY+'</h3>';
   // document.body.style.backgroundColor = "rgb("+e.offsetX+", "+e.offsetY+", 40)"
