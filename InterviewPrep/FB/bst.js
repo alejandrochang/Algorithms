@@ -13,7 +13,7 @@ class Node {
       this.left.insert(data);
     } else if (data < this.data) {
       this.left = new Node(data);
-    } else if (this.right && data > this.right) {
+    } else if (this.right && data > this.data) {
       this.right.insert(data);
     } else if (data > this.data) {
       this.right = new Node(data);
@@ -34,3 +34,5 @@ class Node {
     return null;
   }
 }
+
+module.exports = Node;
