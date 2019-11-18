@@ -17,7 +17,7 @@
           <h1 id="header-title">Item Lister</h1>
         </div>
         <div class="col-md-6 align-self-center">
-          <input type="text" class="form-control" id="filter" placholder="Search items...">
+          <input type="text" class="form-control" id="filter" placeholder="Search items...">
         </div>
       </div>
     </div>
@@ -25,22 +25,34 @@
   <div class="container">
     <div id="main" class="card card-body">
       <h2 class="title">Add Items</h2>
-      <form class="form-inline mb-3">
+      <form id="addForm" class="form-inline mb-3">
         <input type="text" class="form-control mr-2">
-        <select class="form-control mr-2">
+        <!-- <select class="form-control mr-2">
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>
-        </select>
+        </select> -->
         <input type="submit" class="btn btn-dark" value="Submit">
       </form>
       <h2 class="title">Items</h2>
       <!-- Insert H3 that says List of Items -->
       <ul id="items" class="list-group">
-        <li class="list-group-item">Item 1</li>
-        <li class="list-group-item">Item 2</li>
-        <li class="list-group-item">Item 3</li>
-        <li class="list-group-item">Item 4</li>
+        <li class="list-group-item">
+          Item 1
+        <button class="btn btn-danger btn-sm float-right delete">X</button>
+        </li>
+        <li class="list-group-item">
+          Item 2
+        <button class="btn btn-danger btn-sm float-right delete">X</button>
+        </li>
+        <li class="list-group-item">
+          Item 3
+        <button class="btn btn-danger btn-sm float-right delete">X</button>
+        </li>
+        <li class="list-group-item">
+          Item 4
+        <button class="btn btn-danger btn-sm float-right delete">X</button>
+        </li>
       </ul>
       <div id="output"></div>
       <br />
