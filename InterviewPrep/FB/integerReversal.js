@@ -2,11 +2,12 @@
   // assert.equal(reverse(-1200), -21);
 
   const integerReversal = (int) => {
-    if (int > 0) {
-      return parseInt(formatReverseNumber(int));
-    } else {
-      return Math.sign(int) * parseInt(formatReverseNumber(Math.abs(int)));
-    }
+    return int > 0 ? parseInt(formatReverseNumber(int)) : Math.sign(int) * parseInt(formatReverseNumber(Math.abs(int)));
+    // if (int > 0) {
+    //   return parseInt(formatReverseNumber(int));
+    // } else {
+    //   return Math.sign(int) * parseInt(formatReverseNumber(Math.abs(int)));
+    // }
   }
 
   const formatReverseNumber = (num) => {
