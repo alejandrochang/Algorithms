@@ -2,6 +2,10 @@
 // sort an unsorted array
 
 
+// Time: O(n * log(n)) // divide and conquer, halfing your sort every time
+// Space: O(n) -> space grows relative to the input
+
+
 const mergeSort = (arr) => {
   if (arr.length < 2) return arr;
 
