@@ -237,8 +237,70 @@ function buttonClick(e) {
 // single click and double click
 // const button2 = document.getElementById('button').addEventListener('click', runEvent);
 // const button2 = document.getElementById('button').addEventListener('dblclick', runEvent);
-const button2 = document.getElementById('button').addEventListener('mousedown', runEvent);
+const button2 = document.getElementById('button');
+
+const box = document.getElementById('box');
+
+// box.addEventListener()
+
+// button2.addEventListener('click', runEvent);
+// button2.addEventListener('dblclick', runEvent);
+
+// as soon as mouse goes down, it goes off
+// button2.addEventListener('mousedown', runEvent);
+
+// mousup, hold as soon as you release, it runs event
+// button2.addEventListener('mouseup', runEvent);
+
+// mousenter and mouseleave for external elements (this case the actual box)
+// box.addEventListener('mouseenter', runEvent);
+// box.addEventListener('mouseleave', leave);
+
+// mouseover and mouseout only for internal elements
+// box.addEventListener('mouseover', runEvent);
+// box.addEventListener('mouseout', leave);
+
+box.addEventListener('mousemove', runEvent);
+
+let itemInput = document.querySelector('input[type="text"]');
+let form = document.querySelector('form');
+
+// keydown, while typing
+// itemInput.addEventListener('keydown', runEvent);
+
+// holding a key and letting it go
+// itemInput.addEventListener('keyup', runEvent);
+
+// only on key press
+// itemInput.addEventListener('keypress', runEvent);
+
+// focusing in input, leaving input
+// itemInput.addEventListener('focus', runEvent);
+// itemInput.addEventListener('blur', runEvent);
+
+// cut and paste events
+// itemInput.addEventListener('cut', runEvent);
+// itemInput.addEventListener('paste', runEvent);
+
+// itemInput.addEventListener('input', runEvent);
 
 function runEvent(e){
   console.log('EVENT TYPE: '+e.type);
+  console.log('value', e.target.value);
+
+  // remove everything from page
+  // document.body.style.display = 'none';
+
+  document.getElementById('output').innerHTML = '<h3>'+e.target.value+'</h3>';
+
+  // output.innerHTML = '<h3>MouseX '+e.offsetX+'</h3><h3>Mouse Y:'+e.offsetY+'</h3>';
+  // document.body.style.backgroundColor = "rgb("+e.offsetX+", "+e.offsetY+", 40)"
 }
+
+// function enter(e){
+//   console.log('mouse just entered')
+// }
+
+// function leave(e){
+//   console.log('mouse just left')
+// }
