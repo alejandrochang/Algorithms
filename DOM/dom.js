@@ -204,9 +204,15 @@ const items = document.querySelector('#items'); // # for ids
 const button = document.getElementById('button').addEventListener('click', buttonClick);
 
 function buttonClick(e) {
-  console.log(e.target.id);
-  console.log(e.target.className);
-  console.log(e.target.classList); // arr of the classList on element
+  // console.log(e.target.id);
+  // console.log(e.target.className);
+  // console.log(e.target.classList); // arr of the classList on element
+
+  // all 4 give you numbers
+  // console.log(e.clientX); // x-axis from browser/window
+  // console.log(e.clientY); // y-axis from browser/window
+  // console.log(e.offsetX); // offset is frome el itself
+  // console.log(e.offsetY); // offset is from el itself
 }
 
 // function buttonClick(e) {
