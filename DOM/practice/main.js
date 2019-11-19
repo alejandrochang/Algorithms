@@ -46,8 +46,34 @@ function removeItem(e) {
 }
 
 // filter
+let filterInput = document.getElementById('filter');
+filterInput.addEventListener('keyup', filterItems);
 
+function filterItems(e) {
+  let textInput = e.target.value.toLowerCase();
 
+  let listArr = Array.from(listItems.children);
+  listArr.forEach((li) => {
+    let liText = li.textContent.toLowerCase();
+    if (liText.indexOf(textInput) !== -1) {
+      li.style.display = 'block';
+    } else {
+      li.style.display = 'none';
+    }
+  });
+}
+
+// clear all
+let clearButton = document.getElementById('removeList');
+clearButton.addEventListener('click', removeAllItems);
+
+function removeAllItems(e) {
+  if (confirm('Delete all list items?')) {
+    while (listItems.firstElementChild) {
+      listItems.removeChild(listItems.firstElementChild);
+    }
+  }
+}
 
 
 
