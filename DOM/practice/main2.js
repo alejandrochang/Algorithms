@@ -2,11 +2,20 @@
 // the first article (<h2 class=”sensations”>) and
 // we want to read the heading text from the next article.
 
-let firstArticleHeader = document.querySelector('.sensations');
-let articleParent = firstArticleHeader.parentElement;
+let firstHeader = document.querySelector('.sensations');
+let firstArticle = firstHeader.parentElement;
 
-let nextArticle = articleParent.nextElementSibling;
-console.log('h2?', nextArticle.firstElementChild.textContent);
-// we want to get the h2s parent
-// go to its nextElementSibling,
-// go down to its firstElementChild
+let secondArticle = firstArticle.nextElementSibling;
+secondArticle.children[1].firstElementChild.innerHTML += "<h3>Hello there</h3>"
+// let secondHeader = secondArticle.firstElementChild;
+// let section = secondHeader.nextElementSibling;
+// let pTag = section.firstElementChild;
+
+// pTag.textContent = 'Contact Chang...'
+
+// children
+// firstElementChild
+// lastElementChild
+// nextElementSibling
+// previousElementSibling
+

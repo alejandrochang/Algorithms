@@ -75,17 +75,22 @@ function removeAllItems(e) {
   }
 }
 
+// change the title name to Alejandros todo List
+let title = document.getElementById('header-title');
+title.textContent = 'Alejandros List';
+// console.log(title.innerHTML);
+// console.log(title.textContent);
 
+let allLi = listItems.getElementsByTagName('li');
+let anotherListArr = Array.from(allLi)
 
-
-
-
-
-
-
-
-
-
+for (let i = 0; i < anotherListArr.length; i++) {
+  if (i % 2 === 0) {
+    anotherListArr[i].textContent = 'Clean Laundry'
+  } else {
+    anotherListArr[i].textContent = 'Wrap up chores'
+  }
+}
 
 
 
