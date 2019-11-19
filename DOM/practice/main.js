@@ -1,63 +1,82 @@
-// get form and list items, input
+// functionality to add, edit, delete items
+// functionality to filter and sort items
+
 let form = document.getElementById('addForm');
 let itemList = document.getElementById('items');
-let searchInput = document.getElementById('filter');
 
-// submit event for form
 form.addEventListener('submit', addItem);
+itemList.addEventListener('click', removeItem);
 
-// Delete event for items
-itemList.addEventListener('click', deleteItem);
+// add items to list
+function addItem(e) {
+  // prevent browser submit
+  e.preventDefault();
 
-// filter event
-searchInput.addEventListener('keyup', filterItems);
+  let inputText = document.getElementById('input-1').value;
 
-function addItem(e){
-  e.preventDefault(); // prevent browser default on submit
-
-  let inputValue = document.getElementById('input1').value;
-
-  // create list element, add styling and add text
-  let li = document.createElement('li');
-  li.className = 'list-group-item';
-  li.appendChild(document.createTextNode(inputValue));
-
-  // add delete functionality and ui
+  // create button, add style
   let button = document.createElement('button');
   button.className = 'btn btn-danger btn-sm float-right delete';
   button.appendChild(document.createTextNode('X'));
 
-  li.appendChild(button);
+  // create li add style
+  let li = document.createElement('li');
+  li.className = 'list-group-item';
+  li.appendChild(document.createTextNode(inputText))
 
-  // append to the itemList dom tree
+  li.appendChild(button);
   itemList.appendChild(li);
+
+  document.getElementById('input-1').value = '';
 }
 
-function deleteItem(e) {
-  // select the specific delete button
+// remove an item,
+// get all the buttons, place handler there
+// on click event we want remove item from dom
+
+function removeItem(e) {
   if (e.target.classList.contains('delete')) {
     if (confirm('Are you sure?')) {
-      // want to remove the li
-      let li = e.target.parentElement;
-      itemList.removeChild(li);
+      // parentElement is li
+      // let li = e.target.parentElement;
+      itemList.removeChild(e.target.parentElement);
     }
   }
 }
 
-// filter Items
-function filterItems(e) {
-  // convert text to lower case
-  var text = e.target.value.toLowerCase();
-  // get list, return html document
-  let items = itemList.getElementsByTagName('li');
-  // convert to array
-  Array.from(items).forEach((item) => {
-    let itemName = item.firstChild.textContent;
+// filter
+let filterInput = document.getElementById('filter');
+filterInput.addEventListener('keyup', filterList);
 
+function filterList(e) {
+  let text = e.target.value.toLowerCase();
+  // get list
+  let items = itemList.getElementsByTagName('li');
+
+  Array.from(items).forEach((item) => {
+    // if found get the text
+    let itemName = item.firstChild.textContent;
     if (itemName.toLowerCase().indexOf(text) !== -1) {
       item.style.display = 'block';
     } else {
-      item.style.display = 'none'
+      item.style.display = 'none';
     }
   });
+}
+
+// clear List:
+// Remove list button id, add event handler on click
+// if click, iterate through list and remove all li's
+
+let clearListButton = document.getElementById('removeList');
+clearListButton.addEventListener('click', removeAllItems);
+
+function removeAllItems(e) {
+  // get itemslist and iterate through them
+  // while (theres a first child) removeChild
+  if (confirm('You sure you want to delete all?')) {
+    while (itemList.firstChild) {
+      itemList.removeChild(itemList.firstChild);
+    }
+  }
 }
