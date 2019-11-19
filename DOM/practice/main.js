@@ -55,7 +55,7 @@ function filterList(e) {
 
   Array.from(items).forEach((item) => {
     // if found get the text
-    let itemName = item.firstChild.textContent;
+    let itemName = item.firstElementChild.textContent;
     if (itemName.toLowerCase().indexOf(text) !== -1) {
       item.style.display = 'block';
     } else {
@@ -75,8 +75,36 @@ function removeAllItems(e) {
   // get itemslist and iterate through them
   // while (theres a first child) removeChild
   if (confirm('You sure you want to delete all?')) {
-    while (itemList.firstChild) {
-      itemList.removeChild(itemList.firstChild);
+    while (itemList.firstElementChild) {
+      // itemList.firstElementChild.remove();
+      itemList.removeChild(itemList.firstElementChild);
     }
   }
 }
+
+
+// sort list
+// let sortButton = document.getElementById('sortList');
+// sortButton.addEventListener('click', sortList);
+
+// function sortList(e) {
+//   let items = itemList.childNodes;
+//   let itemsArr = [];
+
+//   // get rid of  whitespace
+//   for (let i in items) {
+//     if (items[i].nodeType === 1) {
+//       itemsArr.push(items[i]);
+//     }
+//   }
+
+//   // // sort the arr
+//   itemsArr.sort((a, b) => {
+//     return a.textContent > b.textContent;
+//   });
+
+//   // // append the list ordered
+//   for (let j = 0; j < itemsArr.length; j++) {
+//     itemList.appendChild(itemsArr[j]);
+//   }
+// }
