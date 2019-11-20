@@ -6,7 +6,34 @@
 // and false for exp = “[(])”
 
 const isMatchingBrackets = (str) => {
+  let stack = [];
 
+  let open = {
+    '(': ')',
+    '{': '}',
+    '[': ']',
+  };
+
+  let closed = {
+   ')': true,
+   '}': true,
+   ']': true,
+  }
+
+  for (let i = 0; i < str.length; i++) {
+    let ch = str[i];
+
+    if (open[ch]) {
+      stack.push(ch);
+    } else if (closed[ch]) {
+      let last = stack.pop();
+      if (open[last] !== ch) {
+        return false;
+      }
+    }
+  }
+
+  return stack.length === 0;
 }
 
 // Time: O(n)
@@ -44,7 +71,7 @@ const isMatchingBrackets = (str) => {
 // T: O(n)
 // T: O(n)
 
-console.log(isMatchingBrackets("(){}")); // returns true
+console.log(isMatchingBrackets("()3423ssdf{}")); // returns true
 console.log(isMatchingBrackets("))((")); // returns false
 console.log(isMatchingBrackets("[()]{}{[()()]()}")); // returns false
 console.log(isMatchingBrackets("[{()()}({[]})]({}[({})])((((((()[])){}))[]{{{({({({{{{{{}}}}}})})})}}}))[][][]")); // returns true

@@ -11,8 +11,8 @@ const maxSequence = (arr) => {
   if (arr.length === 0 || allNegatives(arr)) return 0;
   if (allPositives(arr)) return arr.reduce((sum, curr) => sum += curr );
   
-  let currentMax = 0; // 5
-  let max = 0; // 5
+  let currentMax = 0;
+  let max = 0;
 
   for (let i = 0; i < arr.length; i++) {
     currentMax = Math.max(0, arr[i] + currentMax);
