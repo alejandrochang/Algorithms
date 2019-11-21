@@ -5,22 +5,35 @@
 // For example:
 
 const commonItems = (arr1, arr2) => {
-  let countMap = {};
-
-  for (let i = 0; i < arr1.length; i++) {
-    countMap[arr1[i]] = countMap[arr1[i]] + 1 || 1;
+  const map = {};
+  for (let ch of arr1)  {
+    if (!map[ch]) map[ch] = true;
   }
 
-  for (let j = 0; j < arr2.length; j++) {
-    countMap[arr2[j]] = countMap[arr2[j]] + 1 || 1;
-  }
-
-  for (let z in countMap) {
-    if (countMap[z] > 1) return true;
+  for (let ch of arr2) {
+    if (map[ch]) return true;
   }
 
   return false;
 }
+
+// const commonItems = (arr1, arr2) => {
+//   let countMap = {};
+
+//   for (let i = 0; i < arr1.length; i++) {
+//     countMap[arr1[i]] = countMap[arr1[i]] + 1 || 1;
+//   }
+
+//   for (let j = 0; j < arr2.length; j++) {
+//     countMap[arr2[j]] = countMap[arr2[j]] + 1 || 1;
+//   }
+
+//   for (let z in countMap) {
+//     if (countMap[z] > 1) return true;
+//   }
+
+//   return false;
+// }
 
 // Time: O(n + m) -> iterations grow as arrays length grow - truncked O(n)
 // Space: O(n) -> map grows as arrays length grow
