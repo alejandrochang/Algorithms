@@ -7,6 +7,7 @@
 const commonItems = (arr1, arr2) => {
   return arr1.some(item => arr2.includes(item));
 };
+
 // const commonItems = (arr1, arr2) => {
 //   const map = {};
 //   for (let ch of arr1)  {

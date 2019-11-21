@@ -18,15 +18,16 @@ function isValidString(str) {
 
 function removeInvalidParentheses(str) {
   let levels = [str];
-  console.log({ levels });
+
   while (true) {
     let valid = levels.filter(isValidString);
-    console.log({ valid });
+    console.log(valid)
+  //   console.log({ valid });
     if (valid.length > 0) {
         return new Set(valid);
     }
 
-    // check validity of all possible substrings with one character removed.
+  //   // check validity of all possible substrings with one character removed.
     let nextlevels = [];
     for (let str of levels) {
         for (let i = 0; i < str.length; i++) {
@@ -35,7 +36,6 @@ function removeInvalidParentheses(str) {
     }
     levels = nextlevels;
   }
-  console.log({ levels });
   return levels;
 }
 
