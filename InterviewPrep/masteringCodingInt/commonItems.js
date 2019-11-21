@@ -5,17 +5,20 @@
 // For example:
 
 const commonItems = (arr1, arr2) => {
-  const map = {};
-  for (let ch of arr1)  {
-    if (!map[ch]) map[ch] = true;
-  }
+  return arr1.some(item => arr2.includes(item));
+};
+// const commonItems = (arr1, arr2) => {
+//   const map = {};
+//   for (let ch of arr1)  {
+//     if (!map[ch]) map[ch] = true;
+//   }
 
-  for (let ch of arr2) {
-    if (map[ch]) return true;
-  }
+//   for (let ch of arr2) {
+//     if (map[ch]) return true;
+//   }
 
-  return false;
-}
+//   return false;
+// }
 
 // const commonItems = (arr1, arr2) => {
 //   let countMap = {};
