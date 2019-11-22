@@ -4,6 +4,9 @@
 const items = [
   { name: 'Glasses', price: 100 },
   { name: 'Watch', price: 450 },
+  { name: 'Watch', price: 450 },
+  { name: 'Watch', price: 450 },
+  { name: 'Watch', price: 450 },
   { name: 'Drink', price: 2 },
   { name: 'Water', price: 1 },
   { name: 'Car', price: 25000 },
@@ -51,6 +54,18 @@ const allPrices = items.reduce((sum, item) => {
 
 // console.log({ allPrices });
 
-const numbers = [1, 2, 3, 4];
-console.log(numbers.includes(3)); // true
-console.log(numbers.includes(10)); // false
+const numbers = [1, 2, 3, 4, 4, 4, 4];
+// console.log(numbers.includes(3)); // true
+// console.log(numbers.includes(10)); // false
+
+const uniqueItems = [...new Set(numbers)];
+// const unique = [...new Set(JSON.stringify())]
+
+// const uniqueItems = unique(items);
+
+
+// console.log({ uniqueItems });
+
+// let updatedItems = JSON.stringify(items).map((item) => JSON.parse(item));
+// let up = [...new Set(updatedItems)];
+// console.log(up)
