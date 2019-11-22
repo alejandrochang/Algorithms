@@ -29,5 +29,28 @@ const updateItemPrice = items.map((item) => {
 
 items.forEach((item) => {
   // do a function here -> essentially a for loop
-  console.log(item.price);
+  // console.log(item.price);
 })
+
+// matching a specific case 
+const foundItem = items.find((item) => item.name === 'Watch');
+// console.log({ foundItem });
+
+// some: returns boolean if some apply
+const cheapItems = items.some((item) => item.price <= 1);
+// console.log(cheapItems) // true
+
+// every: returns boolean if all apply
+const greaterThanZeroPrice = items.every((item) => item.price > 0);
+// console.log(greaterThanZeroPrice); // true
+
+// reduce, acc + sum
+const allPrices = items.reduce((sum, item) => {
+  return sum += item.price;
+}, 0);
+
+// console.log({ allPrices });
+
+const numbers = [1, 2, 3, 4];
+console.log(numbers.includes(3)); // true
+console.log(numbers.includes(10)); // false
