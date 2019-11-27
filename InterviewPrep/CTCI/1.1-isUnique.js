@@ -25,10 +25,23 @@ const unique2 = (str) => {
   return true;
 }
 
+const unique3 = (str) => {
+  str = str.split('').sort().join('');
+  for (let i = 0; i < str.length; i++) {
+    if (str[i] === str[i + 1]) return false;
+  }
 
-console.log(unique2('sadas')); // false
-console.log(unique2('sadfhgjry')); // true
-console.log(unique2('sadsadhkashdjasghfhgjry')); // false
+  return true;
+}
+
+
+console.log(unique3('sadas')); // false
+console.log(unique3('sadfhgjry')); // true
+console.log(unique3('sadsadhkashdjasghfhgjry')); // false
+
+// console.log(unique1('sadas')); // false
+// console.log(unique1('sadfhgjry')); // true
+// console.log(unique1('sadsadhkashdjasghfhgjry')); // false
 
 // console.log(unique2('sadas')); // false
 // console.log(unique2('sadfhgjry')); // true
