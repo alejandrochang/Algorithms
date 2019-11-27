@@ -9,7 +9,9 @@ const oneAway = (s1, s2) => {
   let count = 0;
 
   for (let ch in map1) {
-    if (!map2[ch]) count++;
+    if (map1[ch] !== map2[ch]) {
+      count++;
+    }
   }
   
   return count <= 1;
@@ -27,6 +29,7 @@ const buildMap =(str) => {
 console.log(oneAway('pale', 'ple')); // true
 console.log(oneAway('pale', 'pale')); // true
 console.log(oneAway('pale', 'bale')); // true
+console.log(oneAway('paaaale', 'bale')); // false
 console.log(oneAway('pale', 'bake')); // false
 
 
