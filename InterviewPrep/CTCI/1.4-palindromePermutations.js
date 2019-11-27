@@ -24,6 +24,9 @@ console.log(palindromePermutation("carrace")); // "true
 console.log(palindromePermutation("Tact boa")); // "false"
 console.log(palindromePermutation("code")); // "false"
 
+// Time: O(n)
+// Space: O(n)
+
 
 // [pseudo]
 // We can count palindrom permutations by keeping count of keys,
