@@ -8,7 +8,7 @@ const isValidString = (str) => {
   for (let ch of str) {
     if (ch === '(') {
       count++;
-    } else if (ch === ')') {
+    } else if (ch === ')'){
       count--;
     }
 
@@ -20,15 +20,15 @@ const isValidString = (str) => {
 
 const removeInvalidParentheses = (str) => {
   let levels = [str];
-
   while (true) {
     let valid = levels.filter(isValidString);
     if (valid.length > 0) return valid[0];
 
+    // check validity of all possible substrings with one character removed.
     let nextlevels = [];
     for (let str of levels) {
       for (let i = 0; i < str.length; i++) {
-        nextlevels.push(str.substring(0, i) + str.substring(i + 1));
+          nextlevels.push(str.slice(0, i) + str.slice(i + 1));
       }
     }
 
@@ -37,6 +37,10 @@ const removeInvalidParentheses = (str) => {
 
   return levels;
 }
+
+
+// get all possiblities of the string, if its was one char missing, iterate through until
+// we have a valid parenthesis or no parenthesis at all
 
 
 
