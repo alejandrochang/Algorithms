@@ -17,28 +17,21 @@ const F = [
 ]
 
 const rotate = (matrix) => {
-  const x = Math.floor(matrix.length / 2);
-  const y = matrix.length - 1;
+  const x = Math.floor(matrix.length / 2); // 2
+  const y = matrix.length - 1; // 3
 
-  for (let i = 0; i < x; i++) {
-    
+  for (let i = 0; i < x; i++) { // i = 0
+    for (let j = i; j < y - i; j++) {
+      k = matrix[i][j];
+      // console.log({ k })
+      matrix[i][j] = matrix[y - j][i];
+      matrix[y - j][i] = matrix[y - i][y - j];
+      matrix[y - i][y - j] = matrix[j][y - i];
+      matrix[j][y - i] = k;
+    }
   }
 }
 
-// function rotate(matrix) {
-//   const n = matrix.length;
-//   const x = Math.floor(n/ 2);
-//   const y = n - 1;
-//   for (let i = 0; i < x; i++) {
-//      for (let j = i; j < y - i; j++) {
-//         k = matrix[i][j];
-//         matrix[i][j] = matrix[y - j][i];
-//         matrix[y - j][i] = matrix[y - i][y - j];
-//         matrix[y - i][y - j] = matrix[j][y - i]
-//         matrix[j][y - i] = k
-//      }
-//   }
-// }
 rotate(A);
 console.log(A);
 
@@ -57,3 +50,21 @@ console.log(A);
 //   [ 14, 10, 6, 2 ],
 //   [ 15, 11, 7, 3 ],
 //   [ 16, 12, 8, 4 ] ]
+
+
+
+// solution
+// function rotate(matrix) {
+//   const n = matrix.length;
+//   const x = Math.floor(n/ 2);
+//   const y = n - 1;
+//   for (let i = 0; i < x; i++) {
+//      for (let j = i; j < y - i; j++) {
+//         k = matrix[i][j];
+//         matrix[i][j] = matrix[y - j][i];
+//         matrix[y - j][i] = matrix[y - i][y - j];
+//         matrix[y - i][y - j] = matrix[j][y - i]
+//         matrix[j][y - i] = k
+//      }
+//   }
+// }
