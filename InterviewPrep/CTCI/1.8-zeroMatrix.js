@@ -56,6 +56,8 @@ let zeroMatrix = function(matrix) {
 
   zeroifyCols(matrix, zeroScan);
   zeroifyRows(matrix, zeroScan);
+
+  return matrix;
 };
 
 // Testing
@@ -100,3 +102,12 @@ const F = [
 
 // console.log(zeroMatrix(A));
 console.log(zeroMatrix(testMatrix));
+
+
+// [pseudo]
+// check in the matrix where all the zeroes are located
+// store those key position in a hashtable
+// iterate through matrix, see if it has any columns to  update
+// iterate through matrix see if it has any rows to udpdate
+// update matrix, update key  to  reflect number,
+// return the updated matrix
