@@ -52,6 +52,23 @@ const removeMiddleNode = (head) => {
   slow = slow.next;
 }
 
-console.log(removeMiddleNode(ll.head));
-console.log(JSON.stringify(ll, null, 4));
+// console.log(removeMiddleNode(ll.head));
+// console.log(JSON.stringify(ll, null, 4));
 // ll: a -> b -> d -> e
+
+// removing middle node without access to the head
+const removeMiddleNode2 = (node) => {
+  if (!node || !node.next) return false;
+  const next = node.next;
+  node.data = next.data;
+  node.next = next.next;
+  return true;
+}
+
+// removeMiddleNode with node passed down
+let cNode = ll.head.next.next;
+console.log(removeMiddleNode2(cNode));
+console.log('LL', JSON.stringify(ll, null, 4));
+
+// [pseudo]
+// make the next data and node equal to the next
