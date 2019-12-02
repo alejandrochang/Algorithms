@@ -38,18 +38,18 @@ ll.insertFirst('a');
 
 const removeMiddleNode = (head) => {
   if (!head || !head.next) return head;
-  let previous = head;
-  let p1 = head;
-  let p2 = head.next;
+  let prev;
+  let slow = head;
+  let fast = head;
 
-  while (p2.next && p2.next.next) {
-    previous = p1;
-    p1 = p1.next;
-    p2 = p2.next.next;
+  while (fast.next && fast.next.next) {
+    prev = slow;
+    slow = slow.next;
+    fast = fast.next.next;
   }
-  console.log({ previous, p1, p2 })
-  // previous.next = p1.next;
-  // p1 = p1.next;
+
+  prev.next = slow.next;
+  slow = slow.next;
 }
 
 console.log(removeMiddleNode(ll.head));
