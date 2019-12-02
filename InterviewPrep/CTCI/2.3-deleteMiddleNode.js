@@ -42,12 +42,12 @@ const removeMiddleNode = (head) => {
   let p1 = head;
   let p2 = head.next;
 
-  while (p2.next.next) {
+  while (p2.next && p2.next.next) {
     previous = p1;
     p1 = p1.next;
     p2 = p2.next.next;
   }
-  console.log({ p1, p2 })
+  console.log({ previous, p1, p2 })
   // previous.next = p1.next;
   // p1 = p1.next;
 }
