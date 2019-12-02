@@ -74,3 +74,7 @@ console.log(sumLists(l1, l2));
 
 // 912
 // 2 -> 1 -> 9`
+
+// if they were in order, I wouldn't have to reverse it,
+// iterate through loop backwards and insert first each int
+// as you go through them
