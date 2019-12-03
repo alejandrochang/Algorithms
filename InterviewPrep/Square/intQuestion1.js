@@ -24,3 +24,44 @@
 // Assume that addJob and cancelJob will not be called while processAllJobs is in progress.
 // Assume that the same job will not be added to the queue more than once.
 
+function jobQueue(){
+  this.queue = [];
+
+  // add function
+  this.add = (job) => {
+    this.queue.unshift(job);
+  }
+
+  // cancel job
+  this.cancelJob = (job) => {
+    for (let i = 0; i < this.queue.length; i++){
+      if (this.queue[i] === job) {
+        this.queue.splice(i, 1);
+      }
+    }
+  }
+
+  this.processAllJobs = async () => {
+    while (this.queue.length) {
+      // console.log('processing jobs')
+      let last = await this.queue.pop();
+    }
+  }
+}
+
+let queue = new jobQueue();
+
+// adding a promise
+let promise = new Promise((resolve, reject) => console.log(resolve));
+let promise2 = new Promise((resolve, reject) => console.log(resolve));
+
+queue.add(promise);
+queue.add(promise2);
+queue.cancelJob(promise);
+queue.processAllJobs(promise);
+
+console.log({ queue });
+
+
+// let promise = new Promise((resolve, reject) => console.log(resolve));
+// console.log({ promise });
