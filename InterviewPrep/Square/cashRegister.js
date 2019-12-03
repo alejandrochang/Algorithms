@@ -17,7 +17,7 @@ const denominator = [
 ];
 
 // cash register denominators -> whats lefts in the cash register
-const checkCashRegister = (price, cash, crd) => {
+const checkCashRegister = (price, cash, cir) => {
   // if price is less than cash return
   if (price > cash) console.log('insufficient funds');
 
@@ -25,19 +25,28 @@ const checkCashRegister = (price, cash, crd) => {
   let change = cash - price; // cost of item
 
   // get total amount in register, // curr[0] = 'PENNY', curr[1] = int
-  let register = crd.reduce((acc, curr) => {
+  let register = cir.reduce((acc, curr) => {
     acc.total += curr[1];
     acc[curr[0]] = curr[1];
     return acc;
   }, { total: 0 });
 
-  console.log({ register });
+// { register:
+//    { total: 107.11,
+//      PENNY: 1.01,
+//      FIVE: 15,
+//      DIME: 1.1,
+//      TEN: 30,
+//      TWENTY: 60 } }
+  // console.log({ register });
+
+  
 
 
 }
 
 
-console.log(checkCashRegister(40.0, 45.7, [['PENNY', 101],['FIVE': 2],[ 'DIME': 53],[ 'TEN': 3], 'TWENTY': 4])); // Change: $5.70
+console.log(checkCashRegister(40.0, 45.7, [['PENNY', 1.01],['FIVE', 15.00],['DIME', 1.10],['TEN', 30.00],['TWENTY', 60.00 ]])); // Change: $5.70
 
 
 // I need:
@@ -88,11 +97,11 @@ console.log(checkCashRegister(40.0, 45.7, [['PENNY', 101],['FIVE': 2],[ 'DIME': 
 //   let change = cash - price;
 
 //   // get information from register
-//   let register = cir.reduce((acc, curr) => {
-//     acc.total += curr[1];
-//     acc[curr[0]] = curr[1]; // assign names with values
-//     return acc;
-//   }, { total: 0 });
+  // let register = cir.reduce((acc, curr) => {
+  //   acc.total += curr[1];
+  //   acc[curr[0]] = curr[1]; // assign names with values
+  //   return acc;
+  // }, { total: 0 });
 
 //   // handle exact change
 //   if (register.total === change) {
