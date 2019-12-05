@@ -3,30 +3,63 @@
 // of 5, 10, and 25 cents
 
 const denom = [
-  { 'QUARTER': .25 },
-  { 'DIME': .10 },
-  { 'NICKEL': .05 },
+  { name: 'QUARTER', val: .25 },
+  { name: 'DIME', val: .10 },
+  { name: 'NICKEL', val: .05 },
 ]
 
-const vendingMachine = (cost, payment, cdi) => {
-  if (payment < cost) console.log('INSUFFICIENT FUNDS');
+const vendingMachine = (cost, payment, cid) => {
   let change = payment - cost; // .75
+  let response = { status: '' };
+
+  // if not enough money
+  if (payment < cost) {
+    response.status = 'INSUFFICIENT PAYMENT';
+    return response;
+  }
 
   // get vending change
-  let vendingChange = cdi.reduce((acc, curr) => {
+  let vendingChange = cid.reduce((acc, curr) => {
     acc.total += curr[1];
     acc[curr[0]] = curr[1];
     return acc;
   }, { total: 0 });
 
-  if (change > vendingChange) console.log('INSUFFICIENT CHANGE');
-  // subtract from the total, see what kind of change we can receive going highest to lowest
-  vendingChange.total -= change; // 2.25 - .75 = 1.50
-  // for (let coin of denom) {
-  //   if (denom[])
-  // }
+  // insufficient funds
+  if (vendingChange.total < change) {
+    response.status = 'INSUFFICIENT CHANGE';
+    return repsonse;
+  }
 
+  let changeArray = denom.reduce((acc, curr) => {
+    let value = 0;
 
+    // while there is still money and whie denomination
+    // is larger than the change remaining
+    while (vendingChange[curr.name] && change >= curr.val) {
+      change -= curr.val;
+      vendingChange[curr.name] -= curr.val;
+      value += curr.val;
+
+      change = Math.round(change * 100) / 100;
+    }
+
+    if (value > 0) {
+      acc.push([ curr.name, value ]);
+    }
+
+    return acc;
+  }, []);
+
+  // change has to equal zero and there has to be change
+  if (changeArray.length < 1 || change > 0) {
+    response.status = 'INSUFFICIENT FUNDS';
+    return response;
+  }
+
+  response.status = 'OPEN';
+  response.change = changeArray;
+  return response;
 }
 
 // snicker: 1.25, 2.00, 
