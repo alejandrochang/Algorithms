@@ -8,66 +8,71 @@ let denominations = [
   { name: 'NICKEL', val: .05 },
 ];
 
-// cda -> change denominations available
-const vendingMachine1 = (cost, payment, cda) => {
-  let response = { status: '', change: []};
-  if (cost > payment) {
-    response.status = 'INSUFFICIENT PAYMENT';
+// vc -> vendingChange
+const vendingMachine1 = (cost, payment, vc) => {
+  let response = { status: '', change: [] };
+  let change = payment - cost;
+  if (payment < cost) {
+    response.status = 'Insufficient Funds';
     return response;
-  }
+  };
 
-  let change = payment - cost; // .75
-
-  // calculate vendingMachine total and cda
-  let vendingMachine = cda.reduce((acc, curr) => {
+  // get the total of the vending machine
+  let vendingMachine = vc.reduce((acc, curr) => {
     acc.total += curr[1];
     acc[curr[0]] = curr[1];
     return acc;
-  }, { total : 0 });
+  }, { total: 0 });
 
-  // if vendingMachine.total < change return insufficient funds
+  // if vendingMachine total < change: not enough change
   if (vendingMachine.total < change) {
-    response.status = 'INSUFFICIENT FUNDS';
+    response.status = 'Not enough change';
     return response;
   }
 
-  let changeArray = denominations.reduce((acc, curr) => {
-    // value of change
+  // subtract change to 0, calculate leftover change
+  let changeArr = denominations.reduce((acc, curr) => {
+    // value we are generating, multiple quarters etc for any given val
     let value = 0;
 
+    // while vending machine has that specific change and the change is greater than value
     while (vendingMachine[curr.name] && change >= curr.val) {
       change -= curr.val;
-      vendingMachine[curr.name] -= curr.val;
+      vendingMachine[curr] -= curr.val;
       value += curr.val;
 
       change = Math.round(change * 100) / 100;
     }
 
     if (value > 0) {
-      acc.push([curr.name, value ]);
+      acc.push([ curr.name, value ]); // ['QUARTER', .75 ]
     }
 
     return acc;
   }, []);
 
-  if (changeArray.length < 1 || change > 0) {
-    response.status = 'INSUFFICIENT FUNDS';
+  if (changeArr.length < 1 || change > 0) {
+    response.status = 'Not Succesful';
     return response;
   }
 
-  response.status = 'SUCESS'
-  response.change = changeArray;
+  response.status = 'SUCESS';
+  response.change = changeArr;
   return response;
 }
 
 
+console.log(vendingMachine1(1.25, 2.00, [['NICKEL', .25], ['DIME', 1.00], ['QUARTER', 1.00]]))
+// console.log(vendingMachine1(1.25, 3.10, [['NICKEL', .25 ], ['DIME', 1.00 ], ['QUARTER', 1.00]]))
+// { status: 'OPEN', change: [ [ 'QUARTER', 0.75 ] ] }
 
 
 
-
-
-
-
+// iterating over denominations, getting vendingMachine total and cda
+// checking to see if the greatest denoms are available and change is available
+// if payment < cost insuficient funds
+// if vendingMachine total < change insuficient change
+// change will be an array of denominations available (thats is what is being passed in);
 
 
 
@@ -87,10 +92,6 @@ const vendingMachine1 = (cost, payment, cda) => {
 // give change back of remaining amounts
 
 // insufficient changet, insufficient payment
-
-
-console.log(vendingMachine1(1.25, 2.00, [['NICKEL', .25 ], ['DIME', 1.00 ], ['QUARTER', 1.00]]))
-// { status: 'OPEN', change: [ [ 'QUARTER', 0.75 ] ] }
 
 
 
