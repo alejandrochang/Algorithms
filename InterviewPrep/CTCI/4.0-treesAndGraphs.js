@@ -38,7 +38,7 @@ node.children[1].add(22);
 
 let tree = new Tree();
 tree.root = node;
-console.log(JSON.stringify(tree, null, 4));
+// console.log(JSON.stringify(tree, null, 4));
 //       1
 //    6      12
 //  4   5   8  22
@@ -47,20 +47,55 @@ console.log(JSON.stringify(tree, null, 4));
 // Implement a BST
 // left is < right is > then
 // Implement: insert, contains methods
-class BSTNode {
-  constructor(data) {
-    this.data = data;
-    this.left = null;
-    this.right = null;
-  }
 
-  // insert(data) {
-  //   if ()
-  // }
+// class BSTNode {
+//   constructor(data) {
+//     this.data = data;
+//     this.left = null;
+//     this.right = null;
+//   }
 
-  // constains(data) {
-  // }
-}
+//   insert(data) {
+//     if (data < this.data && this.left) {
+//       this.left.insert(data);
+//     } else if (data < this.data) {
+//       this.left = new Node(data);
+//     } else if (data > this.data && this.right) {
+//       this.right.insert(data);
+//     } else if (data > this.data) {
+//       this.right = new Node(data);
+//     }
+//   }
+
+//   contains(data) {
+//     if (this.data === data) {
+//       return this;
+//     }
+
+//     if (data < this.data && this.left) {
+//       return this.left.contains(data);
+//     } else if (data > this.data && this.right) {
+//       return this.right.contains(data);
+//     }
+
+//     return null;
+//   }
+// }
+
+// if this.left && this.data < .data
+let bst = new BSTNode(5);
+tree.root = bst;
+bst.insert(6)
+bst.insert(7)
+bst.insert(8)
+console.log({ bst });
+bst.insert(2);
+bst.insert(4);
+// bst.insert(18);
+console.log(JSON.stringify(bst, null, 4));
+
+
+
 // Implement IOT (In Order Traversal), POT(Pre-Order Traversal) and POT (Post-Order Traversal) for Binary Tree Traversal
 
 
