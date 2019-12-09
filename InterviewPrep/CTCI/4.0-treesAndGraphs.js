@@ -78,21 +78,64 @@ class NodeBST {
       return this.right.contains(data);
     }
 
-    return null;
+    return null;r
+    
   }
 }
 
 let bst = new NodeBST(5);
+let tree2 = new Tree();
+tree2.root = bst;
 bst.insert(6)
 bst.insert(7)
 bst.insert(8)
 bst.insert(2);
+// bst.insert(1);
 bst.insert(4);
 
-console.log(JSON.stringify(bst, null, 4));
 
 
+// console.log(JSON.stringify(bst, null, 4));
 
 // Implement IOT (In Order Traversal), POT(Pre-Order Traversal) and POT (Post-Order Traversal) for Binary Tree Traversal
+// IOT: In order Traversal
 
+// from left to root, to right
+const inOrderTraversal = (root) => {
+  let node = root;
 
+  if (node !== null) {
+    inOrderTraversal(node.left);
+    console.log(node.data);
+    inOrderTraversal(node.right);
+  }
+}
+
+// console.log(inOrderTraversal(tree2.root)); // 2, 4, 5, 6, 7, 8
+
+// PreOT: Goes from top down left, then down right
+const preOrderTraversal = (root) => {
+  let node = root;
+  if (node !== null) {
+    console.log(node.data);
+    preOrderTraversal(node.left);
+    preOrderTraversal(node.right);
+  }
+}
+
+// console.log(preOrderTraversal(tree2.root)); // 5, 2, 4, 6, 7, 8
+
+// POT
+// Starts at the leftmost leaf, goes up, 
+// Rightmost leaf, goes up
+
+const postOrderTraversal = (root) => {
+  let node = root;
+  if (node !== null) {
+    postOrderTraversal(node.left);
+    postOrderTraversal(node.right);
+    console.log(node.data);
+  }
+}
+
+// console.log('post', postOrderTraversal(tree2.root)); // 4, 2, 8, 7, 6
