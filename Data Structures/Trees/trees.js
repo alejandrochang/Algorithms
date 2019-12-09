@@ -44,4 +44,15 @@ class Tree {
 const node = new Node(1);
 const tree = new Tree();
 tree.root = node;
-console.log(tree.root); // Node { data: 1, children: [] }
+
+node.add(6);
+node.add(12);
+node.add(77);
+// console.log(tree.root); // Node { data: 1, children: [] }
+
+let sum = 0;
+const sumFn = (node) => sum += node.data;
+
+tree.bfs(sumFn)
+// 
+console.log({ sum })
