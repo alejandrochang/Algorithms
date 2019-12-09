@@ -31,7 +31,10 @@ let arr = [1, 2, 3, 4, 5];
 
 
 let bst = new Tree();
-bst.minimalTree(arr);
+// const minimalTree = (tree, arr) => {
+
+// }
+
 
 console.log(JSON.stringify(bst, null, 4))
 
