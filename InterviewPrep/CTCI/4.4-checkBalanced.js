@@ -38,15 +38,39 @@ node.insert(12);
 node.insert(5);
 node.insert(18);
 
-
-console.log(JSON.stringify(node, null, 4));
-
-
-
+//     10
+//    7   12
+//  5        18
 
 
+// console.log(JSON.stringify(node, null, 4));
+// console.log(JSON.stringify(tree, null, 4));
 
-const checkBalanced = () => {
+const checkBalanced = (node, min = null, max = null) => {
+  if (min !== null && node.data < min) {
+    return false;
+  }
 
+  if (max !== null && node.data > max) {
+    return false;
+  }
+
+  if (node.left && !validate(node.left, min, node.data)) {
+    return false;
+  }
+
+  if (node.right && !validate(node.right, node.data, max)) {
+    return false;
+  }
+
+
+  return true;
 }
 
+console.log(checkBalanced(tree.root));
+
+// [pseudo]: how do  we knoe its balanced
+// Hold a min, max values for the function
+// Go to left and validate the data store the max, should be less than
+// Go to right and store the min, should be greter than that
+// recursively call functions with node.left and node.right
