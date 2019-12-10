@@ -1,23 +1,11 @@
 // Given a sorted (increasing oder) array with a unique integer elements, write and
 // algorithm to create a bst (binary search tree) with minimal height
 
-class Node {
+class TreeNode {
   constructor(data) {
     this.data = data;
     this.left = null;
     this.right = null;
-  }
-
-  insert(data) {
-    if (data < this.data && this.left) {
-      this.left.insert(data);
-    } else if (data < this.data) {
-      this.left = new Node(data);
-    } else if (data > this.data && this.right) {
-      this.right.insert(data);
-    } else if (data > this.data) {
-      this.right = new Node(data);
-    }
   }
 }
 
@@ -31,6 +19,11 @@ let arr = [1, 2, 3, 4, 5];
 
 
 let bst = new Tree();
+
+// const createMinimalBST = (arr)  => {
+//   return createMinimalBST(arr, 0, array.length - 1);
+// }
+
 // const minimalTree = (tree, arr) => {
 
 // }
