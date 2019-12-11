@@ -11,10 +11,6 @@
 // 4       5
 // Answer: [1, 3, 2]
 
-// [pseudo]
-// Defined the tree and node
-// BFS algorithm, go through each floor, and push the length of each stair
-
 class Node {
   constructor(data) {
     this.data = data;
@@ -41,12 +37,33 @@ node.insert(3);
 node.children[0].insert(4);
 node.children[2].insert(5);
 
-console.log(JSON.stringify(node, null, 4));
+// console.log(JSON.stringify(node, null, 4));
 
 const levelWidth = (node) => {
-  let widthArr = [];
-  
+  let arr = [node, 's'];
+  let result = [0];
+
+  while (arr.length > 1) {
+    let currNode = arr.shift();
+    if (currNode === 's') {
+      result.push(0);
+      arr.push('s');
+    } else {
+      arr.push(...currNode.children);
+      result[result.length - 1]++;
+    }
+  }
+
+  return result;
 }
+
+// [0]
+
+// [pseudo]
+// Defined the tree and node
+// BFS algorithm, go through each floor, and push the length of each stair
+// when its not a tracker, increase the counter of the last floor
+// when it is a tracker push a tracker at the end so we know the length
 
 
 console.log(levelWidth(tree.root)); // [1, 3, 2]
