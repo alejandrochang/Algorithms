@@ -37,6 +37,8 @@ class Tree {
     let leftCount = this.height(node.left);
     let rightCount = this.height(node.right);
 
+    console.log({ leftCount, rightCount });
+
     // Balanced Tree difference can be 1 or less
     if (Math.abs(leftCount - rightCount) <= 1) {
       return true;
