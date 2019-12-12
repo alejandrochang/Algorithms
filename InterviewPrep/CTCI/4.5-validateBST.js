@@ -40,27 +40,22 @@ node.insert(18);
 //    7   12
 //  5        18
 
-
-// console.log(JSON.stringify(node, null, 4));
-// console.log(JSON.stringify(tree, null, 4));
-
 const validateBST = (node, min = null, max = null) => {
-  if (min !== null && node.data < min) {
+  if (min && node.data < min) {
     return false;
   }
 
-  if (max !== null && node.data > max) {
+  if (max && node.data > max) {
     return false;
   }
 
-  if (node.left && !validate(node.left, min, node.data)) {
+  if (node.left && !validateBST(node.left, min, node.data)) {
     return false;
   }
 
-  if (node.right && !validate(node.right, node.data, max)) {
+  if (node.right && !validateBST(node.right, node.data, max)) {
     return false;
   }
-
 
   return true;
 }
