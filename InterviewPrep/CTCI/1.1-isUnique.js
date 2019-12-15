@@ -46,3 +46,9 @@ console.log(unique3('sadsadhkashdjasghfhgjry')); // false
 // console.log(unique2('sadas')); // false
 // console.log(unique2('sadfhgjry')); // true
 // console.log(unique2('sadsadhkashdjasghfhgjry')); // false
+
+
+// constant space, time: O(1)
+// 3 pointer approach
+
+const uniqueFast = (arr) => {};
