@@ -1,3 +1,6 @@
+// Examples of all different type of DOM selectors, query etc. 
+
+
 // Document Methods: Examine the document object
 // console.dir(document);
 // console.log(document.domain);
