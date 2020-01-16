@@ -1,6 +1,8 @@
 import React from 'react';
 import Head from 'next/head';
 import Nav from '../components/nav';
+import css from "../stylesheets/styles.scss"
+
 
 // import './style.css';
 
@@ -15,12 +17,12 @@ const Home = () => (
 
     <div className="hero">
       <h1 className="title">Welcome to Learn Finance Education!</h1>
-      <p className="description">
+      {/* <p className="description">
         To get started, edit <code>pages/index.js</code> and save to reload.
-      </p>
+      </p> */}
 
       <div className="row">
-        <a href="https://nextjs.org/docs" className="card">
+        {/* <a href="https://nextjs.org/docs" className="card">
           <h3>Documentation &rarr;</h3>
           <p>Learn more about Next.js in the documentation.</p>
         </a>
@@ -34,11 +36,11 @@ const Home = () => (
         >
           <h3>Examples &rarr;</h3>
           <p>Find other example boilerplates on the Next.js GitHub.</p>
-        </a>
+        </a> */}
       </div>
     </div>
 
-    <style jsx>{`
+    {/* <style jsx>{`
       .hero {
         width: 100%;
         color: #333;
@@ -84,8 +86,8 @@ const Home = () => (
         color: #333;
       }
 
-    `}</style>
+    `}</style> */}
   </div>
 )
 
-export default Home
+export default Home;
