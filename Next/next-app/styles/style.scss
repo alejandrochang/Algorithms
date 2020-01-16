@@ -1,4 +1,4 @@
-$color: gold;
+$color: #333;
 .example {
   background-color: $color;
 }
@@ -50,4 +50,31 @@ $color: gold;
   padding: 12px 0 0;
   font-size: 13px;
   color: #333;
+}
+
+:global(body) {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
+    Helvetica, sans-serif;
+  background-color: #fff;
+}
+nav {
+  text-align: center;
+}
+ul {
+  display: flex;
+  justify-content: space-between;
+}
+nav > ul {
+  padding: 16px 16px;
+  margin: auto;
+}
+li {
+  display: flex;
+  padding: 6px 8px;
+}
+a {
+  color: #067df7;
+  text-decoration: none;
+  font-size: 13px;
 }
