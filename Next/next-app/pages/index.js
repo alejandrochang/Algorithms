@@ -2,6 +2,8 @@ import React from 'react';
 import Head from 'next/head';
 import Nav from '../components/nav';
 
+// import './style.css';
+
 const Home = () => (
   <div>
     <Head>
