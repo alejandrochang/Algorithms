@@ -6,7 +6,7 @@ import Nav from '../components/nav';
 import '../styles/style.scss'
 
 const Home = () => (
-  <div className="example">
+  <div className="header-color">
     <Head />
     <Nav />
   </div>

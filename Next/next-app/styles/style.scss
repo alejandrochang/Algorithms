@@ -1,6 +1,11 @@
-$color: #333;
-.example {
-  background-color: $color;
+// color palette
+$base: #333;
+$words: darkcyan;
+
+
+
+.header-color {
+  background-color: $base;
 }
 .header {
   background-color: grey;
@@ -8,7 +13,7 @@ $color: #333;
 .middle {
   width: 100%;
   height: 100vh;
-  color: #333;
+  color: blue;
   background-color: aliceblue;
 }
 .title {
@@ -34,22 +39,22 @@ $color: #333;
   width: 220px;
   text-align: left;
   text-decoration: none;
-  color: #434343;
+  color: #2e2b2b;
   border: 1px solid #9b9b9b;
 }
 .card:hover {
-  border-color: #067df7;
+  border-color: darkcyan;
 }
 .card h3 {
   margin: 0;
-  color: #067df7;
+  color: darkcyan;
   font-size: 18px;
 }
 .card p {
   margin: 0;
   padding: 12px 0 0;
   font-size: 13px;
-  color: #333;
+  color: #262a35;
 }
 
 :global(body) {
@@ -63,7 +68,7 @@ nav {
 }
 ul {
   display: flex;
-  justify-content: space-between;
+  justify-content: flex-end;
 }
 nav > ul {
   padding: 16px 16px;
@@ -74,7 +79,7 @@ li {
   padding: 6px 8px;
 }
 a {
-  color: #067df7;
+  color: $words;
   text-decoration: none;
   font-size: 13px;
 }
