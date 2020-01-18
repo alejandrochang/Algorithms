@@ -1,6 +1,9 @@
 import React from 'react';
 import Link from 'next/link';
 
+import '../styles/style.scss'
+
+
 // import './logo3.png'
 
 const links = [
@@ -12,7 +15,7 @@ const links = [
 })
 
 const Nav = () => (
-  <nav>
+  <nav id="nav" className="nav">
     <ul>
       <li>
         <Link href="/">

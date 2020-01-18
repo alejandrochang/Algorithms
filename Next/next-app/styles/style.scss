@@ -1,85 +1,40 @@
 // color palette
 $base: #333;
-$words: darkcyan;
-
-
-
-.header-color {
-  background-color: $base;
-}
-.header {
-  background-color: grey;
-}
-.middle {
-  width: 100%;
-  height: 100vh;
-  color: blue;
-  background-color: aliceblue;
-}
-.title {
-  margin: 0;
-  width: 100%;
-  padding-top: 80px;
-  line-height: 1.15;
-  font-size: 48px;
-}
-.title,
-.description {
-  text-align: center;
-}
-.row {
-  max-width: 880px;
-  margin: 80px auto 40px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
-.card {
-  padding: 18px 18px 24px;
-  width: 220px;
-  text-align: left;
-  text-decoration: none;
-  color: #2e2b2b;
-  border: 1px solid #9b9b9b;
-}
-.card:hover {
-  border-color: darkcyan;
-}
-.card h3 {
-  margin: 0;
-  color: darkcyan;
-  font-size: 18px;
-}
-.card p {
-  margin: 0;
-  padding: 12px 0 0;
-  font-size: 13px;
-  color: #262a35;
-}
+$words: #fff;
+$button: #3172c1;
 
 :global(body) {
   margin: 0;
   font-family: -apple-system, BlinkMacSystemFont, Avenir Next, Avenir,
     Helvetica, sans-serif;
-  background-color: #fff;
+  background-color: $words;
 }
+
 nav {
   text-align: center;
 }
+
 ul {
   display: flex;
   justify-content: flex-end;
 }
+
 nav > ul {
+  background-color: $base;
   padding: 16px 16px;
   margin: auto;
 }
+
 li {
   display: flex;
   padding: 6px 8px;
 }
+
 a {
+  padding: 10px;
   color: $words;
+  background-color: $button;
   text-decoration: none;
   font-size: 13px;
+  border-radius: 5px
 }
