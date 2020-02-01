@@ -1,6 +1,6 @@
 // main elements
-
 body {
+  height: 100vh;
   margin: 0;
 }
 
@@ -33,4 +33,15 @@ li a:hover {
 .image-1 {
   width: 20px;
   height: 20px;
+}
+
+.logo {
+  display: block;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  float: left;
+  position: absolute;
+  left: 6%;
+  font-family: fantasy;
 }

@@ -5,9 +5,10 @@ import '../styles.scss';
 const Navigation = () => (
   <div>
     <ul>
-      <li>
+      {/* <li> */}
         {/* <img className="image-1" src="/static/background.png" /> */}
-      </li>
+      {/* </li> */}
+      <p className="logo">Learn Finance Education</p>
       <li>
         <Link href="/about">
           <a className="link">About</a>
