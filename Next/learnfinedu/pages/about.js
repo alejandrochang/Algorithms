@@ -1,10 +1,14 @@
 import Link from "next/link";
 import Header from '../components/Header';
 
+// import '../styles.scss'
+
 const About = () => (
     <div>
-        <h1>About</h1>
         <Header />
+        <h1>About</h1>
+        {/* <button className="button">Click me</button> */}
+        <p className="example">Hello Next.js</p>
     </div>
 );
 

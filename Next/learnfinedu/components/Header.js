@@ -1,21 +1,25 @@
 import Link from 'next/link';
 
-const linkStyle = {
-  marginRight: 15
-};
+import '../styles.scss';
 
-const Header = () => (
+const Navigation = () => (
   <div>
-    <Link href="/">
-      <a style={linkStyle}>Root</a>
-    </Link>
-    <Link href="/about">
-      <a style={linkStyle}>About</a>
-    </Link>
-    <Link href="/home">
-      <a style={linkStyle}>home</a>
-    </Link>
+    <ul>
+      <li>
+        {/* <img className="image-1" src="/static/background.png" /> */}
+      </li>
+      <li>
+        <Link href="/about">
+          <a className="link">About</a>
+        </Link>
+      </li>
+      <li>
+        <Link href="/">
+          <a className="link">Home</a>
+        </Link>
+      </li>
+    </ul>
   </div>
 );
 
-export default Header;
+export default Navigation;

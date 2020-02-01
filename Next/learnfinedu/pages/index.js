@@ -1,11 +1,14 @@
 import Link from "next/link";
 import Header from '../components/Header';
 
+// import "../styles.scss"
+
+
 const App = () => {
   return (
     <div>
       <Header />
-      <p>Hello Next.js</p>
+      <p className="example">Hello Next.js</p>
     </div>
   );
 };
