@@ -29,6 +29,8 @@ li a:hover {
 }
 
 .main-content {
+  display: flex;
+  justify-content: space-evenly;
   padding: 15px 80px 15px 80px;
 }
 

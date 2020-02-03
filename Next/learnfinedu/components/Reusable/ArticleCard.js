@@ -5,11 +5,10 @@ import '../../styles.scss';
 
 const ArticleCard = () => (
   <div className="card">
-    <img className="image-1" src="/static/background.png" alt="Avatar"/>
-    {/* <img src="img_avatar.png" alt="Avatar" style="width:100%" /> */}
+    <img className="image-1" src="/static/books.jpg" alt="Avatar"/>
     <div className="container">
-      <h4><b>John Doe</b></h4> 
-      <p>Architect Engineer</p> 
+      <h4><b>My Favorite Finance Books</b></h4> 
+      <p>Improve your life by reading some of these books!</p> 
     </div>
   </div>
 );
