@@ -127,42 +127,45 @@ let matrix = [
 
 
 
-let start = [4, 0];
-let end = [3, 4];
+// let start = [4, 0];
+// let end = [3, 4];
 
-const shortestPathPractice = (start, end) => {
-  let queue = [];
-  matrix[start[0]][start[1]] = 1; //  mark as one
-  queue.push([start]); // store a path and position
+// const shortestPathPractice = (start, end) => {
+//   let queue = [];
+//   matrix[start[0]][start[1]] = 1; //  mark as one
+//   queue.push([start]); // store a path and position
 
-  while (queue.length > 1) {
-    let path = queue.shift(); // [[4, 0]]
-    let pos = path[path.length - 1]; // [4, 0]
+//   while (queue.length > 1) {
+//     let path = queue.shift(); // [[4, 0]]
+//     let pos = path[path.length - 1]; // [4, 0]
     
-    // get all possible directions
-    const directions = [
-      [pos[0] + 1, pos[1]], //
-      [pos[0], pos[1] + 1], //
-      [pos[0] - 1, pos[1]],
-      [pos[0], pos[1] - 1],
-    ];
+//     // get all possible directions
+//     const directions = [
+//       [pos[0] + 1, pos[1]], //
+//       [pos[0], pos[1] + 1], //
+//       [pos[0] - 1, pos[1]],
+//       [pos[0], pos[1] - 1],
+//     ];
 
-    for (let i = 0; i < directions.length; i++) {
-      // if its the end return path
-      if (directions[i][0] === end[0] && directions[i][1] === end[1]) {
-        // return path up to that point
-        return path.concat([end]);
-      }
+//     for (let i = 0; i < directions.length; i++) {
+//       // if its the end return path
+//       if (directions[i][0] === end[0] && directions[i][1] === end[1]) {
+//         // return path up to that point
+//         return path.concat([end]);
+//       }
 
+//       // if out of bounds
+//       if (){
 
+//       }
 
-      matrix[directions[i][0]][directions[i][1]] = 1;
-      // extend and push path on the queue
-      queue.push(path.concat([direction[i]]));
-    }
-  }
+//       matrix[directions[i][0]][directions[i][1]] = 1;
+//       // extend and push path on the queue
+//       queue.push(path.concat([direction[i]]));
+//     }
+//   }
 
-}
+// }
 
 
 
