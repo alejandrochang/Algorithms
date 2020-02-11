@@ -7,8 +7,8 @@ const ArticleCard = () => (
   <div className="card">
     <img className="image-1" src="/static/books.jpg" alt="Avatar"/>
     <div className="container">
-      <h4><b>My Favorite Finance Books</b></h4> 
-      <p>Improve your life by reading some of these books!</p> 
+      <h4 className="align-text"><b>My Favorite Finance Books</b></h4> 
+      <p className="align-text">Read Here!</p> 
     </div>
   </div>
 );
