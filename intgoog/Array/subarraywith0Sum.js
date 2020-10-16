@@ -1,6 +1,3 @@
-
-
-
 // Check if subarray with 0 sum exists or not
 // Given an array of integers, check if array 
 // contains a sub-array having 0 sum
@@ -34,21 +31,15 @@ console.log(subarrayWith0SumPairs([3,4,-7,3,1,3,1,-4,-2,-2]));
 // console.log(subarrayWith0SumPairs([3,4,-7,3,1,3,1,-4,-2,-2]));
 
 function zeroSumPairs(arr) {
-  let finalPairs = [];
-  let result = { sum: 0, pairs: [] };
-
-  for (let i = 0; i < arr.length; i++) {
-    // let tempArr = [];
-    let el = arr[i];
-    result.sum += el;
-    result.pairs.push(el);
-
-    if (result.sum === 0) {
-      finalPairs.push([...result.pairs]);
+  let sum = 0;
+  for (let val of arr) {
+    sum += val;
+    if (sum === 0) {
+      return true;
     }
   }
 
-  return finalPairs;
+  return false;
 }
 
 console.log(zeroSumPairs([3,4,-7,3,1,3,1,-4,-2,-2]));
