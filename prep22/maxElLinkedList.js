@@ -62,20 +62,28 @@ list3.insertFirst(3);
 list3.insertFirst(2);
 list3.insertFirst(4);
 
-const removeEleTgtVal = (list, tgt) => {
+const removeTargetElement = (list, tgt) => {
   if (!list.head) return;
-  let node = list.head;
 
-  while (node.next) {
-    // if node.data = tgt - 2
-    // keep previous node to point to next node
-    node = node.next;
+  let previousNode = list.head;
+  let currentNode = previousNode.next;
+
+  while (currentNode) {
+    if (currentNode.data === tgt) {
+      previousNode.next = currentNode.next;
+      currentNode = currentNode.next;
+    } else {
+      previousNode = currentNode;
+      currentNode = currentNode.next;
+    }
   }
+
+  return list;
 }
 
 
-const res3 = removeEleTgtVal(list, 2);
-const res4 = removeEleTgtVal(list2, 4);
+const res3 = removeTargetElement(list, 2);
+// const res4 = removeEleTgtVal(list2, 4);
 
 console.log("res3", JSON.stringify(list3, null, 4)); // 5
 // console.log("res3", JSON.stringify(res3, null, 4)); // 5
