@@ -26,5 +26,14 @@ const appendElLinkedList = (list, target) => {
   return list;
 }
 
-const result = appendElLinkedList(list, 7);
-console.log('result', JSON.stringify(result, null, 4));
+// const result = appendElLinkedList(list, 7);
+// console.log('result', JSON.stringify(result, null, 4));
+
+
+const 
+
+
+
+
+const res = appendElLinkedList(list, 7);
+console.log("result", JSON.stringify(res, null, 4));
