@@ -109,40 +109,81 @@ const removeTargetElement = (list, tgt) => {
 }
 
 // previous, current -> if current = tgt - previous = current.next
-
-console.log('removeTargetElement:', removeTargetElement(list4, 2)); // 4 -> 2 -> 3 -> 2 -> 2, target 2 //  4 -> 3
-console.log("removeTargetElement:", removeTargetElement(list3, 1)); // 1, target 1, returns empty list
+// console.log('removeTargetElement:', removeTargetElement(list4, 2)); // 4 -> 2 -> 3 -> 2 -> 2, target 2 //  4 -> 3
+// console.log("removeTargetElement:", removeTargetElement(list3, 1)); // 1, target 1, returns empty list
 // ---------------------------------------------------------
 
 // Question 5: Find El in sorted linked list
 // Given a sorted linked list of unique integers, check if the list contains and element with a target valie
-const findElInSortedList = (list) => {
+let sortedList = new LinkedList();
+sortedList.insertFirst(5);
+sortedList.insertFirst(3);
+sortedList.insertFirst(2);
+// 2 -> 3 -> 5
+const findElInSortedList = (list, target) => {
+  if (!list.head) return false;
+  let slow = list.head;
+  let fast = list.head;
 
+  while (fast.next && fast.next.next) {
+    if (slow.data === target || fast.data === target || fast.next.data === target) {
+      return true;
+    }
+    slow = slow.next;
+    fast = fast.next.next;
+  }
+
+  return false;
 }
 
-// console.log('findElInSortedList:', findElInSortedList(list)); // 2 -> 3 -> 5,  tgt : 2 // return True
-// console.log("findElInSortedList:", findElInSortedList(list3)); // 2 -> 3 -> 5, tgt: 4  returns False
+// console.log("findElInSortedList:", findElInSortedList(sortedList, 2)); // 2 -> 3 -> 5,  tgt : 2 // return True
+// console.log("findElInSortedList:", findElInSortedList(sortedList, 4)); // 2 -> 3 -> 5, tgt: 4  returns False
 // ---------------------------------------------------------
 
 // Question 6: Insert a Tgt Element in Sorted Linked List
 // Given a sorted list, insert an element in the apropriate position
-const insertTargetElementSorted = (list) => {
+const insertTargetElementSorted = (list, tgt) => {
+  if (!list.head) {
+    list.head = new Node(tgt);
+    return list;
+  }
 
+  let previous = list.head;
+  let node = previous.next;
+
+  while (node && node.next) {
+    if (previous.data < tgt < node.data) {
+      let newNode = new Node(tgt);
+      previous.next = newNode;
+      newNode.next = node;
+    }
+
+    previous = node;
+    node = node.next;
+  }
+
+  return JSON.stringify(list, null, 4);
 }
 
-// console.log('insertTargetElementSorted:', insertTargetElementSorted(list)); // 1 -> 3 -> 4, tgt 2 =  1 -> 2 -> 3 -> 4
-// console.log("insertTargetElementSorted:", insertTargetElementSorted(new LinkedList())); // LL, tgt 1 = 1
+let sortedList2 = new LinkedList();
+sortedList2.insertFirst(4);
+sortedList2.insertFirst(3);
+sortedList2.insertFirst(1);
+
+// console.log("insertTargetElementSorted:", insertTargetElementSorted(sortedList2, 2)); // 1 -> 3 -> 4, tgt 2 =  1 -> 2 -> 3 -> 4
+// console.log("insertTargetElementSorted:", insertTargetElementSorted(new LinkedList(), 1)); // LL, tgt 1 = 1
 // ---------------------------------------------------------
 
 
 // Question 7: Remove a tgt element from a sorted linked list
 // Given a sorted linked list of unique integers, remove a node fwith the tft value from the list
+const removeList = new LinkedList();
 const removeTargetElementSorted = (list) => {
 
 }
 
-// console.log('removeTargetElementSorted:', removeTargetElementSorted(list)); // -1 -> 1 -> 3 -> 4. tgt: 1 // -1 -> 3 -> 4
-// console.log("removeTargetElementSorted:", removeTargetElementSorted(list3)); // 5, tgt: 3, //  5
+console.log('removeTargetElementSorted:', removeTargetElementSorted(list)); // -1 -> 1 -> 3 -> 4. tgt: 1 // -1 -> 3 -> 4
+console.log("removeTargetElementSorted:", removeTargetElementSorted(list3)); // 5, tgt: 3, //  5
 // ---------------------------------------------------------
 
 
