@@ -1,3 +1,18 @@
+// regular cache
+const cache = (value) => {
+  // if key is not there add key
+  const cache = {};
+  return = (...args) => {
+    let key = JSON.stringify(args);
+    if (cache[key] !== undefined) {
+      delete cache[key]
+      cache[key] = value;
+    }
+
+    cache[key] = value;
+  }
+}
+
 // Develop an LRU Cache where you have a get, set and first methods
 // Refresh key if item exists
 class LRU {
