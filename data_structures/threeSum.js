@@ -11,9 +11,12 @@ function threeSum(nums, tgt) {
   let results = [];
   nums.sort();
 
-  for (let i = 0; i < nums.length; i++) {
+  for (let i = 0; i < nums.length - 2; i++) {
     let j = i + 1;
     let k = nums.length - 1;
+
+    if (nums[i] > tgt) break;
+    // if ()
 
     while (j < k) {
       let sum = nums[i] + nums[j] + nums[k];
@@ -26,6 +29,7 @@ function threeSum(nums, tgt) {
         j++;
         k--
       } else if (sum < tgt) {
+        // if sum is to small increment count to get to target
         j++;
       } else {
         // if greater > tgt
