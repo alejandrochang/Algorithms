@@ -22,6 +22,8 @@ function sortedArrToBST(arr) {
   return root;
 }
 
+// Time: O(n)
+// Space: O(h) - h height of the tree
 
 //     0
 //   -3  9 
