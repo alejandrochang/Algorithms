@@ -50,7 +50,7 @@ root.right  = new TreeNode(3);
 let maxSum = Number.NEGATIVE_INFINITY;
 let chosenNode = null;
 
-function binaryTreePaths(root) {
+function rootToLeaves(root) {
   let result = [];
   traverse(root, []);
 
@@ -65,7 +65,7 @@ function binaryTreePaths(root) {
     traverse(node.right, [...path, node.val]);
   }
 
-  return result.map((arr) => arr.join('-'));
+  return result.map((arr) => arr.join('->'));
 }
 
 // dfs all the way down to sum and sorted
