@@ -11,21 +11,16 @@ Example4: [40, 30, 35, 20, 80, 100] // false
 */
 
 function canRepresentBST(arr) {
-  const stack = []; // 2, 4, 1
-
-  let root = Number.NEGATIVE_INFINITY; // -Infinity
+  const stack = [];
+  let root = Number.NEGATIVE_INFINITY;
 
   for (let i = 0; i < arr.length; i++) {
-    let currentNum = arr[i]; // 1
-    console.log({ currentNum, root, stack });
+    let currentNum = arr[i];
 
-    // if node is on right side and < root return false
-    if (currentNum < root) {
-      return false;
-    }
+    if (currentNum < root) return false;
 
-    // while stack > 0 && last element of stack < currentNum
-    while (stack.length !== 0 && stack[stack.length - 1] < currentNum) {
+    // if stack top less than currentNum set new root + remove last element
+    while (stack.length > 0 && stack[stack.length - 1] < currentNum) {
       root = stack[stack.length - 1];
       stack.pop();
     }
@@ -33,11 +28,14 @@ function canRepresentBST(arr) {
     stack.push(currentNum);
   }
 
+
   return true;
 }
 
-// console.log(canRepresentBST([2, 4, 3])); // true
+console.log(canRepresentBST([2, 4, 3])); // true
 console.log(canRepresentBST([2, 4, 1])); // false
+console.log(canRepresentBST([40, 30, 35, 80, 100])); // true
+console.log(canRepresentBST([40, 30, 35, 20, 80, 100])); // false
 
 
 
@@ -54,6 +52,8 @@ console.log(canRepresentBST([2, 4, 1])); // false
 /*
 
 High Level:
-- Use a stack 
+- Use a stack to process items, have root set to -Infinity
+- iterate, keep removing items smaller than currentNum, 
+- make the last removed item new root
 
 */
