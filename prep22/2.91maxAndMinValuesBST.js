@@ -95,5 +95,5 @@ function isSameTree(tree1, tree2) {
   )
 }
 
-console.log('same tree', isSameTree(root, root2)); // true
-console.log("same tree", isSameTree(root, root3)); // false
+// console.log('same tree', isSameTree(root, root2)); // true
+// console.log("same tree", isSameTree(root, root3)); // false
