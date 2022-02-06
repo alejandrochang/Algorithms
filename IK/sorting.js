@@ -50,14 +50,18 @@ function selectionSort(arr) {
 // 3. Insertion Sort
 // Recursive
 
-function insertionSort(arr, n) {
-  if (n <= 1) return; // don't keep going
-  insertionSort(arr, n - 1);
+function insertionSort(arr) {
+  for (let i = 1; i < arr.length; i++) {
+    let key = arr[i];
+    let j = i - 1; // go to start
 
-  j = n - 1;
-  while (j >= 1 && arr[j] > arr[j + 1]) {
-    swap(arr, arr[j + 1], arr[j]);
-    j = j - 1;
+    console.log({ key }, 'j:', arr[j], 'i:', arr[i]);
+
+    while (j >= 0 && arr[j] > key) { // while previous > current
+      arr[j + 1] = arr[j];
+      j = j -1;
+    }
+    arr[j + 1] = key;
   }
 
   return arr;
@@ -66,8 +70,8 @@ function insertionSort(arr, n) {
 
 
 // [3, 2, 1]
-// console.log("insertionSort:", insertionSort(arr, arr.length - 1));
+console.log("insertionSort:", insertionSort([3, 2, 1]));
 
-
+// Time: O(n^2)
 // Iterative
 
