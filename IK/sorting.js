@@ -23,7 +23,7 @@ const arr = [5, 2, 4, 3, 1, 10];
 
 
 // 2. Selection Sort - (n+1); compare to next iteration
-
+// mindIndex = i + swapping
 function selectionSort(arr) {
   for (let i = 0; i < arr.length - 1; i++) {
     let minIndex = i;
@@ -40,7 +40,6 @@ function selectionSort(arr) {
   return arr;
 }
 
-
 // console.log("selectionSort:", selectionSort(arr));
 // Uses n-1 or n+1
 // Time: O(n^2)
@@ -49,13 +48,12 @@ function selectionSort(arr) {
 
 // 3. Insertion Sort
 // Recursive
-
+// Inserting right most element into right side
+// Decrease and Conquer
 function insertionSort(arr) {
   for (let i = 1; i < arr.length; i++) {
     let key = arr[i];
     let j = i - 1; // go to start
-
-    console.log({ key }, 'j:', arr[j], 'i:', arr[i]);
 
     while (j >= 0 && arr[j] > key) { // while previous > current
       arr[j + 1] = arr[j];
