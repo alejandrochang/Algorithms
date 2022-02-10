@@ -14,8 +14,8 @@ function bubbleSort(arr) {
 }
 
 
+// Brute Force Algo
 const test = [100, 5, 2, 1, 23, 12, 1];
-// console.log({ test });
 console.log('res', bubbleSort(test)); //[1,1,2,5,12,23,100]
 
 // Time: worst, best, average  - O(n^2)
