@@ -1,4 +1,6 @@
 
+// minIdx
+
 // i + 1
 // function selectionSort(arr) {
 //   for (let i = 0; i < arr.length - 1; i++) {
