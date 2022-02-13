@@ -6,9 +6,8 @@
 
   Notes:
   - Gets the midpoint - splits array into 2 - uses binary search
-
-
-
+  - Divide and conquer
+  - Recursively call mergeSort -> pass (left, right) into merge check left < right
 */
 
 
