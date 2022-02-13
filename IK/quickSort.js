@@ -1,16 +1,13 @@
-// quicksort, gets a pivot and splits in half every time.
-// O(n * log(n));
+// quicksort, gets a pivot
+// and split from left side <= and the right side >
+// Average Time: O(n * log(n)), Worst Case: O(n^2), Space: O(1)
 
 function quickSort(arr) {
   if (arr.length <= 1) return arr;
 
-  // get the pivot at start
-  let pivot = arr[0];
-
-
-  // filter left <= el && right > el
-  let left = quickSort(arr.slice(1).filter((el) => el <= pivot));
-  let right = quickSort(arr.slice(1).filter((el) => el > pivot));
+  const pivot = arr[0];
+  const left = quickSort(arr.slice(1).filter((el) => el <= pivot));
+  const right = quickSort(arr.slice(1).filter((el) => el > pivot));
 
   return [...left, pivot, ...right];
 }
