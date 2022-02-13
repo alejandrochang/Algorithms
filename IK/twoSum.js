@@ -22,7 +22,7 @@ function twoSum(arr, tgt) {
 
 let result = twoSum([5, 9, 1, 3], 6); // true
 let result2 = twoSum([5, 9, 1, 3], -6); // false
-console.log({ result, result2 });
+// console.log({ result, result2 });
 
 
 //  6-5 = 1
@@ -69,4 +69,29 @@ function twoSumPointer(arr, tgt) {
 // Explanation: The sum of 2 and 7 is 9. Therefore index1 = 1, index2 = 2.
 
 let resultPointer = twoSumPointer([2, 7, 11, 15], 9); // [1,2] -> true
-console.log({ resultPointer });
+// console.log({ resultPointer });
+
+
+
+function twoPointer(arr, tgt) {
+  let sum = 0;
+  let left = 0;
+  let right = arr.length - 1;
+
+  while (left < right) {
+    sum = arr[left] + arr[right];
+    if (sum === tgt) {
+      return true;
+    } else if (sum < tgt) {
+      left+=1;
+    } else {
+      right -= 1;
+    }
+  }
+
+  return false;
+}
+
+console.log('plop1', twoPointer([2, 7, 11, 15], 9)); // [1,2] -> true
+console.log('plop2,', twoPointer([12, 7, 2, 15], 9)); // [1,2] -> true
+console.log('plop3,', twoPointer([12, 7, 4, 15], 9)); // [1,2] -> false
