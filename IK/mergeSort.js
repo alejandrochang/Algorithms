@@ -15,8 +15,8 @@ function mergeSort(arr) {
   if (arr.length <= 1) return arr;
 
   const mid = Math.floor(arr.length / 2);
-  const left = mergeSort(arr.slice(0, mid));
-  const right = mergeSort(arr.slice(mid));
+  let left = mergeSort(arr.slice(0, mid));
+  let right = mergeSort(arr.slice(mid));
 
   return merge(left, right);
 }
@@ -25,11 +25,12 @@ function merge(left, right) {
   let res = [];
   while (left.length && right.length) {
     if (left[0] < right[0]) {
-      res.push(left.shift())
+      res.push(left.shift());
     } else {
-      res.push(right.shift())
+      res.push(right.shift());
     }
   }
+
 
   return [...res, ...left, ...right];
 }
