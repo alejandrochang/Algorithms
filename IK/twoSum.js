@@ -114,13 +114,14 @@ function twoPointerIndices(arr, tgt) {
     }
   }
 
-  return [];
+  return [-1,-1];
 }
 
 
-console.log('plop1', twoPointerIndices([2, 7, 11, 15], 9)); // [1,2] -> true
-console.log('plop2,', twoPointerIndices([2, 7, 12, 4], 11)); // [1,3] -> true
-console.log('plop3,', twoPointerIndices([1, 2, 3, 100], -8)); // [] -> false
+// console.log("plop0", twoPointerIndices([1, 2, 3, 5, 10], 7)); // [1,2] -> true
+// console.log('plop1', twoPointerIndices([2, 7, 11, 15], 9)); // [1,2] -> true
+// console.log('plop2,', twoPointerIndices([2, 7, 12, 4], 11)); // [1,3] -> true
+// console.log('plop3,', twoPointerIndices([1, 2, 3, 100], -8)); // [] -> false
 
 
 
@@ -129,3 +130,27 @@ console.log('plop3,', twoPointerIndices([1, 2, 3, 100], -8)); // [] -> false
 
 // Time :O(nlogn)
 // Space: O(1)
+
+
+
+
+function pair_sum_sorted_array(numbers, target) {
+  let map = {};
+
+  for (let i = 0; i < numbers.length; i++) {
+    const num = numbers[i];
+    if (map[num]) {
+      return [i, parseInt(map[num], 10)];
+    }
+
+    const difference = target - num;
+    map[difference] = String(i);
+  }
+
+  return [-1, -1];
+}
+
+
+// console.log("res yee", pair_sum_sorted_array([1, 2, 3, 5, 10], 7));
+// console.log("res 2", pair_sum_sorted_array([-7, -6, 0, 7, 8, 9, 10], 0));
+console.log("res 2", pair_sum_sorted_array([5, 3, 10, 45, 1], 6)); // [0,4]

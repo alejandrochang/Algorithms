@@ -22,14 +22,25 @@ function intersectionTwoArrays(num1, num2) {
 }
 
 
+function iTwoArrays(num1, num2) {
+  let set1 = new Set(num1);
+
+  return [...new Set(num2.filter((el) => set1.has(el)))];
+}
+
+
+// Time: O(n), space: O(n)
+
 let test = [1,2,2,1];
 let test2 = [2,2];
 
 let test3 = [4,9,5];
 let test4 = [9,4,9,8,4];
 
-let r1 = intersectionTwoArrays(test, test2); // [2]
-let r2 = intersectionTwoArrays(test3, test4); // [9,4]
+// let r1 = intersectionTwoArrays(test, test2); // [2]
+// let r2 = intersectionTwoArrays(test3, test4); // [9,4]
+let r1 = iTwoArrays(test, test2); // [2]
+let r2 = iTwoArrays(test3, test4); // [9,4]
 
 console.log({ r1, r2 });
 
