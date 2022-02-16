@@ -54,3 +54,21 @@ console.log("1", meetingRooms2(test3));
 
 // i = 0 - 0 < 10 
 // room 1
+
+function test(intervals) {
+  const start = intervals.slice().sort((a, b) => a[0] - b[0]);
+  const ends = intervals.sort((a, b) => a[1] - b[1]);
+
+  let result = 0;
+  let end = 0;
+
+  for (let i = 0; i < intervals.length - 1; i++) {
+    if (start[i][0] < ends[i][1]) {
+      result++;
+    } else {
+      end++;
+    }
+  }
+
+  return result;
+}
