@@ -31,6 +31,40 @@ function nationalFlag(arr) {
 // const balls = ["G", "B", "G", "G", "R", "B", "R", "G"];
 const test = ["G", "B", "G", "G", "R", "B", "R", "G"];
 
-console.log("res", nationalFlag(test));
+// console.log("res", nationalFlag(test));
 // ["R", "R", "G", "G", "G", "G", "B", "B"];
 // Orer of r, g, b
+
+
+function swap(arr, fir, sec) {
+  return ([arr[fir], arr[sec]] = [arr[sec], arr[fir]]);
+}
+
+// start low = 0, mid = 0, high  = length - 1
+function dutchNationalFlag(arr) {
+  let low = 0;
+  let mid = 0;
+  let high = arr.length - 1;
+
+  while (mid <= high) {
+    if (arr[mid] === 'R') {
+      swap(arr, low++, mid++);
+    } else if(arr[mid] === 'B') {
+      swap(arr, mid, high--);
+    } else {
+      mid++;
+    }
+  }
+
+  return arr;
+}
+
+console.log("res", dutchNationalFlag(test));
+// ["R", "R", "G", "G", "G", "G", "B", "B"];
+// Orer of r, g, b
+
+
+// low, mid, high
+// if it is need on left most side - we will swap the array elmeents from low++ and mid++
+// else if mid === 'B' (right most side) - we will swap mid and high--
+// else mid++
