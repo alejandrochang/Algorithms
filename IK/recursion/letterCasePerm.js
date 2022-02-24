@@ -8,25 +8,22 @@
 
 function letterCasePerm(string) {
   let result = [];
-
   helper(string, 0, '', result);
-  return [...new Set(result)];
+
+  return [... new Set(result)];
 }
 
-function helper(str, idx, currentStr, output) {
+function helper(str, idx, currStr, collector) {
   if (idx === str.length) {
-    output.push(currentStr);
+    return collector.push(currStr);
   } else {
-    // explore choices
-    const currChar = str.charAt(idx);
-    console.log({ currChar });
-    if (typeof currChar === 'number') {
-      helper(str, idx + 1, currentStr + currChar, output);
+    let ch = str.charAt(idx);
+    if (typeof ch === 'number') {
+      helper(str, idx + 1, currStr + ch, collector);
     } else {
-      // if its a letter -> first lowercase thens uppercase
-      helper(str, idx + 1, currentStr + currChar.toLowerCase(), output);
+      helper(str, idx + 1, currStr + ch.toLowerCase(), collector);
 
-      helper(str, idx + 1, currentStr + currChar.toUpperCase(), output);
+      helper(str, idx + 1, currStr + ch.toUpperCase(), collector);
     }
   }
 }
@@ -38,3 +35,5 @@ console.log("result", letterCasePerm(input));
 
 
 // if its a letter we have 2 choices: lowerCase and upperCase
+// if number append number to string
+// base case break on idx
