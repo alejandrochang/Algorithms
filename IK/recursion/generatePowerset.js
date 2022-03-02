@@ -21,8 +21,9 @@ function powerSet(str, idx, curr) {
 
 
 
-const result = powerSet([1, 2, 3], -1, "");
-console.log({ result });
+const res1 = powerSet([1, 2, 3], -1, "");
+
+console.log({ res1 });
 
 
 
