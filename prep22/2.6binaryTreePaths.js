@@ -69,25 +69,48 @@ function rootToLeaves(root) {
 }
 
 // dfs all the way down to sum and sorted
-function binaryTreePaths(root) {
-  let result = [];
-  traverse(root, 0);
+// function binaryTreePaths(root) {
+//   let result = [];
+//   traverse(root, 0);
 
-  function traverse(node, sum) {
-    if (!node) return;
+//   function traverse(node, sum) {
+//     if (!node) return;
 
-    if (!node.left && !node.right) {
-      // sum = sum + node.val
-      result.push(sum + node.val);
-    }
+//     if (!node.left && !node.right) {
+//       // sum = sum + node.val
+//       result.push(sum + node.val);
+//     }
 
-    traverse(node.left, sum + node.val);
-    traverse(node.right, sum + node.val);
-  }
+//     traverse(node.left, sum + node.val);
+//     traverse(node.right, sum + node.val);
+//   }
 
-  return result;
-}
+//   return result;
+// }
 
 // console.log("result", binaryTreePaths(root));
 
 
+
+
+function all_paths_of_a_binary_tree(root) {
+  // Write your code here.
+  let result = [];
+
+  const traverse = (node, path) => {
+    if (!node) return;
+
+    if (!node.left && !node.right) {
+      result.push([...path.node.val]);
+    }
+
+    traverse(node.left, [...path.node.val]);
+    traverse(node.right, [...path.node.val]);
+  };
+
+  traverse(root, []);
+
+  return result;
+}
+
+console.log("plop result", all_paths_of_a_binary_tree(root));
