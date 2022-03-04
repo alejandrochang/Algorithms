@@ -11,7 +11,8 @@ class Node {
 const root = new Node(5); // 
 root.children.push(new Node(1)); // 2
 
-console.log({ root });
+// console.log({ root });
+// bfs approach
 function heightOfTree(root) {
   let q = [root];
   let depth = 0;
@@ -29,7 +30,7 @@ function heightOfTree(root) {
     depth++;
   }
 
-  return depth;
+  return depth - 1;
 }
 
 let result = heightOfTree(root);
@@ -37,7 +38,7 @@ let result = heightOfTree(root);
 console.log({ result });
 
 
-
+// top bottom approach
 function heightOfTree2(root) {
   if (!root) return 0;
   let depth = 0;
@@ -52,10 +53,31 @@ function heightOfTree2(root) {
     return levels;
   }
 
-  dfs(root, 1);
+  dfs(root, 0);
 
   return depth;
 }
 
 let result2 = heightOfTree2(root);
 console.log({ result2 });
+
+
+
+
+// bottom up approach
+function getTreeHeight(root) {
+  if (!root) return 0;
+  if (!root.children.length) return 0;
+
+  let height = 0;
+
+  for (let child of root.children) {
+    let childHeight = getTreeHeight(child) + 1;
+    height = Math.max(height, childHeight);
+  }
+
+  return height;
+}
+
+let result3 = getTreeHeight(root);
+console.log({ result3 });
