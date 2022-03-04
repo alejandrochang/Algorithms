@@ -2,14 +2,12 @@
 let res = [];
 
 function powerSet(str, idx, curr) {
-  let n = str.length;
-
-  if (n === idx) return;
+  if (str.length === idx) return;
 
   res.push(curr);
   // console.log({ curr });
 
-  for (let i = idx + 1; i < n; i++) {
+  for (let i = idx + 1; i < str.length; i++) {
     curr += str[i];
     powerSet(str, i, curr);
 
@@ -28,7 +26,7 @@ console.log({ res1 });
 
 
 // High Level:
-
+// Recursively call - genenrate new Index + append string and substring as well 
 
 // Input :  set = "abc"
 // Output : "", "a", "b", "c", "ab", "ac", "bc", "abc"

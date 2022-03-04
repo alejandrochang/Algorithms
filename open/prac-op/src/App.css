@@ -1,0 +1,22 @@
+.App {
+  text-align: center;
+}
+
+.content-box {
+  /* left: calc(100% + var(--tooltip-margin));
+  top: 50%;
+  transform: translateX(0) translateY(-50%); */
+  position: absolute;
+  border-radius: 4px;
+  left: 50%;
+  /* transform: translateX(-50%); */
+  transform: translateX(0) translateY(-50%);
+  padding: 6px;
+  color: white;
+  background: black;
+  font-size: 14px;
+  font-family: sans-serif;
+  line-height: 1;
+  z-index: 100;
+  white-space: nowrap;
+}
