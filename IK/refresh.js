@@ -38,8 +38,8 @@ function heightOfTree(root) {
 
 
 // let result = heightOfTree(root);
-let result = bfsHeightOfTree(root);
-console.log({ result });
+// let result = bfsHeightOfTree(root);
+// console.log({ result });
 
 
 function bfsHeightOfTree(root) {
@@ -63,14 +63,40 @@ function bfsHeightOfTree(root) {
 
 
 
-
-
-
-
 // 2. balancedBSTFromSortedArr
+// Input:
+
+const arr = [8, 10, 12, 15, 16, 20, 25];
+
+class Node {
+  constructor(val, left=null, right=null) {
+    this.val = val;
+    this.left = left;
+    this.right = right;
+  }
+}
+
+// sort from start to end -> recrusively call that 
+
+function balancedBSTFromSortedArr(array, start, end) {
+  if (!array.length) return [];
+  if (start > end) return;
+  const mid = Math.floor((start + end) / 2);
+  const root = new Node(array[mid]);
+
+  root.left = balancedBSTFromSortedArr(array, start, mid - 1);
+  root.right = balancedBSTFromSortedArr(array, mid + 1, end);
+
+  return root;
+}
+
+let result = balancedBSTFromSortedArr(arr, 0, arr.length - 1);
+console.log('sortedArr', JSON.stringify(result, null, 4));
 
 
 
+// mid - labeled as root
+// root.left = balancedBST(arr, start, end)
 
 
 
