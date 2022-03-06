@@ -11,13 +11,11 @@
 
 
 function validBST(node, min=null, max=null) {
-  if (min && node.data < min) return false;
-  if (max && node.data > max) return false;
+  if (!node) return true;
+  if (min && node.value <= min) return false;
+  if (max && node.value >= max) return false;
 
-  if (node.left && !validBST(node.left, min, node.data)) return false;
-  if (node.right && !validBST(node.right, node.data, max)) return false;
-
-  return true;
+  return validBST(node.left, min, node.value) && validBST(node.right, node.value, max);
 }
 
 
@@ -43,7 +41,7 @@ let result = validBST(root);
 let result2 = validBST(root2);
 
 console.log({ result, result2 });
-
+// 
 // left subtree has to be node.data < node
 // right subtree has to be node.data > node
 // 
