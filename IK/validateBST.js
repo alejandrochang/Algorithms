@@ -45,3 +45,11 @@ console.log({ result, result2 });
 // left subtree has to be node.data < node
 // right subtree has to be node.data > node
 // 
+
+
+// inorder traversal
+// iterate and see if next number is great than if so return false
+
+function isValidBST(root) {
+  
+}
