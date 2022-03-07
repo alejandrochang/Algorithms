@@ -20,8 +20,8 @@ function validBST(node, min=null, max=null) {
 
 
 class Node {
-  constructor(data, left=null, right=null) {
-    this.data = data;
+  constructor(value, left=null, right=null) {
+    this.value = value;
     this.left = left;
     this.right = right;
   }
@@ -38,9 +38,9 @@ root2.left = new Node(50);
 root2.right = new Node(300);
 
 let result = validBST(root);
-let result2 = validBST(root2);
+// let result2 = validBST(root2);
 
-console.log({ result, result2 });
+console.log({ result });
 // 
 // left subtree has to be node.data < node
 // right subtree has to be node.data > node
@@ -51,5 +51,23 @@ console.log({ result, result2 });
 // iterate and see if next number is great than if so return false
 
 function isValidBST(root) {
-  
+  if (!root) return true;
+
+  function bstHelper(node, prev) {
+    if (!node) return true;
+    const isLeftSubtree = bstHelper(node.left, prev);
+
+    if (node.value < prev) return false;
+    prev = root.value;
+
+    const isRightSubtree = bstHelper(node.right, prev);
+
+    return (isLeftSubtree && isRightSubtree);
+  }
+
+  let min = -Infinity;
+  return bstHelper(root, min);
 }
+
+let resul = isValidBST(root);
+console.log({ resul })
