@@ -17,7 +17,6 @@ class Node {
 
    root.left = convertoBST(arr, start, mid - 1);
    root.right = convertoBST(arr, mid + 1, end);
-
    return root;
  }
 
