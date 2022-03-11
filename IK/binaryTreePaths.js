@@ -46,7 +46,10 @@ function printPathsSumtoK(root, k) {
     if (!node) return;
 
     if (!node.left && !node.right) {
-      result.push({ path: path.concat(node.value), sum: sum + node.value });
+      if (sum + node.value === k) {
+        result.push(path.concat(node.value));
+      }
+      // result.push({ path: path.concat(node.value), sum: sum + node.value });
       return;
     }
 
@@ -57,8 +60,9 @@ function printPathsSumtoK(root, k) {
   getPathSum(root, [], 0);
 
 
-  const filteredResults = result.filter(({ sum }) => sum === k).map(({ path }) => path);
-  return filteredResults;
+  // const filteredResults = result.filter(({ sum }) => sum === k).map(({ path }) => path);
+  // return filteredResults;
+  return result;
 }
 
 console.log("printPathsSumtoK:", printPathsSumtoK(root, 80));
