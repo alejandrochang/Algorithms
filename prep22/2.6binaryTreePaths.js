@@ -97,16 +97,16 @@ function all_paths_of_a_binary_tree(root) {
   // Write your code here.
   let result = [];
 
-  const traverse = (node, path) => {
+  function traverse(node, path) {
     if (!node) return;
 
     if (!node.left && !node.right) {
-      result.push([...path.node.val]);
+      result.push([...path, node.val]);
     }
 
-    traverse(node.left, [...path.node.val]);
-    traverse(node.right, [...path.node.val]);
-  };
+    traverse(node.left, [...path, node.val]);
+    traverse(node.right, [...path, node.val]);
+  }
 
   traverse(root, []);
 
