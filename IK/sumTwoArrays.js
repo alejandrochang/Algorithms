@@ -23,7 +23,7 @@ let result1 = nonNativeSumArr([8, 4, 5], [7, 2]); // [9,1,7]
 // nativeSumAr without in-built methods
 
 function nativeSum(arr1, arr2) {
-  let res = [];
+  let revRes = [];
   let i = arr1.length - 1;
   let j = arr2.length - 1;
   let remainder = 0;
@@ -36,21 +36,31 @@ function nativeSum(arr1, arr2) {
 
     if (sum > 10) {
       const remain = sum % 10;
-      res.push(remain);
+      revRes.push(remain);
       remainder = remain;
     } else {
-      res.push(sum);
+      revRes.push(sum);
     }
 
     i--;
     j--;
   }
 
-  return res.reverse();
+  return reverseArr(revRes);
+}
+
+function reverseArr(arr) {
+  const result = [];
+
+  for (let i = arr.length - 1; i >= 0; i--) {
+    result.push(arr[i]);
+  }
+
+  return result;
 }
 
 let result2 = nativeSum([8, 4, 5], [7, 2]); // [9,1,7]
-let result3 = nativeSum([1, 0, 0, 1, 5], [1, 2]); // [9,1,7]
+let result3 = nativeSum([1, 0, 0, 1, 5], [1, 2]); // [1,0,0,2,7]
 console.log({ result2, result3 }); 
 
 
