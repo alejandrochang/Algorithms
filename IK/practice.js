@@ -10,7 +10,7 @@ function reverse(arr) {
     result.push(arr[i]);
   }
 
-  return result;
+  return `result`;
 }
 
 console.log([reverse(arr)]); // 
