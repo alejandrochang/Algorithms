@@ -2,7 +2,40 @@
 // // Given two arrays, write a function to compute their intersection
 
 
+// Input:
+const nums1 = [1,2,2,1];
+const nums2 = [2,2];
 
+// function interTwoArrays(arr1, arr2) {
+//   // unique 
+//   let set1 = new Set(arr1);
+
+//   const filtered = arr2.filter((el) => set1.has(el));
+//   const res = [...new Set(filtered)];
+//   return res;
+// }
+
+function interTwoArrays(arr1, arr2) {
+  let set1 = new Set(arr1);
+  let set2 = new Set(arr2);
+  let res = [];
+  set1.forEach((el) => {
+    if (set2.has(el)) res.push(el);
+  })
+
+  return res;
+}
+
+
+console.log(interTwoArrays(nums1, nums2)); // Output: [2]
+console.log(interTwoArrays([4, 9, 5], [9, 4, 9, 8, 4])); // Output: [9,4]
+
+
+// Example 2:
+
+// Input: nums1 = [4,9,5], nums2 = [9,4,9,8,4]
+// Output: [9,4]
+// Explanation: [4,9] is also accepted.
 
 
 
