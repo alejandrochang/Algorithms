@@ -7,14 +7,13 @@
 // Notice that you may not slant the container.
 
 function containerMostWater(arr) {
-  let ans = 0;
   let i = 0;
   let j = arr.length - 1;
+  let ans = 0;
 
-  while (i < j) {
-    let temp = Math.min(arr[i], arr[j]) * (j - i);
-    console.log({ temp, i, j, ans })
-    ans = Math.max(ans, temp);
+  while (i <= j) {
+    const area = (j - i) * Math.min(arr[i], arr[j]);
+    ans = Math.max(ans, area);
     arr[i] <= arr[j] ? i++ : j--;
   }
 
