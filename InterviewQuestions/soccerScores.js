@@ -3,6 +3,15 @@
 // B: [2, 3]
 
 // Find all the scores where TeamB is greater than teamA 
+
+
+// Insert arr into map
+// Iterate through other arr - check if insertion item is available
+// if so increase counter
+
+// function allScores(a, b){
+
+// }
  
 const allScores = (a, b) => {
   let result = [];
