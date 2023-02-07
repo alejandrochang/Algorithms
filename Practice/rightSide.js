@@ -47,6 +47,5 @@ function btRigthSide(root) {
 
 
 let result = btRigthSide(root);
-
 let result2 = btRigthSide(root2);
 console.log({ result, result2 });
