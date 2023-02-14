@@ -24,4 +24,11 @@ go install -? Compiles and "installs" a package
 go get -> Downloads the raw source code of someone else's
 go test -? Runs any tests associated with the current project
 
-2. 
+2. A package main contain multiple files. If all files belong to a specific file they will also have the specific package name at the top.
+
+Two 2 Types of Packages
+- Executable - Generates a file that we can run (must have a function called main)
+- Reusable (Code used as helpers - good place to place reusable logic)
+
+Packages Documentation:
+https://pkg.go.dev/std
