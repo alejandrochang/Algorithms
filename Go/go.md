@@ -32,3 +32,16 @@ Two 2 Types of Packages
 
 Packages Documentation:
 https://pkg.go.dev/std
+
+
+## Basic Go Types
+bool (true | false)
+string ("string")
+int (0 | -10000 | 99999)
+float64 (10.000001 | 0.00009 | -100.003)
+
+
+:= you need to figure out what data type (infer types)
+:= when using a new variable only
+
+Ex: 	card := "Ace of Spades"
