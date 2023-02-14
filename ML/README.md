@@ -13,4 +13,14 @@ Getting and gathering the data is pretty important to have a good estimate of wh
 
 Output Examples:
 Classification -> The value of our labels belong to a discrete set
+
+Example:
+Question: Based on how many hours a student studied for an examp, did they PASS or FAIL? (Variables narrow down to answer)
+A: PASS or FAIL
+
 Regression -> The value of our labels belong to a continous set
+
+
+Example:
+Question: Based on the height of this pine tree, what is its age? (A lot of variables)
+A: 0 -> 500 years
