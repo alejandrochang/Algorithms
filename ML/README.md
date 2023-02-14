@@ -20,7 +20,14 @@ A: PASS or FAIL
 
 Regression -> The value of our labels belong to a continous set
 
-
 Example:
 Question: Based on the height of this pine tree, what is its age? (A lot of variables)
 A: 0 -> 500 years
+
+TLDR: 
+Regression: used with continous values
+Classification: Used with discrete valeues
+
+### Example
+
+Dataset -> Feed Linear Regression Algorithm (Finds relationship between two variables or more) -> Algorthm gives estimate of prediction of what will result based on the variables.
