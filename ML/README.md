@@ -10,3 +10,7 @@ Problem Solving Process
 
 ## Data
 Getting and gathering the data is pretty important to have a good estimate of what our hypothesis can be for the future. 
+
+Output Examples:
+Classification -> The value of our labels belong to a discrete set
+Regression -> The value of our labels belong to a continous set
