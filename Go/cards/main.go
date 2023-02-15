@@ -3,9 +3,8 @@ package main
 
 import "fmt"
 
-var deckSize int
-
 func main() {
+	// printState()
 	card := newCard()
 
 	fmt.Println(card)
@@ -16,26 +15,25 @@ func newCard() string {
 }
 
 // Testing different functions
+// func test() {
+// 	// var card string = "Ace of spades"
+// 	card := "Ace of Spades"
+// 	card = "Five of Diamonds"
+// 	var deckSize int = 50
+// 	divisibleNum := 50
+// 	fmt.Println(card)
 
-func test() {
-	// var card string = "Ace of spades"
-	card := "Ace of Spades"
-	card = "Five of Diamonds"
-	deckSize := 50
-	divisibleNum := 50
-	fmt.Println(card)
+// 	var result int = addNumbers(deckSize, deckSize)
+// 	fmt.Println(result)
 
-	var result int = addNumbers(deckSize, deckSize)
-	fmt.Println(result)
+// 	var additionRes, multipRes, diviRes = calculateOperations(deckSize, divisibleNum)
+// 	fmt.Println("addition:", additionRes, "multiplication", multipRes, "division", diviRes)
+// }
 
-	var additionRes, multipRes, diviRes = calculateOperations(deckSize, divisibleNum)
-	fmt.Println("addition:", additionRes, "multiplication", multipRes, "division", diviRes)
-}
+// func addNumbers(num1 int, num2 int) int {
+// 	return num1 + num2
+// }
 
-func addNumbers(num1 int, num2 int) int {
-	return num1 + num2
-}
-
-func calculateOperations(num1, num2 int) (int, int, int) {
-	return num1 + num2, num1 * num2, num1 / num2
-}
+// func calculateOperations(num1, num2 int) (int, int, int) {
+// 	return num1 + num2, num1 * num2, num1 / num2
+// }
