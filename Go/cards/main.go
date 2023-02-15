@@ -6,6 +6,18 @@ import "fmt"
 var deckSize int
 
 func main() {
+	card := newCard()
+
+	fmt.Println(card)
+}
+
+func newCard() string {
+	return "Five of Diamonds"
+}
+
+// Testing different functions
+
+func test() {
 	// var card string = "Ace of spades"
 	card := "Ace of Spades"
 	card = "Five of Diamonds"
