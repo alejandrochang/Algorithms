@@ -7,7 +7,9 @@ func main() {
 	// printState()
 	card := newCard()
 
-	fmt.Println(card)
+	var newCard = CardDetail{number: 5, cardType: "Diamonds"}
+
+	fmt.Println(card, newCard)
 }
 
 type CardDetail struct {
