@@ -10,6 +10,15 @@ func main() {
 	fmt.Println(card)
 }
 
+type CardDetail struct {
+	number   int
+	cardType string
+}
+
+type Cards struct {
+	CardDetail CardDetail
+}
+
 func newCard() string {
 	return "Five of Diamonds"
 }
