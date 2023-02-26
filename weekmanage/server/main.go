@@ -25,18 +25,33 @@ func main() {
 		return c.SendString("Ok!")
 	})
 
-	app.Post("/api", func(c *fiber.Ctx) error {
+	app.Post("/api/todos", func(c *fiber.Ctx) error {
 		todo := &Todo{}
-
 		if err := c.BodyParser(todo); err != nil {
 			return err
 		}
 
 		todo.ID = len(todos) + 1
-
 		todos = append(todos, *todo)
-
 		// return list of todos
+		return c.JSON(todos)
+	})
+
+	app.Patch("/api/todos/:id/done", func(c *fiber.Ctx) error {
+		id, err := c.ParamsInt("id")
+
+		if err != nil {
+			return c.Status(401).SendString("Invalid id")
+		}
+
+		// i: index, t: Todos
+		for i, t := range todos {
+			if t.ID == id {
+				todos[i].Done = true
+				break
+			}
+		}
+
 		return c.JSON(todos)
 	})
 
