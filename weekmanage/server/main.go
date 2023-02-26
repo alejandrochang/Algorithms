@@ -25,6 +25,10 @@ func main() {
 		return c.SendString("Ok!")
 	})
 
+	app.Get("/todos", func(c *fiber.Ctx) error {
+		return c.JSON(todos)
+	})
+
 	app.Post("/api/todos", func(c *fiber.Ctx) error {
 		todo := &Todo{}
 		if err := c.BodyParser(todo); err != nil {
