@@ -1,54 +1,14 @@
-import { MantineProvider, Box, List, ThemeIcon } from "@mantine/core";
-import { CheckCircleFillIcon } from "@primer/octicons-react";
+import { MantineProvider } from "@mantine/core";
 import React from 'react';
-import useSWR from 'swr';
+import Navigation from './components/Navigation';
 import './App.css';
-import AddTodo from "./components/AddTodo";
-
-export const ENDPOINT = 'http://localhost:4000';
-
-const fetcher = (url) => fetch(`${ENDPOINT}/${url}`).then((r) => r.json());
 
 function App() {
-  const {data: todos, mutate} = useSWR('api/todos', fetcher);
-  async function markTodoAsDone(id) {
-    const updated = await fetch(`${ENDPOINT}/api/todos/${id}/done`, {
-      method: "PATCH",
-    }).then((r) => r.json());
 
-    mutate(updated);
-  }
-
-  console.log('plop todos', { todos });
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS>
-      <Box>
-        <List spacing="xs" size="sm" mb={12} center>
-          {todos?.map((todo) => {
-            return (
-              <List.Item
-                onClick={() => markTodoAsDone(todo.id)}
-                key={`todo_list__${todo.id}`}
-                icon={
-                  todo.done ? (
-                    <ThemeIcon color="teal" size={24} radius="xl">
-                      <CheckCircleFillIcon size={20} />
-                    </ThemeIcon>
-                  ) : (
-                    <ThemeIcon color="gray" size={24} radius="xl">
-                      <CheckCircleFillIcon size={20} />
-                    </ThemeIcon>
-                  )
-                }
-              >
-                {todo.title}
-              </List.Item>
-            );
-          })}
-        </List>
-      </Box>
-
-      <AddTodo mutate={mutate} />
+      NavBar
+      <Navigation />
     </MantineProvider>
   );
 }
