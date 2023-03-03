@@ -7,7 +7,6 @@ function App() {
 
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS>
-      NavBar
       <Navigation />
     </MantineProvider>
   );

@@ -2,25 +2,15 @@ import React from 'react';
 import {
   createStyles,
   Navbar,
-  TextInput,
-  Code,
   UnstyledButton,
   Badge,
   Text,
   Group,
   ActionIcon,
   Tooltip,
-  // rem,
 } from "@mantine/core";
-import {
-  IconBulb,
-  IconUser,
-  IconCheckbox,
-  IconSearch,
-  IconPlus,
-  // IconSelector,
-} from "@tabler/icons-react";
-// import { UserButton } from "../UserButton/UserButton";
+import { IconCheckbox, IconPlus, IconSelector } from "@tabler/icons-react";
+import UserButton from './UserButton'
 
 const useStyles = createStyles((theme) => ({
   navbar: {
@@ -138,21 +128,7 @@ const useStyles = createStyles((theme) => ({
 }));
 
 const links = [
-  { icon: IconBulb, label: "Activity", notifications: 3 },
-  { icon: IconCheckbox, label: "Tasks", notifications: 4 },
-  { icon: IconUser, label: "Contacts" },
-];
-
-const collections = [
-  { emoji: "👍", label: "Sales" },
-  { emoji: "🚚", label: "Deliveries" },
-  { emoji: "💸", label: "Discounts" },
-  { emoji: "💰", label: "Profits" },
-  { emoji: "✨", label: "Reports" },
-  { emoji: "🛒", label: "Orders" },
-  { emoji: "📅", label: "Events" },
-  { emoji: "🙈", label: "Debts" },
-  { emoji: "💁‍♀️", label: "Customers" },
+  { icon: IconCheckbox, label: "Tasks/Todos", notifications: 4 },
 ];
 
 const NavbarSearch = () => {
@@ -172,41 +148,16 @@ const NavbarSearch = () => {
     </UnstyledButton>
   ));
 
-  const collectionLinks = collections.map((collection) => (
-    <a
-      href="/"
-      onClick={(event) => event.preventDefault()}
-      key={collection.label}
-      className={classes.collectionLink}
-    >
-      <span style={{ marginRight: 9, fontSize: 16 }}>
-        {collection.emoji}
-      </span>{" "}
-      {collection.label}
-    </a>
-  ));
-
   return (
     <Navbar height={700} width={{ sm: 300 }} p="md" className={classes.navbar}>
       <Navbar.Section className={classes.section}>
-        {/* <UserButton
+        <UserButton
           image="https://i.imgur.com/fGxgcDF.png"
-          name="Bob Rulebreaker"
-          email="Product owner"
+          name="Alejandro Chang"
+          email="Software Engineer"
           icon={<IconSelector size="0.9rem" stroke={1.5} />}
-        /> */}
+        />
       </Navbar.Section>
-
-      <TextInput
-        placeholder="Search"
-        size="xs"
-        icon={<IconSearch size="0.8rem" stroke={1.5} />}
-        rightSectionWidth={70}
-        rightSection={<Code className={classes.searchCode}>Ctrl + K</Code>}
-        styles={{ rightSection: { pointerEvents: "none" } }}
-        mb="sm"
-      />
-
       <Navbar.Section className={classes.section}>
         <div className={classes.mainLinks}>{mainLinks}</div>
       </Navbar.Section>
@@ -222,7 +173,6 @@ const NavbarSearch = () => {
             </ActionIcon>
           </Tooltip>
         </Group>
-        <div className={classes.collections}>{collectionLinks}</div>
       </Navbar.Section>
     </Navbar>
   );
