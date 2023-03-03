@@ -2,8 +2,8 @@ import { Box, List, ThemeIcon, Card } from "@mantine/core";
 import { CheckCircleFillIcon } from "@primer/octicons-react";
 import React from "react";
 import useSWR from "swr";
-import "./App.css";
-import AddTodo from "./components/AddTodo";
+import AddTodo from "./AddTodo";
+import "./Todos.css";
 
 export const ENDPOINT = "http://localhost:4000";
 
@@ -20,7 +20,7 @@ function App() {
   }
 
   return (
-    <div>
+    <div className="container">
       <Box>
         <List spacing="xs" size="sm" mb={12} center>
           {todos?.map((todo) => {
