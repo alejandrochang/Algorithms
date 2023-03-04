@@ -3,6 +3,8 @@ import React, { useState, useEffect } from 'react';
 import Navigation from './components/Navigation';
 import Todos from "./components/Todos";
 import useSWR from "swr";
+import { parseTodos } from './utils/index';
+
 import './App.css';
 
 export const ENDPOINT = "http://localhost:4000";
@@ -16,13 +18,14 @@ function App() {
     setTodos(data);
   }, [data]);
   
-  const todosLength = todos?.length;
-
-  console.log('plop', { todos })
+  const [incompleteTodos, completeTodos] = parseTodos(todos);
 
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS>
-      <Navigation todosLength={todosLength} />
+      <Navigation
+        incompleteCount={incompleteTodos?.length}
+        completeCount={completeTodos?.length}
+      />
       <Todos todos={todos} mutate={mutate} />
     </MantineProvider>
   );

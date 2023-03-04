@@ -9,7 +9,11 @@ import {
   ActionIcon,
   Tooltip,
 } from "@mantine/core";
-import { IconCheckbox, IconPlus, IconSelector } from "@tabler/icons-react";
+import {
+  IconCheckbox,
+  IconPlus,
+  IconSelector,
+} from "@tabler/icons-react";
 import UserButton from './UserButton'
 
 const useStyles = createStyles((theme) => ({
@@ -131,24 +135,42 @@ const useStyles = createStyles((theme) => ({
 const NavbarSearch = (props) => {
   const { classes } = useStyles();
   // eslint-disable-next-line react/prop-types
-  const { todosLength } = props;
+  const { incompleteCount, completeCount } = props;
 
   const links = [
-    { icon: IconCheckbox, label: "Tasks/Todos", notifications: todosLength },
+    {
+      icon: IconCheckbox,
+      label: "Tasks/Todos",
+      notifications: incompleteCount,
+      color: "red",
+    },
+    {
+      icon: IconCheckbox,
+      label: "Completed",
+      notifications: completeCount,
+      color: "lime",
+    },
   ];
 
   const mainLinks = links.map((link) => (
-    <UnstyledButton key={link.label} className={classes.mainLink}>
-      <div className={classes.mainLinkInner}>
-        <link.icon size={20} className={classes.mainLinkIcon} stroke={1.5} />
-        <span>{link.label}</span>
-      </div>
-      {link.notifications && (
-        <Badge size="sm" variant="filled" className={classes.mainLinkBadge}>
-          {link.notifications}
-        </Badge>
-      )}
-    </UnstyledButton>
+    <>
+      <UnstyledButton key={link.label} className={classes.mainLink} mb={5}>
+        <div className={classes.mainLinkInner}>
+          <link.icon size={20} className={classes.mainLinkIcon} stroke={1.5} />
+          <span>{link.label}</span>
+        </div>
+        {link.notifications && (
+          <Badge
+            size="sm"
+            variant="filled"
+            color={link.color}
+            className={classes.mainLinkBadge}
+          >
+            {link.notifications}
+          </Badge>
+        )}
+      </UnstyledButton>
+    </>
   ));
 
   return (

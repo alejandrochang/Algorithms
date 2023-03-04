@@ -1,4 +1,4 @@
-import { Box, List, ThemeIcon, Card } from "@mantine/core";
+import { Box, List, ThemeIcon, Card, Title} from "@mantine/core";
 import { CheckCircleFillIcon } from "@primer/octicons-react";
 import React from "react";
 import AddTodo from "./AddTodo";
@@ -13,7 +13,7 @@ const sortTodos = (todos) => {
 
 const Todos = (props) => {
   // eslint-disable-next-line react/prop-types
-  const { todos, mutate } = props;
+  const { todos = [], mutate } = props;
   async function markTodoAsDone(id) {
     const updated = await fetch(`${ENDPOINT}/api/todos/${id}/done`, {
       method: "PATCH",
@@ -25,6 +25,9 @@ const Todos = (props) => {
   return (
     <div className="container">
       <Box>
+        <Title order={4} mb={20} color="blue.5">
+          You have {todos?.length} tasks remaining
+        </Title>
         <List spacing="xs" size="sm" mb={12} center>
           {sortTodos(todos)?.map((todo) => {
             return (
