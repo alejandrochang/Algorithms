@@ -8,6 +8,10 @@ import "./Todos.css";
 export const ENDPOINT = "http://localhost:4000";
 
 const fetcher = (url) => fetch(`${ENDPOINT}/${url}`).then((r) => r.json());
+const sortTodos = (todos) => {
+  if (!todos) return [];
+  return todos.sort((a, b) => a.done - b.done);
+};
 
 function App() {
   const { data: todos, mutate } = useSWR("api/todos", fetcher);
@@ -23,7 +27,7 @@ function App() {
     <div className="container">
       <Box>
         <List spacing="xs" size="sm" mb={12} center>
-          {todos?.map((todo) => {
+          {sortTodos(todos)?.map((todo) => {
             return (
               <Card
                 shadow="sm"
