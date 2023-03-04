@@ -1,20 +1,19 @@
 import { Box, List, ThemeIcon, Card } from "@mantine/core";
 import { CheckCircleFillIcon } from "@primer/octicons-react";
 import React from "react";
-import useSWR from "swr";
 import AddTodo from "./AddTodo";
 import "./Todos.css";
 
 export const ENDPOINT = "http://localhost:4000";
 
-const fetcher = (url) => fetch(`${ENDPOINT}/${url}`).then((r) => r.json());
 const sortTodos = (todos) => {
   if (!todos) return [];
   return todos.sort((a, b) => a.done - b.done);
 };
 
-function App() {
-  const { data: todos, mutate } = useSWR("api/todos", fetcher);
+const Todos = (props) => {
+  // eslint-disable-next-line react/prop-types
+  const { todos, mutate } = props;
   async function markTodoAsDone(id) {
     const updated = await fetch(`${ENDPOINT}/api/todos/${id}/done`, {
       method: "PATCH",
@@ -64,4 +63,4 @@ function App() {
   );
 }
 
-export default App;
+export default Todos;

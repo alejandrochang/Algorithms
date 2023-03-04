@@ -127,12 +127,15 @@ const useStyles = createStyles((theme) => ({
   },
 }));
 
-const links = [
-  { icon: IconCheckbox, label: "Tasks/Todos", notifications: 4 },
-];
 
-const NavbarSearch = () => {
+const NavbarSearch = (props) => {
   const { classes } = useStyles();
+  // eslint-disable-next-line react/prop-types
+  const { todosLength } = props;
+
+  const links = [
+    { icon: IconCheckbox, label: "Tasks/Todos", notifications: todosLength },
+  ];
 
   const mainLinks = links.map((link) => (
     <UnstyledButton key={link.label} className={classes.mainLink}>
