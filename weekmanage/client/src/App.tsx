@@ -11,12 +11,7 @@ export const ENDPOINT = "http://localhost:4000";
 const fetcher = (url: string) => fetch(`${ENDPOINT}/${url}`).then((r) => r.json());
 
 const renderActiveChild = (child: string, todos: any[], mutate: KeyedMutator<any>) => {
-  switch(child) {
-    // case child === 'completed':
-    //   return<Todos todos={todos} mutate={mutate} />
-    default:
-      return<Todos todos={todos} mutate={mutate} />
-  }
+  return<Todos todos={todos} mutate={mutate} navItem={child} />
 }
 
 function App() {
@@ -29,6 +24,7 @@ function App() {
   }, [data]);
   
   const [incompleteTodos, completeTodos] = parseTodos(todos);
+  const currentTodos = activeNavChild === 'todos' ? incompleteTodos : completeTodos;
 
   return (
     <MantineProvider withGlobalStyles withNormalizeCSS>
@@ -37,7 +33,7 @@ function App() {
         completeCount={completeTodos?.length}
         setActiveNavChild={setActiveNavChild}
       />
-      {renderActiveChild(activeNavChild, todos, mutate)}
+      {renderActiveChild(activeNavChild, currentTodos, mutate)}
     </MantineProvider>
   );
 }

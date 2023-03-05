@@ -2,17 +2,13 @@ import React from "react";
 import { Box, List, ThemeIcon, Card, Title} from "@mantine/core";
 import { CheckCircleFillIcon } from "@primer/octicons-react";
 import AddTodo from "./AddTodo";
+import { KeyedMutator } from "swr";
 import "./Todos.css";
 
 export const ENDPOINT = "http://localhost:4000";
 
-const sortTodos = (todos: any[]) => {
-  if (!todos) return [];
-  return todos.sort((a, b) => a.done - b.done);
-};
-
-const Todos = (props: { todos?: any[] | undefined; mutate: any; }) => {
-  const { todos = [], mutate } = props;
+const Todos = (props: { todos?: any[] | undefined; mutate: KeyedMutator<any>; navItem: string }) => {
+  const { todos = [], mutate, navItem } = props;
 
   async function markTodoAsDone(id: number) {
     const updated = await fetch(`${ENDPOINT}/api/todos/${id}/done`, {
@@ -22,14 +18,17 @@ const Todos = (props: { todos?: any[] | undefined; mutate: any; }) => {
     mutate(updated);
   }
 
+  const keyword = navItem === 'completed' ? 'completed' : 'remaining';
+  const title = `You have ${todos?.length} tasks ${keyword}`;
+
   return (
     <div className="container">
       <Box>
         <Title order={4} mb={20} color="blue.5">
-          You have {todos?.length} tasks remaining
+          {title}
         </Title>
         <List spacing="xs" size="sm" mb={12} center>
-          {sortTodos(todos)?.map((todo) => {
+          {todos?.map((todo) => {
             return (
               <Card
                 shadow="sm"

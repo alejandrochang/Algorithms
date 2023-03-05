@@ -173,7 +173,7 @@ const NavbarSearch = (props: { incompleteCount: number; completeCount: number; s
   ));
 
   return (
-    <Navbar height={700} width={{ sm: 300 }} p="md" className={classes.navbar}>
+    <Navbar height='100%' width={{ sm: 300 }} p="md" className={classes.navbar}>
       <Navbar.Section className={classes.section}>
         <UserButton
           image="https://i.imgur.com/fGxgcDF.png"
