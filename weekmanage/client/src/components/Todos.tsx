@@ -1,20 +1,20 @@
+import React from "react";
 import { Box, List, ThemeIcon, Card, Title} from "@mantine/core";
 import { CheckCircleFillIcon } from "@primer/octicons-react";
-import React from "react";
 import AddTodo from "./AddTodo";
 import "./Todos.css";
 
 export const ENDPOINT = "http://localhost:4000";
 
-const sortTodos = (todos) => {
+const sortTodos = (todos: any[]) => {
   if (!todos) return [];
   return todos.sort((a, b) => a.done - b.done);
 };
 
-const Todos = (props) => {
-  // eslint-disable-next-line react/prop-types
+const Todos = (props: { todos?: any[] | undefined; mutate: any; }) => {
   const { todos = [], mutate } = props;
-  async function markTodoAsDone(id) {
+
+  async function markTodoAsDone(id: number) {
     const updated = await fetch(`${ENDPOINT}/api/todos/${id}/done`, {
       method: "PATCH",
     }).then((r) => r.json());

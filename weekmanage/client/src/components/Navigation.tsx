@@ -132,9 +132,8 @@ const useStyles = createStyles((theme) => ({
 }));
 
 
-const NavbarSearch = (props) => {
+const NavbarSearch = (props: { incompleteCount: number; completeCount: number; }) => {
   const { classes } = useStyles();
-  // eslint-disable-next-line react/prop-types
   const { incompleteCount, completeCount } = props;
 
   const links = [
