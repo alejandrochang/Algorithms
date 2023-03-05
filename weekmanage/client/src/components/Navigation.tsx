@@ -132,14 +132,14 @@ const useStyles = createStyles((theme) => ({
 }));
 
 
-const NavbarSearch = (props: { incompleteCount: number; completeCount: number; }) => {
+const NavbarSearch = (props: { incompleteCount: number; completeCount: number; setActiveNavChild: any}) => {
   const { classes } = useStyles();
-  const { incompleteCount, completeCount } = props;
+  const { incompleteCount, completeCount, setActiveNavChild } = props;
 
   const links = [
     {
       icon: IconCheckbox,
-      label: "Tasks/Todos",
+      label: "Todos",
       notifications: incompleteCount,
       color: "red",
     },
@@ -153,7 +153,7 @@ const NavbarSearch = (props: { incompleteCount: number; completeCount: number; }
 
   const mainLinks = links.map((link) => (
     <>
-      <UnstyledButton key={link.label} className={classes.mainLink} mb={5}>
+      <UnstyledButton key={link.label} className={classes.mainLink} mb={5} onClick={() => setActiveNavChild(link.label.toLowerCase())}>
         <div className={classes.mainLinkInner}>
           <link.icon size={20} className={classes.mainLinkIcon} stroke={1.5} />
           <span>{link.label}</span>
