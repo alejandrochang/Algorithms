@@ -53,7 +53,7 @@ function AddTodo({ mutate }) {
       </Modal>
 
       <Group position="center">
-        <Button fullWidth mb={12} onClick={() => setOpen(true)}>
+        <Button bg='#393B44' fullWidth mb={12} onClick={() => setOpen(true)}>
           ADD TODO
         </Button>
       </Group>
