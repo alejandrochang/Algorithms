@@ -23,7 +23,7 @@ const Todos = (props: { todos?: any[] | undefined; mutate: KeyedMutator<any>; na
 
   return (
     <div className="container">
-      <Box>
+      <Box w="800px">
         <Title order={4} mb={20} color="blue.5">
           {title}
         </Title>
