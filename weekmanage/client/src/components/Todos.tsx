@@ -2,6 +2,7 @@ import React from "react";
 import { Box, List, ThemeIcon, Card, Title} from "@mantine/core";
 import { CheckCircleFillIcon } from "@primer/octicons-react";
 import AddTodo from "./AddTodo";
+import DeleteTodo from "./DeleteTodo";
 import { KeyedMutator } from "swr";
 import "./Todos.css";
 
@@ -31,6 +32,7 @@ const Todos = (props: { todos?: any[] | undefined; mutate: KeyedMutator<any>; na
           {todos?.map((todo) => {
             return (
               <Card
+                sx={{ justifyContent: "space-between", alignItems: "center" }}
                 shadow="sm"
                 radius="md"
                 p="xl"
@@ -38,6 +40,7 @@ const Todos = (props: { todos?: any[] | undefined; mutate: KeyedMutator<any>; na
                 miw="300px"
                 key={`todo_list__${todo.id}`}
                 withBorder
+                display="flex"
               >
                 <List.Item
                   onClick={() => markTodoAsDone(todo.id)}
@@ -55,6 +58,7 @@ const Todos = (props: { todos?: any[] | undefined; mutate: KeyedMutator<any>; na
                 >
                   {todo.title}
                 </List.Item>
+                <DeleteTodo mutate={mutate} id={todo.id}/>
               </Card>
             );
           })}

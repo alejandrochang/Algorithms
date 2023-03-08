@@ -1,4 +1,12 @@
-export const parseTodos = (todos) => {
+
+type Todos = {
+  id: string;
+  title: string;
+  body: string;
+  done: boolean;
+}
+
+export const parseTodos = (todos: Todos[]) => {
   if (!todos) return [];
 
   const completeTodos = todos.filter(({ done }) => done);
