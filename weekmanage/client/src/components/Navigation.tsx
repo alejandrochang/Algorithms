@@ -152,8 +152,8 @@ const NavbarSearch = (props: { incompleteCount: number; completeCount: number; s
   ];
 
   const mainLinks = links.map((link) => (
-    <>
-      <UnstyledButton key={link.label} className={classes.mainLink} mb={5} onClick={() => setActiveNavChild(link.label.toLowerCase())}>
+    <div key={link.label}>
+      <UnstyledButton className={classes.mainLink} mb={5} onClick={() => setActiveNavChild(link.label.toLowerCase())}>
         <div className={classes.mainLinkInner}>
           <link.icon size={20} className={classes.mainLinkIcon} stroke={1.5} />
           <span>{link.label}</span>
@@ -169,7 +169,7 @@ const NavbarSearch = (props: { incompleteCount: number; completeCount: number; s
           </Badge>
         )}
       </UnstyledButton>
-    </>
+    </div>
   ));
 
   return (

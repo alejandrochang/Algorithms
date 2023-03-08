@@ -15,7 +15,7 @@ function AddTodo({ mutate }) {
     },
   });
 
-  async function createTodo(values) {
+  async function createTodo(values: any) {
     const updated = await fetch(`${ENDPOINT}/api/todos`, {
       method: "POST",
       headers: {

@@ -21,7 +21,7 @@ func main() {
 	app := fiber.New()
 
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: "http://localhost:3000",
+		AllowOrigins: "http://localhost:5173",
 		AllowHeaders: "Origin, Content-Type, Accept",
 	}))
 
@@ -62,6 +62,27 @@ func main() {
 	})
 
 	app.Get("/api/todos", func(c *fiber.Ctx) error {
+		return c.JSON(todos)
+	})
+
+	app.Delete("/api/todos/:id/delete", func(c *fiber.Ctx) error {
+		id, err := c.ParamsInt("id")
+
+		if err != nil {
+			return c.Status(401).SendString("Invalid id")
+		}
+
+		// i: index, t: Todos
+		i := 0
+		for _, t := range todos {
+			if !(t.ID == id) {
+				todos[i] = t
+				i++
+			}
+		}
+
+		todos = todos[:i]
+
 		return c.JSON(todos)
 	})
 
