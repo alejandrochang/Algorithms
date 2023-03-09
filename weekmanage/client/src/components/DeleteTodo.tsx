@@ -4,7 +4,6 @@ import { ENDPOINT } from "./Todos";
 import { KeyedMutator } from "swr";
 import { IconTrash } from "@tabler/icons-react";
 
-// eslint-disable-next-line react/prop-types
 function DeleteTodo({ mutate, id }: { id: string, mutate: KeyedMutator<any> }) {
 
   async function deleteTodo(id: string) {

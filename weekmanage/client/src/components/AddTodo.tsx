@@ -2,10 +2,9 @@ import React, { useState } from "react";
 import { useForm } from "@mantine/form";
 import { Button, Modal, Group, TextInput, Textarea } from "@mantine/core";
 import { ENDPOINT } from "./Todos";
-// import { KeyedMutator } from "swr";
+import { KeyedMutator } from "swr";
 
-// eslint-disable-next-line react/prop-types
-function AddTodo({ mutate }) {
+function AddTodo({ mutate }: { mutate: KeyedMutator<any>}) {
   const [open, setOpen] = useState(false);
 
   const form = useForm({

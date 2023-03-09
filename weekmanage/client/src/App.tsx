@@ -4,13 +4,14 @@ import Navigation from './components/Navigation';
 import Todos from "./components/Todos";
 import useSWR, { KeyedMutator } from "swr";
 import { parseTodos } from './utils/index';
+import { Todos as TodosType } from './types';
 
 import './App.css';
 
 export const ENDPOINT = "http://localhost:4000";
 const fetcher = (url: string) => fetch(`${ENDPOINT}/${url}`).then((r) => r.json());
 
-const renderActiveChild = (child: string, todos: any[], mutate: KeyedMutator<any>) => {
+const renderActiveChild = (child: string, todos: TodosType[], mutate: KeyedMutator<any>) => {
   return<Todos todos={todos} mutate={mutate} navItem={child} />
 }
 

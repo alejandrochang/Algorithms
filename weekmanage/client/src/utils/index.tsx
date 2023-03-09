@@ -1,10 +1,4 @@
-
-type Todos = {
-  id: string;
-  title: string;
-  body: string;
-  done: boolean;
-}
+import { Todos } from '../types'
 
 export const parseTodos = (todos: Todos[]) => {
   if (!todos) return [];
