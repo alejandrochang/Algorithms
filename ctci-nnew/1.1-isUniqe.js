@@ -13,10 +13,18 @@ const isUnique = (str) => {
 // O: boolean
 
 // Time: O(n), Space: O(n)
-// Use a set to get unique elements and compare array with str length;
+// Use a set to get unique elements and compare array with str length;s
 
 
 const result = isUnique(test);
 const result2 = isUnique(test1);
 
 console.log({ result, result2 });
+
+
+// Using bits solutions
+// Time: O(n) - Space: O(1)
+
+function isUniqueEfficient(str) {
+  return str;
+}
