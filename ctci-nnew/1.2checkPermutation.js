@@ -25,6 +25,38 @@ const res2 = checkPermutationsSort(s3, s4);
 console.log({ res, res2 });
 
 
+function createCountMap(str) {
+  let map = {};
+
+  for (let i = 0; i < str.length; i++) {
+    map[str[i]] = (map[str[i]] || 0) + 1;
+  }
+
+  return map;
+}
+
+function checkPermutations(str1, str2) {
+  let s1Map = createCountMap(str1);
+  let s2Map = createCountMap(str2);
+
+  const [shortMap, longMap] = str1.length > str2.length ? [s1Map, s2Map] : [s2Map, s1Map];
+
+  console.log({ s1Map, s2Map });
+
+  for (let key in longMap) {
+    if (!shortMap[key]) return false;
+  }
+
+  return true;
+}
+
+
+const res3 = checkPermutations(s1, s2);
+// result true;
+const res4 = checkPermutations(s3, s4);
+// result false;
+
+console.log({ res3, res4 });
 
 /*
   Approaches:
