@@ -2,6 +2,9 @@
 // Implement an algorithm to determine if a string has all unique characters.
 // What if you cannot use additional data structures?
 
+// Assumption is string is unique
+// Return boolean whether its unique or not
+
 const test = 'aaa';
 const test1 = 'abcdefg';
 
@@ -24,7 +27,17 @@ console.log({ result, result2 });
 
 // Using bits solutions
 // Time: O(n) - Space: O(1)
+// Edge case has to be ordered
 
 function isUniqueEfficient(str) {
-  return str;
+  for (let i = 0; i < str.length - 1; i++) {
+    if (str.charAt(i) === str.charAt(i + 1)) return false;
+  }
+
+  return true;
 }
+
+const result3 = isUniqueEfficient(test);
+const result4 = isUniqueEfficient(test1);
+
+console.log({ result3, result4 });
