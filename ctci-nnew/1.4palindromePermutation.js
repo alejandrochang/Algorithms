@@ -30,6 +30,9 @@ function palindromPermutation(str) {
   return true;
 }
 
+
+// Time: O(n), Space: O(n)
+
 const result = palindromPermutation("taco cat");
 const result2 = palindromPermutation("raecar");
 const result3 = palindromPermutation("blah");
