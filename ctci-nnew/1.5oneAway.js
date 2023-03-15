@@ -33,11 +33,38 @@ function oneAway(s1, s2) {
   return true;
 }
 
+const sort = (s) => s.split('').sort().join('');
 
-const result = oneAway('pale', 'ple'); // true - { p: 1, a: 1, l: 1, e: 1 } - { p: 1, l: 1, e: 1 } - diff = 1 -> true
-const result2 = oneAway('pales', 'pale'); // true
-const result3 = oneAway('pale', 'bale'); // true
-const result4 = oneAway('pale', 'bake'); // false
+function oneAwaySorted(s1, s2) {
+  const [short, long] = s1.length > s2.length ? [s2,s1] : [s1,s2];
+  const shortSorted = sort(short);
+  const longSorted = sort(long);
+
+  let j = 0;
+  let i = 0;
+  let diffCount = 0;
+  while (i < longSorted.length) { // aelp
+    if (longSorted[i] !== shortSorted[j]) {
+      i++;
+      diffCount += 1;
+    } else {
+      i++;
+      j++;
+    }
+
+    if (diffCount >= 2) return false;
+  }
+ 
+  return true;
+}
+
+
+// aelp - elp
+
+const result = oneAwaySorted('pale', 'ple'); // true - { p: 1, a: 1, l: 1, e: 1 } - { p: 1, l: 1, e: 1 } - diff = 1 -> true
+const result2 = oneAwaySorted('pales', 'pale'); // true
+const result3 = oneAwaySorted('pale', 'bale'); // true
+const result4 = oneAwaySorted('pale', 'bake'); // false
 
 console.log({ result, result2, result3, result4 });
 
