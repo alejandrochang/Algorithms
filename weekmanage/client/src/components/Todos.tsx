@@ -1,5 +1,5 @@
 import React from "react";
-import { Box, List, ThemeIcon, Card, Title} from "@mantine/core";
+import { Box, List, ThemeIcon, Card, Title, Badge } from "@mantine/core";
 import { CheckCircleFillIcon } from "@primer/octicons-react";
 import AddTodo from "./AddTodo";
 import DeleteTodo from "./DeleteTodo";
