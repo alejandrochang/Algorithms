@@ -3,11 +3,16 @@
 // write code to check if s2 is a rotation of sl using only one call to isSubstring (e.g.,"waterbottle" is a rotation of"erbottlewat").
 
 
-function stringRotation(str) {
+// 'waterbottle' - isubstring(0,2) - 'erbottlewat'
+
+function stringRotation(s1, s2) {
 
 }
 
 
 /* 
-  
+  Approaches:
+  1. Iterate through string - use isubstring method from 0, i - 
+  2. Check if isSustring + end of string === s2 -> if so rotation is true
+  Time: O(n) - Space: O(n)
 */
