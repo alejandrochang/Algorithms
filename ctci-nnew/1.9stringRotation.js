@@ -6,8 +6,18 @@
 // 'waterbottle' - isubstring(0,2) - 'erbottlewat'
 
 function stringRotation(s1, s2) {
+  for (let i = 0; i < s1.length; i++) {
+    let rotatedString = s1.substring(i) + s1.slice(0, i); // 'wat'
+    if (rotatedString === s2) {
+      return true;
+    }
+  }
 
+  return false;
 }
+
+let result = stringRotation('waterbottle', 'erbottlewat');
+console.log({ result }); // true
 
 
 /* 
