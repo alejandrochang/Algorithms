@@ -25,4 +25,5 @@ console.log({ result }); // true
   1. Iterate through string - use isubstring method from 0, i - 
   2. Check if isSustring + end of string === s2 -> if so rotation is true
   Time: O(n) - Space: O(n)
+  Space of O(1) if you do it in place - instead of saving rotatedString
 */
