@@ -2,3 +2,6 @@
 // FOLLOW UP
 // How would you solve this problem if a temporary buffer is not allowed?
 
+import LinkedList from "./2.0-linkedList";
+
+const ll = new LinkedList();
