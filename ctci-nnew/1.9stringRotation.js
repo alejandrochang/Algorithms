@@ -19,6 +19,15 @@ function stringRotation(s1, s2) {
 let result = stringRotation('waterbottle', 'erbottlewat');
 console.log({ result }); // true
 
+function stringRotation2(s1, s2) {
+  if (s1.length !== s2.length) return false;
+  const concatString = `${s1}${s1}`;
+  return concatString.includes(s2);
+}
+
+
+let result2 = stringRotation2('waterbottle', 'erbottlewat');
+console.log({ result2 }); // true
 
 /* 
   Approaches:
