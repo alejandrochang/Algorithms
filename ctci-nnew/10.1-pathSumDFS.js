@@ -25,6 +25,7 @@ const getSum = (node) =>{
     rootToLeaf(node.left);
     rootToLeaf(node.right);
     sum += node.data;
+    console.log({ sum })
   }
 
   rootToLeaf(node);
@@ -32,22 +33,40 @@ const getSum = (node) =>{
   return sum;
 }
 
-const hasPathSum = (root, targetSum) => {
-  if (!root) return 0;
-  const left = getSum(root.left) + root.data;
-  const right = getSum(root.right) + root.data;
-  return (left === targetSum || right === targetSum);
+const hasPathSumBFS = (root, targetSum) => {
+  let output = false;
+
+  // dfs with value passed in as 0
+  const loop = (node, value) => {
+    if (node.data || node.data === 0) node.data += value;
+
+    if (!node.left && !node.right && targetSum === node.data) {
+      output = true;
+    }
+
+    if (node.left) {
+      loop(node.left, node.data);
+    }
+
+    if (node.right) {
+      loop(node.right, node.data);
+    }
+  }
+
+  loop(root, 0);
+
+  return output;
 }
 
 
 
 // Has Path to Sum solution for full root -> leaf === target
-// const hasPathSumToLeaf = (root, targetSum) => {
-//   if (!root) return 0;
-//   const left = getSum(root.left) + root.data;
-//   const right = getSum(root.right) + root.data;
-//   return (left === targetSum || right === targetSum);
-// }
+const hasPathSumToLeaf = (root, targetSum) => {
+  if (!root) return 0;
+  const left = getSum(root.left) + root.data;
+  const right = getSum(root.right) + root.data;
+  return (left === targetSum || right === targetSum);
+}
 
 
 class Node {
@@ -62,5 +81,5 @@ const root = new Node(5, new Node(4, new Node(11, new Node(7), new Node(2))), ne
 
 // console.log(JSON.stringify(root, null, 4));
 
-let result = hasPathSum(root, 22);
+let result = hasPathSumBFS(root, 22);
 console.log({ result }); // true
