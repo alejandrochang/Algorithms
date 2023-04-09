@@ -9,7 +9,7 @@ function pathSum2(root) {
 
   const traverse = (node, num) => {
     if (!node) return;
-    // we add the value to string
+
     num += node.val;
 
     if (!node.left && !node.right) {
@@ -18,6 +18,7 @@ function pathSum2(root) {
 
     return traverse(node.left, num) + traverse(node.right, num);
   }
+
 
   return traverse(root, '');
 }
