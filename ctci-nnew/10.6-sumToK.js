@@ -14,3 +14,46 @@
 // Return the nodes 5 and 15.
 
 
+// 1. Construct node data structure
+// 2. Func sumToK
+
+
+class Node {
+  constructor(data, left=null, right=null) {
+    this.data = data;
+    this.left = left;
+    this.right = right;
+  }
+}
+
+const root = new Node(10, new Node(5), new Node(15, new Node(11), new Node(15)));
+
+function sumToK(node, k) {
+  let arr = [];
+
+  function helper(root) {
+    if (!root) return;
+
+    helper(root.left);
+    arr.push(root.data);
+    helper(root.right);
+  }
+
+  // should be sorted array with inorder traversal
+  helper(node);
+  return arr;
+}
+
+
+let res = sumToK(root, 20);
+console.log('result', { res });
+
+
+/*
+  Organization:
+  I: root, k
+  O: two nodes that sum up to k
+
+
+
+*/
