@@ -32,6 +32,9 @@ class minStack {
   }
 }
 
+// [5, 10, 2]
+// min: [5, 2]
+
 let s = new minStack();
 s.push(5);
 s.push(10);
