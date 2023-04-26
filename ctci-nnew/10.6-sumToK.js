@@ -40,10 +40,26 @@ function sumToK(node, k) {
   }
 
   // should be sorted array with inorder traversal
-  helper(node);
-  return arr;
+  helper(node); // [5, 10, 11, 15, 15]
+
+  // run a binary search
+  let start = 0;
+  let end = arr.length - 1;
+  while (start < end) {
+    if (arr[start] + arr[end] === k) {
+      return true;
+    } else if (arr[start] + arr[end] < k) { // push right
+      start++;
+    } else {
+      // arr[start] > k - push left
+      end--;
+    }
+  }
+
+  return false;
 }
 
+// Time: O(n), Space: O(n) array allocated
 
 let res = sumToK(root, 20);
 console.log('result', { res });
