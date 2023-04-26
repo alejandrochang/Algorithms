@@ -64,6 +64,38 @@ function sumToK(node, k) {
 let res = sumToK(root, 20);
 console.log('result', { res });
 
+// function sumToK2(root, k) {
+//   // run a bst
+//   // dfs stack
+
+//   function binarySearch(node) {
+//     if (!node) {
+//       return false;
+//     }
+
+//     if (node === k) {
+//       return true;
+//     }
+
+//     if ()
+//   }
+
+//   const stack = [root];
+//   while (stack.length > 0) {
+//     let current = stack.pop(); // root
+
+
+
+//     if (current.left) {
+//       stack.push(current.left)
+//     }
+
+//     if (current.right) {
+//       stack.push(current.right);
+//     }
+//   }
+// }
+
 
 /*
   Organization:
