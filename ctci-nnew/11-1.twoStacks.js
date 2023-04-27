@@ -3,3 +3,5 @@
 // enqueue, which inserts an element into the queue, and dequeue, which removes it.
 
 
+// Stack: LIFO (last in first out)
+// Stack methods: pop(), peek(), push()
