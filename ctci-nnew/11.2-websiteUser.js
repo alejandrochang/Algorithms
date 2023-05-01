@@ -18,5 +18,22 @@ const tuples = [['a', 1], ['a', 3], ['a', 5],
  ['d', 4], ['d', 5], ['d', 6], ['d', 7],
  ['e', 1], ['e', 3], ['e', 5], ['e', 6]];
 
+ // { count '1': 'chars' -}   - { '1': ['a', 'c', 'e']}
 
- 
+
+//  Keep track of similarities + differences
+
+function topSimilarities(list) {
+  const mostSimilar = [];
+
+
+}
+
+
+
+// { 'a' [1,3,5] - 'e' [1,3,5,6] 'c' [1,2,3,4,5] } 
+// { '1': { similarities: ['a', 'b', 'c'], differences: []}}
+
+
+const result = topSimilarities(tuples);
+console.log({ result });
