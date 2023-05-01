@@ -31,8 +31,21 @@ function topSimilarities(list) {
 
 
 
-// { 'a' [1,3,5] - 'e' [1,3,5,6] 'c' [1,2,3,4,5] } 
-// { '1': { similarities: ['a', 'b', 'c'], differences: []}}
+/*
+
+
+'b': { a: { sim: [], diff: [2, 6] }, c: { sim: 3, diff: 2 }}
+
+
+{
+ 'a': { b: [0, 3], c: [3, 2], e: [3, 1]
+ 'b': { a: [0, 2], c: [0, 5], d: [1, 3]
+ }
+
+{ '1': { similarities: ['a', 'b', 'c'], differences: []}}
+
+
+*/
 
 
 const result = topSimilarities(tuples);
