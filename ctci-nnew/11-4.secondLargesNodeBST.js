@@ -42,5 +42,31 @@ function secondLargest(root) {
 }
 
 
-const result = secondLargest(root);
-console.log({ result });
+// const result = secondLargest(root);
+// console.log({ result });
+
+
+// function secLargest(root) {
+//   if (!root) return;
+//   let largestNode = root.data;
+//   let secondLargest = null;
+
+//   function inorderTraverse(node) {
+//     if (!node) return node;
+//     if (node.left) inorderTraverse(node.left);
+//     if (node.right) inorderTraverse(node.right);
+
+//     if (!secondLargest && largestNode !== node.data) {
+//       secondLargest = node.data;
+//     } else if (largestNode > node.data && node.data > secondLargest) {
+//       secondLargest = node.data;
+//     }
+//   }
+
+//   inorderTraverse(root)
+
+//   return secondLargest;
+// }
+
+
+// console.log('res 2', secLargest(root));
