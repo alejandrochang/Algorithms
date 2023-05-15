@@ -21,13 +21,27 @@ const Todos = (props: { todos?: any[] | undefined; mutate: KeyedMutator<any>; na
 
   const keyword = navItem === 'completed' ? 'completed' : 'remaining';
   const title = `You have ${todos?.length} tasks ${keyword}`;
+  const newKeyword = todos.length > 1 ? 'Todos' : 'Todo';
+  const newTitle = `${todos.length} ${newKeyword}`
 
   return (
     <div className="container">
       <Box w="800px">
-        <Title order={4} mb={20} color="blue.5">
-          {title}
-        </Title>
+        <Card
+          sx={{ justifyContent: "space-between", alignItems: "center" }}
+          shadow="sm"
+          radius="md"
+          p={5}
+          pl={20}
+          pr={20}
+          maw="fit-content"
+          withBorder
+          display="flex"
+          c="#ffffff"
+          bg="#B8A9C9"
+        >
+            {newTitle}
+        </Card>
         <List spacing="xs" size="sm" mb={12} center>
           {todos?.map((todo) => {
             return (
@@ -35,8 +49,9 @@ const Todos = (props: { todos?: any[] | undefined; mutate: KeyedMutator<any>; na
                 sx={{ justifyContent: "space-between", alignItems: "center" }}
                 shadow="sm"
                 radius="md"
-                p="xl"
-                mb="20px"
+                p={5}
+                pl={20}
+                pr={20}
                 miw="300px"
                 key={`todo_list__${todo.id}`}
                 withBorder

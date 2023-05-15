@@ -15,6 +15,7 @@ import {
   IconSelector,
 } from "@tabler/icons-react";
 import UserButton from './UserButton'
+import TaskZenLogo from '../assets/taskZenLogo.jpeg';
 
 const useStyles = createStyles((theme) => ({
   navbar: {
@@ -176,11 +177,14 @@ const NavbarSearch = (props: { incompleteCount: number; completeCount: number; s
     <Navbar height='100%' width={{ sm: 300 }} p="md" className={classes.navbar}>
       <Navbar.Section className={classes.section}>
         <UserButton
-          image="https://i.imgur.com/fGxgcDF.png"
+          image={TaskZenLogo}
           name="Alejandro Chang"
           email="Software Engineer"
           icon={<IconSelector size="0.9rem" stroke={1.5} />}
         />
+      </Navbar.Section>
+      <Navbar.Section className={classes.section}>
+        Spaces
       </Navbar.Section>
       <Navbar.Section className={classes.section}>
         <div className={classes.mainLinks}>{mainLinks}</div>
