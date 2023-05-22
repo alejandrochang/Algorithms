@@ -13,7 +13,9 @@ const graph = [
     [3]
 ];
 
-
+function micGraphJs(graph) {
+  return graph;
+}
 
 // The transitive closure of this graph would be:
 
