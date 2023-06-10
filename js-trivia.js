@@ -23,4 +23,21 @@ const call2 = {
 
 // call2.says(); // undefined - es6 arrow function will reference the outside global object which doesn't know about this
 
+const call3 = {
+  caller: "mom", 
+  anotherCaller: function() {
+        console.log(`${this.caller} called, too!`)
+      },
+  says: function() {
+    console.log(`Hey, ${this.caller} just called.`);
+  }
+};
 
+
+let newCall = call3.anotherCaller;
+newCall(); // undefined called 2
+
+
+
+// IIFE
+(function foo(){console.log('hello') })();
