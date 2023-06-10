@@ -43,10 +43,12 @@ newCall(); // undefined called 2
 (function foo(){console.log('hello') })();
 
 let undeclared;
+const declared = {};
 // typeof 
 console.log(
   typeof 24 === 'number',
   typeof '24' === 'string',
   typeof true === 'boolean',
   typeof undeclared === 'undefined',
+  typeof declared === 'object',
 );
