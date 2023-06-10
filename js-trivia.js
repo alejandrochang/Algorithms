@@ -41,3 +41,12 @@ newCall(); // undefined called 2
 
 // IIFE
 (function foo(){console.log('hello') })();
+
+let undeclared;
+// typeof 
+console.log(
+  typeof 24 === 'number',
+  typeof '24' === 'string',
+  typeof true === 'boolean',
+  typeof undeclared === 'undefined',
+);
