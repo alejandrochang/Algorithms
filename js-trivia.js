@@ -52,3 +52,18 @@ console.log(
   typeof undeclared === 'undefined',
   typeof declared === 'object',
 );
+
+
+// Closure
+
+function secret(){
+  let privateName = 'Alex';
+  function privateFunc() {
+    return privateName;
+  }
+
+  return privateFunc;
+}
+
+const secFunc = secret();
+// console.log('plop', secFunc());
