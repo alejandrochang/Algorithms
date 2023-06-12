@@ -9,3 +9,44 @@
 
 // For example, given the array [1, 3, 1, 2, 0, 1], we can go from indices 0 -> 1 -> 3 -> 5, so return true.
 // Given the array [1, 2, 1, 0, 0], we can't reach the end, so return false.
+
+function reachEnd(arr) {
+  // if reached the end return true;
+  if (arr.length <= 1) {
+    return true;
+  }
+
+  // max index that can be reached
+  let max = arr[0]; // 1
+  for (let i = 0; i < arr.length; i++) {
+    // if no way to jump to next return false
+    if (max <= i && arr[i] === 0) {
+      return false
+    }
+
+    // update max jump
+    if (i + arr[i] > max) {
+      max = i + arr[i];
+    }
+
+    // max enough to reach end
+    if (max >= arr.length -1) {
+      return true;
+    }
+  }
+
+  return false;
+}
+
+const result = reachEnd([1, 3, 1, 2, 0, 1]);
+console.log({ result });
+
+// High Level
+
+// [1,3,1,2,0,1] - length: 5
+// i: 0, moves: 1
+// i: 1, moves: 3   - i + moves = 4   + currPos != length
+// i: 1, moves: 2   - i + moves 3     + currPos === length
+
+
+// i: indices, moves: position value, currPosition: nextArrIndices
