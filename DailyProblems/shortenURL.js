@@ -14,14 +14,24 @@ class URLShortener {
     this.keys = new Map();
   }
 
-  generateURL(url) {
-
+  generateURL() {
+    const randomString = Math.random().toString(36).slice(2, 8);
+    console.log({ randomString })
+    return randomString;
   }
 
   shorten(url) {
     // shorten(url), which shortens the url into a six-character alphanumeric string, such as zLg6wl.
-    const shortenedUrl = this.generateURL(url);
+    let shortenedUrl = this.generateURL();
+    while (this.keys.has(shortenedUrl)) {
+      shortenedUrl = this.generateURL();
+    }
+
     this.keys.set(shortenedUrl, url);
+    console.log('keys', this.keys);
+
+    // test restore
+    console.log('restore', this.restore(shortenedUrl));
   }
 
   restore(short) {
@@ -40,3 +50,7 @@ class URLShortener {
 
 // Solution:
 // { url: 6char }
+
+const s = new URLShortener();
+s.shorten('https://www.alejandrochang.com');
+// s.restore('exefk3')
