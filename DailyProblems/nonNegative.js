@@ -29,6 +29,7 @@ function reachEnd(arr) {
       max = i + arr[i];
     }
 
+    console.log({ max, i }, arr[i]);
     // max enough to reach end
     if (max >= arr.length -1) {
       return true;
@@ -40,6 +41,13 @@ function reachEnd(arr) {
 
 const result = reachEnd([1, 3, 1, 2, 0, 1]);
 console.log({ result });
+
+
+// { max: 1, i: 0 } 1
+// { max: 4, i: 1 } 3
+// { max: 4, i: 2 } 1
+// { max: 5, i: 3 } 2
+// { result: true }
 
 // High Level
 
