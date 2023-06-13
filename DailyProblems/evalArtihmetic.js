@@ -18,3 +18,11 @@ function eval(root) {
 }
 
 
+// Recursively go through tree
+//  if null return 0
+//  if !left && !right return int
+//  evaluateLeft
+//  evaluateRight
+
+
+// operands logic for each expression: '+', '−', '∗', or '/'.
