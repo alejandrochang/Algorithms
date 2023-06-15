@@ -11,10 +11,35 @@ for (let key in currencies) {
     if (currencies[currency]) {
       currencies[currency].push({ key, value: 1 / value })
     } else if (currency) {
+      // avoid undefined currency here
       currencies[currency] = [{ key, value: 1 / value }];
     }
-    // push that currency into currencies
   })
 }
 
-console.log('mutated?', currencies);
+
+function convertCurrency(input, c1, c2) {
+  const q = [c1];
+  while (q.length > 0) {
+    const key = q.shift();
+    const curr = currencies[key];
+    console.log({ curr });
+  }
+}
+
+const result = convertCurrency(5, 'YEN', 'USD');
+console.log({ result });
+// console.log('updated currencies', currencies);
+
+
+// [[YEN, USD]]
+// skip if its the same c1 currency
+// if we found c2 currency continue with conversion
+
+// yen -> EUR
+
+
+
+
+// convert(5, yen, usd);
+// convert(2, usd, eur);
