@@ -5,11 +5,16 @@ const currencies = {
 };
 
 for (let key in currencies) {
-  const currency = currencies[key];
-  currency.forEach(obj => {
-
-    // console.log({ key, obj });
+  const struct = currencies[key];
+  struct.forEach(({ currency, value }) => {
     // generate the reverse currency
+    if (currencies[currency]) {
+      currencies[currency].push({ key, value: 1 / value })
+    } else if (currency) {
+      currencies[currency] = [{ key, value: 1 / value }];
+    }
     // push that currency into currencies
   })
 }
+
+console.log('mutated?', currencies);
