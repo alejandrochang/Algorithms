@@ -11,12 +11,18 @@ async function test(num) {
 // console.log(test(4)); // Promise { 5 }
 // console.log(test(-1)); // rejected with reason -2
 
-function printTest(fn) {
-  fn.then((v) => {
+test(4).then((v) => {
     console.log({ v })
-  }).catch(e => console.log({ e }));
+  }).catch(e => console.log({ e })); // v: 5
+
+test(1).then((v) => {
+    console.log({ v })
+  }).catch(e => console.log({ e })); // v: 0
+
+async function asyncCall() {
+  const result = await test(5); // 6
+  // const result2 = await test(1); // error
+  console.log({ result });
 }
 
-console.log(printTest(test(4))); // v: 5
-console.log(printTest(test(1))); // e: 0
-
+asyncCall();
