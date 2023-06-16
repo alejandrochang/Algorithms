@@ -26,6 +26,7 @@ function convertCurrency(input, c1, c2) {
   while (q.length > 0) {
     const key = q.shift();
     const currObjects = currencies[key];
+    console.log({ currObjects, key });
     currObjects.map(({ currency, value }) => {
       currentConversion *= value;
       console.log({ q })
