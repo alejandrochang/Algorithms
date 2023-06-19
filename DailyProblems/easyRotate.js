@@ -27,14 +27,18 @@ function rotateRight(arr, k) {
   for (let i = 0; i < arr.length; i++) {
     let temp = arr[i]; // 1
     let swapNode = arr[i + k]; // 3
+    let modulo = arr.length % k;
     if (temp && swapNode) {
       [arr[i], arr[i + k]] = [arr[i + k], arr[i]];
+    } else if (modulo === k) {
+      [arr[i], arr[i + k - 1]] = [arr[i + k - 1], arr[i]];
     }
-    console.log({ temp, swapNode });
+    // console.log({ temp, swapNode });
   }
 
   return arr;
 }
 
 // works for evens
-console.log("result", rotateRight([1,2,3,4,5,6], 3)); // [4,5,6,1,2,3];
+// console.log("result", rotateRight([1,2,3,4,5,6], 3)); // [4,5,6,1,2,3];
+console.log("result", rotateRight([1,2,3,4,5], 2)); // [3,4,5,1,2];
