@@ -17,33 +17,28 @@ for (let key in currencies) {
   })
 }
 
-console.log('currencies',currencies);
-
 function convertCurrency(input, c1, c2) {
   const q = [c1];
   let currentConversion = input;
-  let found = false;
+  const visitedCurrencies = {};
   while (q.length > 0) {
     const key = q.shift();
-    const currObjects = currencies[key];
-    console.log({ currObjects, key });
-    currObjects.map(({ currency, value }) => {
-      currentConversion *= value;
-      console.log({ q })
-      if (key === c2) {
-        found = true;
-        console.log('plop', { key, currentConversion, c2 });
-        return currentConversion;
-      }
+    if (key === c2) return currentConversion;
+    visitedCurrencies[key] = true;
+    const currencyList = currencies[key];
 
-      if (!q.includes(currency) && !found) q.push(currency);
-    })
+    currencyList.forEach(({ currency: currKey, value }) => {
+      if (!visitedCurrencies[currKey]) {
+        q.push(currKey);
+        currentConversion *= value;
+      }
+    });
   }
 
-  return currentConversion;
+  return null;
 }
 
-const result = convertCurrency(5, 'YEN', 'USD');
+const result = convertCurrency(5, 'YEN', 'USD'); // 0.04365851358478309
 console.log({ result });
 
 
@@ -51,10 +46,6 @@ console.log({ result });
 // skip if its the same c1 currency
 // if we found c2 currency continue with conversion
 
-// yen -> EUR
-
-
-
-
+// yen -> EU
 // convert(5, yen, usd);
 // convert(2, usd, eur);
