@@ -13,3 +13,5 @@ function rotateBrute(arr, k) {
 const result = rotateBrute([1,2,3,4], 2); // [3,4,1,2]
 const result2 = rotateBrute([1,2,3,4,5], 2); // [3,4,5,1,2]
 console.log({ result, result2 });
+
+// Time: 
