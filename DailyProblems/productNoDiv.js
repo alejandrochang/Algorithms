@@ -11,32 +11,37 @@ function bruteForceProdWDivision(arr) {
   const totalProd = arr.reduce((acc, curr) => acc *= curr, 1);
   let result = [];
 
-  for (let int of arr) {
-    result.push(totalProd/int);
-  }
+  for (let int of arr) result.push(totalProd / int);
 
   return result;
 }
 
-console.log('res', bruteForceProdWDivision([1, 2, 3, 4, 5])); //[120, 60, 40, 30, 24]
-console.log('res', bruteForceProdWDivision([3, 2, 1])); // [2, 3, 6]
+// Time: O(2n)
+// Space: O(n)
+// console.log('res', bruteForceProdWDivision([1, 2, 3, 4, 5])); //[120, 60, 40, 30, 24]
+// console.log('res', bruteForceProdWDivision([3, 2, 1])); // [2, 3, 6]
 
+function productNoDivision(arr) {
+  let res = [];
+  for (let i = 0; i < arr.length; i++) {
+    let prodTot = arr.reduce((acc, curr, idx) => {
+      if (i !== idx) acc *= curr;
+      return acc;
+    }, 1);
 
+    res.push(prodTot);
+  }
 
+  return res;
+}
 
+console.log('res2', productNoDivision([1, 2, 3, 4, 5])); //[120, 60, 40, 30, 24]
+console.log('res2', productNoDivision([3, 2, 1])); // [2, 3, 6]
 
-
-
-
-
-// function productNoDivision(arr) {
-//   const prodMap = generateProdMap(arr);
-
-
-// }
-
+// Time: O(n^2)
+// Space: O(n)
 
 // I: array
 // O: arr of products
 
-// High Level: Generate Product Map - access product map and push up the corresponding index
+// High Level: Generate Product Map - access product map and push up the corresponding index;
