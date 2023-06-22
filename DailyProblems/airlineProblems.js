@@ -7,12 +7,45 @@
 // For example, our traveler wants to go from JFK to LAX with up to 3 connections, and our input flights are as follows:
 
 // [
-//     ('JFK', 'ATL', 150),
-//     ('ATL', 'SFO', 400),
-//     ('ORD', 'LAX', 200),
-//     ('LAX', 'DFW', 80),
-//     ('JFK', 'HKG', 800),
-//     ('ATL', 'ORD', 90),
-//     ('JFK', 'LAX', 500),
+//     ['JFK', 'ATL', 150],
+//     ['ATL', 'SFO', 400],
+//     ['ORD', 'LAX', 200],
+//     ['LAX', 'DFW', 80],
+//     ['JFK', 'HKG', 800],
+//     ['ATL', 'ORD', 90],
+//     ['JFK', 'LAX', 500],
 // ]
 // Due to some improbably low flight prices, the cheapest itinerary would be JFK -> ATL -> ORD -> LAX, costing $440.
+
+
+const connections = [
+  ['JFK', 'ATL', 150],
+  ['ATL', 'SFO', 400],
+  ['ORD', 'LAX', 200],
+  ['LAX', 'DFW', 80],
+  ['JFK', 'HKG', 800],
+  ['ATL', 'ORD', 90],
+  ['JFK', 'LAX', 500],
+];
+
+// q = [{'ATL', 150}]
+// q = [{'SFO', 550}, {'ORD', 350}]
+// q = ['LAX']
+
+// DFS problem - get all flights + cost
+
+function getCheapestFlight(departingCity, destinationCity, k) {
+  // const flightData = {}; // { 'JFK' [']} 
+  // const getList = (dep, des, k) => {
+
+  // }
+
+  // getList(departingCity, destinationCity, k);
+}
+
+const res = getCheapestFlight('JFK', 'LAX', 3);
+console.log({ res });
+
+
+// recursively go through all connections from JFK -> LAX - store the list
+// and store the price
