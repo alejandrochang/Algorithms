@@ -35,12 +35,22 @@ const connections = [
 // DFS problem - get all flights + cost
 
 function getCheapestFlight(departingCity, destinationCity, k) {
-  // const flightData = {}; // { 'JFK' [']} 
-  // const getList = (dep, des, k) => {
+  const result = [];
+  const q = [departingCity];
+  while (q.length > 0) {
+    q.shift(); // 'JFK';
 
-  // }
+    connections.forEach(connection => {
+      const [d, a, p] = connection;
+      if (d === departingCity) {
+        result.push({ itinerary: [d], totalCost: p });
+        q.push(a);
+      }
+    });
+  }
 
   // getList(departingCity, destinationCity, k);
+  console.log('res', result);
 }
 
 const res = getCheapestFlight('JFK', 'LAX', 3);
