@@ -8,13 +8,13 @@ async function test(num) {
   throw num - 1;
 }
 
-// console.log(test(4)); // Promise { 5 }
-// console.log(test(-1)); // rejected with reason -2
+console.log(test(4)); // Promise { 5 }
+// console.log(test(-1)); // rejected with reason -2 - ERR_UNHANDLED_REJECTION
 
 // then/catch
 test(4).then((v) => {
-    // console.log({ v })
-  }).catch(e => console.log({ e })); // v: 5
+    console.log({ v }); // v: 5
+  }).catch(e => console.log({ e }));
 
 // test(1).then((v) => {
 //     // console.log({ v })
@@ -38,10 +38,18 @@ const handleNewPromise = (num) => {
     reject(num - 1)
   })
 }
-// console.log('plop', handleNewPromise(5));
+console.log('plop', handleNewPromise(5));
 
 const delay = t => new Promise((res, rej) => setTimeout(res, t));
-delay(5000).then(() => console.log('hello'));
+
+function delayTwo(t, num) {
+  return new Promise((res, rej) => {
+    if (num > 1) setTimeout(res(num + 1), t);
+    rej(num - 1);
+  })
+}
+// delay(5000).then(() => console.log('hello'));
+// delayTwo(5000, -1).then(() => console.log('hello 2'));
 
 // const promiseA = new Promise((resolve, reject) => {
 //   try {
@@ -52,3 +60,7 @@ delay(5000).then(() => console.log('hello'));
 // });
 
 // promiseA.then((val) => console.log("asynchronous logging has val:", val));
+
+
+// then.().catch()
+// try {resolve} catch{}
