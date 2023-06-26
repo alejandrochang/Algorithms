@@ -47,3 +47,30 @@ function totalSumLeft(r) {
 }
 
 console.log(totalSumLeft(root)); // 3
+
+
+// postorder
+
+//   1
+//  2 3
+// 4 5
+
+
+const root2 = new Node(1, new Node(2, new Node(4), new Node(5)), new Node(3));
+
+
+function postOrderBFS(root) {
+  const rightMost = [[root.data]];
+  const postorderTraverse = (node, level) => {
+    if (!node) return;
+    postorderTraverse(node.left, level++);
+    postorderTraverse(node.right, level++);
+    console.log({ level, node })
+  }
+
+  postorderTraverse(root, 0);
+
+  return rightMost;
+}
+
+console.log(postOrderBFS(root2)); // [4,5,2,3,1]
