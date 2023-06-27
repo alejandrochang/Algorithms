@@ -11,7 +11,25 @@
 // O: boolean
 
 function oneToOne(s1, s2) {
-  
+  const charCount = {};
+  let c = "a";
+
+  for (let i = 0; i < s1.length; i++) {
+    // if s1[i] is a key in charCount
+    // eslint-disable-next-line no-prototype-builtins
+    if (charCount[s1[i]]) {
+      c = charCount[s1[i]]; // a
+      if (c !== s2[i]) return false;
+      // is s2[i] if not a value in charCount
+    } else if (!Object.values(charCount).includes(s2[i])) {
+      charCount[s1[i]] = s2[i];
+    } else {
+      return false;
+    }
+  }
+
+  console.log({ charCount });
+  return true;
 }
 
 const res = oneToOne('abc', 'bcd');
