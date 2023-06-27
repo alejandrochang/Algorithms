@@ -7,3 +7,13 @@
 // Given s1 = foo and s2 = bar,
 // return false since the o cannot map to two characters.
 
+// I: s1, s2
+// O: boolean
+
+function oneToOne(s1, s2) {
+  
+}
+
+const res = oneToOne('abc', 'bcd');
+const res2 = oneToOne('foo', 'bar');
+console.log({ res, res2 }); // true | false
