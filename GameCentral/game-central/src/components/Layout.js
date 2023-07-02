@@ -1,6 +1,7 @@
 import { Outlet, Link } from "react-router-dom";
+import Homepage from './Home';
 
-const Layout = () => {
+const Navigation = () => {
   return (
     <>
       <nav>
@@ -21,5 +22,14 @@ const Layout = () => {
     </>
   )
 };
+
+const Layout = () => {
+  return (
+    <>
+      <Navigation />
+      <Homepage />
+    </>
+  )
+}
 
 export default Layout;

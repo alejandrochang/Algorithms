@@ -1,6 +1,6 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import Medication from "./Medication";
-import Layout from "./Layout";
+import Medication from "./components/Medication";
+import Layout from "./components/Layout";
 // import Home from "./pages/Home";
 // import Blogs from "./pages/Blogs";
 // import Contact from "./pages/Contact";
