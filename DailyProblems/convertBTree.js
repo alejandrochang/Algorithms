@@ -28,6 +28,12 @@
 
 function convertFullBinaryTree(root){
   if (!root) return;
+  const newRoot = new Node(root.data);
+
+  const q = [root];
+  while (q.length > 0) {
+    // let length = q.length
+  }
 
 }
 
