@@ -31,12 +31,17 @@ function convertFullBinaryTree(root){
   let bucketArr = [];
   const dfs = (node) => {
     if (!node) return;
-    if (node.left && node.right || (!node.left && !node.right)) bucketArr.push(node.data);
+    if (node.left && node.right || (!node.left && !node.right)) {
+      console.log({ node });
+      bucketArr.push(node.data);
+    }
 
-    
+    dfs(node.left);
+    dfs(node.right);
   }
 
-
+  dfs(root);
+  console.log({ bucketArr });
 }
 
 class Node {
