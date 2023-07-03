@@ -28,12 +28,14 @@
 
 function convertFullBinaryTree(root){
   if (!root) return;
-  const newRoot = new Node(root.data);
+  let bucketArr = [];
+  const dfs = (node) => {
+    if (!node) return;
+    if (node.left && node.right || (!node.left && !node.right)) bucketArr.push(node.data);
 
-  const q = [root];
-  while (q.length > 0) {
-    // let length = q.length
+    
   }
+
 
 }
 
