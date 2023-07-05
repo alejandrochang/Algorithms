@@ -52,22 +52,20 @@ function convertCurrency(r, [c1, c2]) {
   while (q.length > 0) {
     const currencyKey = q.shift(); // 'AUD';
     visited[currencyKey] = true;
-    const currencyStruct = formatedRates[currencyKey];
+    const currencies = formatedRates[currencyKey];
 
-    if (currencyStruct) {
-      for (let obj of currencyStruct) {
-        const { curr, r } = obj;
-        console.log({ rate })
+    for (let { curr, r } of currencies) {
+      console.log({ currencyKey, rate, currencies })
 
-        if (curr === c1) {
-          console.log('plop', { curr, c1, rate })
-          return rate;
-        }
+      if (curr === c1) {
+        console.log('plop', { curr, c1, rate });
+        return rate;
+      }
 
+      // push children
+      if (!visited[curr]) {
+        q.push(curr);
         rate *= r;
-
-        // push children
-        if (!visited[curr]) q.push(curr);
       }
     }
   }
