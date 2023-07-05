@@ -37,7 +37,6 @@ const addFolder = (path) => (node) => {
     // set default child struct to build tree and push children for each folder
     const child = { name, state: 'u', children: []};
     node.children.push(child);
-    // node.children.sort(({ name: n1 }, { name: n2 }) => n1 < n2 ? -1 : n1 > n2 ? 1 : 0)
     return child
   }
 
@@ -48,19 +47,44 @@ const addFolder = (path) => (node) => {
   return node
 }
 
+function allChildrenChecked(node) {
+  let q = [node];
+  while (q.length > 0) {
+    const curr = q.shift();
+    if (curr.state !== 'c') {
+      return false;
+    }
+
+    if (node.children) q.push(node.children);
+  }
+
+  return true;
+}
+
+function noChildrenChecked(node) {};
 const updateSubtreeState = (click, node) => {
-    const q = [node];
     // run bfs to udpate the tree by children
     // If children are checked the return [v] - c
     // if all children are not checked [o] - pc
     // if !children are checked (including self) [] u
 
-    
+    let state = 'c';
+    if (allChildrenChecked(node)) {
+      // if all checked then we uncheck
+      state = 'u'
+    } else if (noChildrenChecked(node)){
+      state = 'c'
+    } else {
+      // partially checked
+      state = 'pc';
+    }
 
+    // use bfs to update the state depending of subtree checked, or not
+    const q = [node];
     while (q.length > 0) {
       const curr = q.shift();
       // 3 state: 'c': checked, 'pc': partially, 'u'
-      curr.state = 'c';
+      curr.state = state;
       
       if (curr.children && curr.children.length) {
         q.push(curr.children);
