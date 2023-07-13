@@ -4,7 +4,14 @@
 // Given the string "abcdef", return null.
 
 function recurringChar(str) {
-  
+  const recurringMap = {};
+
+  for (let ch of str) {
+    recurringMap[ch] = recurringMap[ch] + 1 | 1;
+    if (recurringMap[ch] >= 2) return ch;
+  }
+
+  return null;
 }
 
 
