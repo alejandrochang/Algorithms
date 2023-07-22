@@ -10,7 +10,6 @@ const arr = [2, 4, 6, 8, 10, 2, 6, 10]; // 4, 8;
 
 
 // linear time, linear space
-
 function twoAppear(arr) {
   let countMap = {};
   for (let num of arr) countMap[num] = countMap[num] + 1 | 1;

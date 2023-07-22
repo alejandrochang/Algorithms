@@ -1,6 +1,3 @@
-
-// Node { next, data };
-
 class Node {
   constructor(data, next=null) {
     this.data = data;
@@ -8,13 +5,19 @@ class Node {
   }
 }
 
-// linked list methods - size, clear, getLast, getFirst
+// linked list methods - size, clear, getLast, getFirst, insertFirst
 class LinkedList {
   constructor(head=null) {
     this.head = head;
   }
 
-  size() {
-    let count = 0;
+  insertFirst(data) {
+    if (!this.head) {
+      this.head = new Node(data);
+    } else {
+      this.head = new Node(data, this.head);
+    }
   }
 }
+
+module.exports = LinkedList;
