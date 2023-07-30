@@ -20,21 +20,23 @@ const root = new Node(5, new Node(4, new Node(11)), new Node(6, null, new Node(9
 
 function pathSum2(root, sum) {
   if (!root) return [];
-  const results = [];
-  const dfs = (node, currSum, currPath) => {
-    if (sum === currSum) {
-      results.push(currPath);
-      return;
+  const dfs = (node, targetSum, paths = [], rootToLeaf = []) => {
+    if (node) {
+      const remaining = targetSum - node.data;
+      rootToLeaf.push(node.data);
+
+      if (!node.left && !node.right && remaining === 0) paths.push([...rootToLeaf]);
+
+      dfs(node.left, remaining, paths, rootToLeaf);
+      dfs(node.right, remaining, paths, rootToLeaf);
+
+      rootToLeaf.pop();
     }
 
-    console.log({ currPath, currSum });
-    if (!node) { return }
-    dfs(node.left, currSum += node.data, [...currPath, node.data]);
-    dfs(node.right, currSum += node.data, [...currPath, node.data]);
+    return paths;
   }
 
-  dfs(root, 0, []);
-  return results;
+  return dfs(root, sum);
 }
 
 const res = pathSum2(root, 20);
