@@ -27,8 +27,26 @@ class Node {
 const root = new Node(1, new Node(2), new Node(3)); // 12 + 13 = 25
 
 function sumRootToLeaf(root) {
+  const dfs = (node, sum) => {
+    if (node) {
+      sum += node.data; // '12'
 
+      if (!node.left && !node.right) {
+        return +sum;
+      }
+
+      return dfs(node.left, sum) + dfs(node.right, sum);
+    }
+  }
+
+  return dfs(root, '');
 }
 
 const result = sumRootToLeaf(root);
 console.log({ result });
+
+
+/*
+  High Level: Use the +num operator and string to concatenate the resulst -> then turn into number
+
+*/
