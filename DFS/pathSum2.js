@@ -20,8 +20,9 @@ const root = new Node(5, new Node(4, new Node(11)), new Node(6, null, new Node(9
 
 function pathSum2(root, sum) {
   if (!root) return [];
+
   const dfs = (node, targetSum, paths = [], rootToLeaf = []) => {
-    if (node) {
+    if (node){
       const remaining = targetSum - node.data;
       rootToLeaf.push(node.data);
 
@@ -32,7 +33,6 @@ function pathSum2(root, sum) {
 
       rootToLeaf.pop();
     }
-
     return paths;
   }
 
