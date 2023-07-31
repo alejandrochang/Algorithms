@@ -33,6 +33,7 @@ function pathSum2(root, sum) {
 
       rootToLeaf.pop();
     }
+
     return paths;
   }
 
