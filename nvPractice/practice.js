@@ -59,4 +59,26 @@ function permutator(s) {
 }
 
 const solution = permutator(str);
-console.log({ solution });
+// console.log({ solution });
+
+// const str = "23??1???7";
+function permuteBinary(s) {
+  const result = [];
+  const permute = (strings) => {
+    for (let i = 0; i < strings.length; i++) {
+      const str = strings[i];
+      let newstr = str.replace('?', '1');
+      let newStr2 = str.replace('?', '0');
+
+      newstr.includes('?') ? permute([newstr]) : result.push(newstr);
+      newStr2.includes('?') ? permute([newStr2]) : result.push(newStr2);
+    }
+  }
+
+  permute([s]);
+
+  return result;
+}
+
+const test = permuteBinary(str);
+console.log({ test });
