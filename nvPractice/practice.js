@@ -37,3 +37,29 @@ const res2 = getCardValue(cards2); //
 
 
 // Given a string of the form "23??1???7", replace the question marks with all different permutations of 0s and 1s.
+
+const str = "23??1???7";
+function permutator(s) {
+  const result = [];
+
+  const q = [s];
+  while (q.length > 0) {
+    let length = q.length;
+    for (let i = 0; i < length; i++) {
+      let str = q.shift();
+      let newstr = str.replace('?', '1');
+      let newStr2 = str.replace('?', '0');
+
+      if (newstr.includes('?')) q.push(newstr);
+      if (newStr2.includes('?')) q.push(newStr2);
+
+      if (!newstr.includes('?')) result.push(newstr);
+      if (!newStr2.includes('?')) result.push(newStr2);
+    }
+  }
+
+  return [...new Set(result)];
+}
+
+const solution = permutator(str);
+console.log({ solution });
