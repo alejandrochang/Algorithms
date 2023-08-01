@@ -50,11 +50,8 @@ function permutator(s) {
       let newstr = str.replace('?', '1');
       let newStr2 = str.replace('?', '0');
 
-      if (newstr.includes('?')) q.push(newstr);
-      if (newStr2.includes('?')) q.push(newStr2);
-
-      if (!newstr.includes('?')) result.push(newstr);
-      if (!newStr2.includes('?')) result.push(newStr2);
+      newstr.includes('?') ? q.push(newstr) : result.push(newstr);
+      newStr2.includes('?') ? q.push(newStr2) : result.push(newStr2);
     }
   }
 
