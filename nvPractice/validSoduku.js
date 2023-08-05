@@ -33,3 +33,38 @@ const board2 =
 ,[".",".",".",".","8",".",".","7","9"]];
 // Output: false
 // Explanation: Same as Example 1, except with the 5 in the top left corner being modified to 8. Since there are two 8's in the top left 3x3 sub-box, it is invalid.
+
+function validList(row) {
+  let positions = {};
+  for (let pos of row) {
+    if (pos === ".") continue;
+    positions[pos] = positions[pos] + 1 | 1;
+
+    if (positions[pos] > 1) return false;
+  }
+
+  return true;
+}
+
+function validSoduku(b) {
+  let columns = Array(b[0].length).fill([]);
+  for (let r = 0; r < b.length; r++) {
+    if (!validList(b[r])) return false;
+    for (let c = 0; c < b[0].length; c++) {
+      const pos = b[r][c];
+      columns[r].push(pos);
+      // console.log({ columns, pos, c })
+    }
+  }
+
+  console.log({ columns });
+  return true;
+}
+
+// const res = validSoduku(board); // true
+const res2 = validSoduku(board2); // false
+console.log({ res2 });
+
+
+// Test each row - go 1 - through 9,
+// Test 
