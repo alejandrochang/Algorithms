@@ -47,12 +47,15 @@ function validList(row) {
 }
 
 function validSoduku(b) {
-  let columns = Array(b[0].length).fill([]);
+  let columns = [...Array(b[0].length).fill([])];
   for (let r = 0; r < b.length; r++) {
     if (!validList(b[r])) return false;
     for (let c = 0; c < b[0].length; c++) {
       const pos = b[r][c];
-      columns[r].push(pos);
+      // if (c === 0) {
+        const bucket = columns[c];
+        console.log({ bucket });
+      // }
       // console.log({ columns, pos, c })
     }
   }
