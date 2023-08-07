@@ -25,7 +25,16 @@ const stocks = [9, 11, 8, 5, 7, 10];
 // }
 
 function stockPrices(prices) {
-  
+  let j = prices.length - 1; // 10
+  let best = 0;
+  for (let i = prices.length - 2; i >= 0; i--) {
+    let next = prices[i]; // 8
+    const diff = prices[j] - next;
+    if (prices[j] < next) j = i;
+    if (best < diff) best = diff;
+  }
+
+  return best;
 }
 
 const res = stockPrices(stocks);
