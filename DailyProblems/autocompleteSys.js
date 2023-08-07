@@ -22,7 +22,7 @@
 
 function autocompleteSys(str, strings) {
   const regex = /de.*/g;
-  const test = strings.join("-").match(regex);
+  const test = strings.join('-').match(regex);
   return test[0].split('-');
 }
 
