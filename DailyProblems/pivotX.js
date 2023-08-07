@@ -25,11 +25,18 @@ function pivotX(list, x) {
   return buckets.flat();
 }
 
+// Time: O(n)
+// Space: O(n)
+
 const x = 10;
 const lst = [9, 12, 3, 5, 14, 10, 10];
 
 const res = pivotX(lst, x);
 console.log({ res }); // [9, 3, 5, 10, 10, 12, 14].
+// res: [
+//      9,  3,  5, 10,
+//     10, 12, 14
+//   ]
 
 
 // 3 buckets approach
