@@ -34,38 +34,40 @@ const board2 =
 // Output: false
 // Explanation: Same as Example 1, except with the 5 in the top left corner being modified to 8. Since there are two 8's in the top left 3x3 sub-box, it is invalid.
 
-function validList(row) {
-  let positions = {};
-  for (let pos of row) {
-    if (pos === ".") continue;
-    positions[pos] = positions[pos] + 1 | 1;
-
-    if (positions[pos] > 1) return false;
-  }
-
-  return true;
-}
-
 function validSoduku(b) {
-  let columns = [...Array(b[0].length).fill([])];
-  for (let r = 0; r < b.length; r++) {
-    if (!validList(b[r])) return false;
-    for (let c = 0; c < b[0].length; c++) {
-      const pos = b[r][c];
-      // if (c === 0) {
-        const bucket = columns[c];
-        console.log({ bucket });
-      // }
-      // console.log({ columns, pos, c })
+  for (let i = 0; i < b.length ; i++) {
+    let rowMap = {};
+    let colMap = {};
+    let boxMap = {};
+
+    for (let j = 0; j < b[i].length; j++) {
+      const row = b[i][j];
+      const col = b[j][i];
+
+      if (row !== '.') {
+        if (rowMap[row]) return false;
+        rowMap[row] = 1;
+      }
+
+      if (col !== '.') {
+        if (colMap[col]) return false;
+        colMap[col] = 1;
+      }
+
+      // 3x3 formula (3 * Math.floor(i/3) + Math.floor(j/3))][3 * (i % 3) + (j % 3)]
+      const board = b[3 * Math.floor(i/3) + Math.floor(j/3)][3 * (i % 3) + (j % 3)];
+      if (board !== '.') {
+        if (boxMap[board]) return false;
+        boxMap[board] = 1;
+      }
     }
   }
 
-  console.log({ columns });
   return true;
 }
 
 // const res = validSoduku(board); // true
-const res2 = validSoduku(board2); // false
+const res2 = validSoduku(board); // false
 console.log({ res2 });
 
 
