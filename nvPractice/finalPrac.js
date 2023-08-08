@@ -18,6 +18,56 @@
 
 // Return deepest node: 'd'
 
+class Node {
+  constructor(data,left=null,right=null) {
+    this.data=data;
+    this.left=left;
+    this.right=right;
+  }
+}
+
+const root = new Node('a', new Node('b', new Node('d')), new Node('c')); // d
+
+function deepestNode(root) {
+  if (!root) return null;
+  let result = { node: null, level: -Infinity };
+  const dfs = (node, level) => {
+    if (!node) return;
+
+    console.log({ node, level });
+
+    dfs(node.left, level += 1);
+    if (level > result.level) {
+      result.level = level;
+      result.node = node;
+    }
+    dfs(node.right, level += 1);
+
+  }
+
+  dfs(root, 0);
+
+  return result.node;
+}
+
+function deepestNodeHeight(root) {
+  const height = (node) => {
+    if (!node) return 0;
+
+    const letfHeight = height(node.left);
+    const rightHeight = height(node.right);
+
+    return Math.max(letfHeight,rightHeight) + 1;
+  }
+
+  return height(root);
+}
+
+
+// TIme: O(n), Space: O(n)
+
+console.log('result', deepestNode(root));
+console.log('result', deepestNodeHeight(root));
 
 
 
