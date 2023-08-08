@@ -34,8 +34,6 @@ function deepestNode(root) {
   const dfs = (node, level) => {
     if (!node) return;
 
-    console.log({ node, level });
-
     dfs(node.left, level += 1);
     if (level > result.level) {
       result.level = level;
@@ -66,8 +64,8 @@ function deepestNodeHeight(root) {
 
 // TIme: O(n), Space: O(n)
 
-console.log('result', deepestNode(root));
-console.log('result', deepestNodeHeight(root));
+// console.log('result', deepestNode(root));
+// console.log('result', deepestNodeHeight(root));
 
 
 
@@ -120,8 +118,51 @@ console.log('result', deepestNodeHeight(root));
 // 4. Degree Arr
 // Input: nums = [1,2,2,3,1]
 // Output: 2
-// Explanation: 
-// The input array has a degree of 2 because both elements 1 and 2 appear twice.
-// Of the subarrays that have the same degree:
-// [1, 2, 2, 3, 1], [1, 2, 2, 3], [2, 2, 3, 1], [1, 2, 2], [2, 2, 3], [2, 2]
-// The shortest length is 2. So return 2.
+// Given a non-empty array of non-negative integers nums, 
+// the degree of this array is defined as the maximum frequency of any one of its elements.
+// Your task is to find the smallest possible length of a (
+//   contiguous) subarray of nums, that has the same degree as nums.
+
+
+// High Level: startIndex - endIndex
+// numMap = { sI: eI }; continues addition of elements
+// if repeated subarray length ties, check both and see which one is the smallest distance (e-s)
+
+
+function degreeArr(nums) {
+  const numMap = {};
+  for (let i = 0; i < nums.length; i++) {
+    const currentNum = nums[i];
+    if (numMap[currentNum]) {
+      numMap[currentNum].endIndex = i;
+      numMap[currentNum].degree = i - numMap[currentNum].startIndex;
+      numMap[currentNum].repeated = numMap[currentNum].repeated + 1;
+    } else {
+      numMap[currentNum] = { startIndex: i, endIndex: null, degree: null, repeated: 0 };
+    }
+  }
+
+  let result = { val: null, mostRepeated: 0, degree: 0 };
+  for (let key in numMap) {
+    let val = numMap[key];
+    const degree = val.degree + 1;
+    if (result.mostRepeated < val.repeated) {
+      result = { degree: degree, mostRepeated: val.repeated, val: key };
+    } else if (result.mostRepeated === val.repeated) {
+      if (degree < result.degree) {
+        result = { degree: degree, mostRepeated: val.repeated, val: key };
+      }
+    }
+  }
+
+  return result;
+}
+
+
+// { 1: { start: 0, end: 4, degree: 4 }};
+// { 2: start: 1, end 6, degree: 5 };
+
+const nums = [1,2,2,3,1]; // Output: 2
+const nums2 = [1,2,2,3,1,4,2]; // Output :6 (because 2 is repeated 3 times)
+
+// console.log('res', degreeArr(nums), degreeArr(nums2));
