@@ -24,6 +24,9 @@ const Navigation = () => {
           <li>
             <Link to="/poker">Poker Shuffle</Link>
           </li>
+          <li>
+            <Link to="/stoplight">Stoplight</Link>
+          </li>
         </ul>
       </nav>
 

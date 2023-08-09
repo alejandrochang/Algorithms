@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import '../App.css';
 
 // Create a four card system of 4 suits
@@ -22,7 +22,7 @@ for (let suit of suits) {
 const Poker = () => {
   // Shuffle logic - bubble sort type
   const shuffle = (arr) => {
-    for (let i = arr.length - 1; i > 0; i--) {
+    for (let i = arr.length - 1; i >= 0; i--) {
       let rand = Math.floor(Math.random() * (i + 1));
       [arr[i], arr[rand]] = [arr[rand], arr[i]];
     }
@@ -30,15 +30,29 @@ const Poker = () => {
     return arr;
   }
   const [deck, setDeck] = useState(shuffle(cards));
-  const [activeCards, setActiveCards] = useState(deck.slice(0,4));
 
-  console.log({ deck, activeCards });
+  const handleNextCards = () => {
+    const newDeck = deck.splice(4);
+    setDeck(newDeck);
+  }
+
+  const handleCardReset = () => {
+    const newDeck = shuffle(cards);
+    setDeck(newDeck);
+  }
+
   const Card = ({ card }) => <div className="card">{`${card.suit} ${card.num}`}</div>
   return (
     <div className="poker-container">
-      {activeCards.map((card) => {
-        return <Card card={card} />
-      })}
+      <div className="card-container">
+          {deck.slice(0,4).map((card, idx) => {
+            return <Card key={idx} card={card} />
+          })}
+      </div>
+      <div>
+        <button onClick={handleNextCards}>Shuffle</button>
+        {deck.length === 0 && <button onClick={handleCardReset}>Reset</button>}
+      </div>
     </div>
   )
 }

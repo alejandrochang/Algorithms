@@ -104,10 +104,16 @@ li {
 
 .poker-container {
   display: flex;
-  justify-content: center;
-  flex-direction: row;
+  align-items: center;
+  flex-direction: column;
 }
 
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+  margin-bottom: 12px;
+}
 .card {
   height: 200px;
   width: 100px;
@@ -115,4 +121,32 @@ li {
   border: 1px solid black;
   border-radius: 8px;
   margin-right: 10px;
+}
+
+
+/* Light Container */
+.container-l {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.light-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100px;
+  height: 170px;
+  background-color: #000000;
+  padding: 12px;
+}
+
+.light {
+  border-radius: 75px;
+  height: 40px;
+  width: 40px;
+  background-color: grey;
+  margin-bottom: 10px;
 }
