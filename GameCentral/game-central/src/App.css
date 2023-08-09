@@ -100,7 +100,19 @@ li {
   margin-bottom: 16px;
 }
 
-.footer {
+/* Poker */
 
+.poker-container {
+  display: flex;
+  justify-content: center;
+  flex-direction: row;
+}
 
+.card {
+  height: 200px;
+  width: 100px;
+  padding: 10px;
+  border: 1px solid black;
+  border-radius: 8px;
+  margin-right: 10px;
 }

@@ -18,6 +18,12 @@ const Navigation = () => {
           <li>
             <Link to="/tictactoe">Tic Tac Toe</Link>
           </li>
+          <li>
+            <Link to="/time">Time Load App</Link>
+          </li>
+          <li>
+            <Link to="/poker">Poker Shuffle</Link>
+          </li>
         </ul>
       </nav>
 
