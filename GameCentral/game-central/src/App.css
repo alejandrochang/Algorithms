@@ -89,6 +89,7 @@ li {
 }
 
 .toe-cell {
+  height: 30px;
   width: 40px;
   padding: 20px;
   align-items: center;
@@ -100,6 +101,6 @@ li {
 }
 
 .footer {
-  
+
 
 }
