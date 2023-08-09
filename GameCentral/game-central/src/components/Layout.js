@@ -1,5 +1,4 @@
 import { Outlet, Link } from "react-router-dom";
-import Homepage from './Home';
 
 const Navigation = () => {
   return (
@@ -14,7 +13,10 @@ const Navigation = () => {
             <Link to="/medication">Medication</Link>
           </li>
           <li>
-            <Link to="/other">Other</Link>
+            <Link to="/calendar">Calendar</Link>
+          </li>
+          <li>
+            <Link to="/tictactoe">Tic Tac Toe</Link>
           </li>
         </ul>
       </nav>
@@ -28,7 +30,6 @@ const Layout = () => {
   return (
     <>
       <Navigation />
-      <Homepage />
     </>
   )
 }

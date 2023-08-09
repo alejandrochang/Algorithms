@@ -1,20 +1,17 @@
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Medication from "./components/Medication";
 import Layout from "./components/Layout";
-// import Home from "./pages/Home";
-// import Blogs from "./pages/Blogs";
-// import Contact from "./pages/Contact";
-// import NoPage from "./pages/NoPage";
+import Calendar from "./components/Calendar";
+import TicTacToes from "./components/Tictactoe";
 
 export default function App() {
   return (
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<Layout />}>
-          {/* <Route index element={<Home />} />
-          <Route path="blogs" element={<Blogs />} /> */}
+          <Route path="calendar" element={<Calendar />} />
           <Route path="medication" element={<Medication />} />
-          {/* <Route path="*" element={<NoPage />} /> */}
+          <Route path="tictactoe" element={<TicTacToes />} />
         </Route>
       </Routes>
     </BrowserRouter>

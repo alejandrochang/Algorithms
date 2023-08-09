@@ -30,3 +30,76 @@ ol {
 li {
   text-align: left;
 }
+
+/* Calendar */
+
+.outer-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border: 0.5px solid black;
+  border-radius: 6px;
+  padding: 10px;
+}
+
+.month {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: calc(100% - 30px);
+}
+
+.week {
+  flex-direction: row;
+  display: flex;
+}
+
+.day {
+  padding: 10px;
+  width: 25px;
+  text-align: center;
+}
+
+.day:hover {
+  background-color: lightgray;
+  cursor: pointer;
+}
+
+
+/* Tic Tac Toe */
+
+.toe-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: 100%;
+}
+
+.toe-row {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+}
+
+.toe-cell {
+  width: 40px;
+  padding: 20px;
+  align-items: center;
+  border: .5px solid black;
+}
+
+.board-container {
+  margin-bottom: 16px;
+}
+
+.footer {
+  
+
+}
