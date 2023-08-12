@@ -7,17 +7,23 @@
 
 // For example, suppose you are given the following input:
 
-// elevations = {0: 5, 1: 25, 2: 15, 3: 20, 4: 10}
+const elevations = {0: 5, 1: 25, 2: 15, 3: 20, 4: 10}
 
-// paths = {
-//     (0, 1): 10,
-//     (0, 2): 8,
-//     (0, 3): 15,
-//     (1, 3): 12,
-//     (2, 4): 10,
-//     (3, 4): 5,
-//     (3, 0): 17,
-//     (4, 0): 10
-// }
+const paths = {
+  '0_1': 10,
+  '0_2': 8,
+  '0_3': 15,
+  '1_3': 12,
+  '2_4': 10,
+  '3_4': 5,
+  '3_0': 17,
+  '4_0': 10
+};
 // In this case, the shortest valid path would be 0 -> 2 -> 4 -> 0, with a distance of 28.
 
+function elevationPaths() {
+
+}
+
+const res = elevationPaths(elevations, paths);
+console.log({ res }); // 28
