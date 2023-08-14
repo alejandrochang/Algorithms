@@ -21,8 +21,13 @@ const paths = {
 };
 // In this case, the shortest valid path would be 0 -> 2 -> 4 -> 0, with a distance of 28.
 
-function elevationPaths() {
 
+
+// BFS - starts at 0, ends at 0
+// Must go up then down
+
+function elevationPaths(input, paths) {
+  
 }
 
 const res = elevationPaths(elevations, paths);
