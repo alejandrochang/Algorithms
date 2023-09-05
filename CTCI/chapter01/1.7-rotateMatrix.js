@@ -2,3 +2,12 @@
 // write a method to rotate the image by 90 degrees. Can you do this in place?
 
 
+function rotateMatrix(arr) {
+
+}
+
+
+const arr = [1,2,3,4,5];
+const res = rotateMatrix(arr);
+
+console.log({ res });
