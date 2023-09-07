@@ -53,7 +53,7 @@ function zeroMatrix(matrix) {
 }
 
 const res = zeroMatrix(matrix);
-// console.log(JSON.stringify(res));
+console.log(JSON.stringify(res));
 
 //[[0,0,0,0,0,0,0],
 // [0,0,0,0,0,0,0],
